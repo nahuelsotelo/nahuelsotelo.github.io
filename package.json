@@ -1,0 +1,11 @@
+{
+  "author": "Nahuel Sotelo",
+  "name": "nahuelsotelo.com",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib": "~0.7.0",
+    "grunt-contrib-compass": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}
