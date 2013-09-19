@@ -41,21 +41,26 @@ body {
             @include vrm(margin-bottom, 1);
         }
     }
+    a {
+        font-weight: 700;
+
+        .links & {
+            @include font(16px,1);
+            color: Chocolate;
+            font-family: $f-sans;
+            text-decoration: none;
+        }
+        .mail & {
+            color: $c-text;
+            display: block;
+            @include font(32px);
+            text-decoration: none;
+        }
+    }
     .mail {
         @include font(24px);
         text-align: center;
     }
     .links {
         @include vrm(margin, 2, 0);
-        a {
-            @include font(16px,1);
-        }
-    }
-    a {
-        color: Chocolate;
-        font-family: $f-sans;
-        font-weight: 700;
-        // letter-spacing: 0.1em;
-        text-decoration: none;
-        // text-transform: uppercase;
     }

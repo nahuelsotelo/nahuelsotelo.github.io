@@ -57,6 +57,25 @@ h1 span,
   margin-bottom: 1.5rem;
 }
 
+a {
+  font-weight: 700;
+}
+.links a {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: Chocolate;
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+}
+.mail a {
+  color: #333333;
+  display: block;
+  font-size: 32px;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
 .mail {
   font-size: 24px;
   font-size: 1.5rem;
@@ -66,18 +85,6 @@ h1 span,
 .links {
   margin: 48px 0px;
   margin: 3rem 0rem;
-}
-.links a {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-a {
-  color: Chocolate;
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  text-decoration: none;
 }
 
 /* --------------------------------------------------------------------------------
