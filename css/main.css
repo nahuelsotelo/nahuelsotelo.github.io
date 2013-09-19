@@ -1,0 +1,95 @@
+/*
+    NOTE FOR CURIOUS DEVELOPERS:
+    This is a compress css files, but if you are reading this you probably  want to see the code in a more legible way. You can find it here: https://github.com/nahuelsotelo/nahuelsotelo-v4.0
+*/
+/* ============== [ INDEX ] ==============
+
+*** BASE STYLES ***
+*** COMPONENTS ***
+*** LAYOUT ***
+*** HELPERS ***
+
+======================================== */
+/* ------------------------------------------------------------ */
+/* ---------------------------------------- */
+/* -------------------- */
+/* --------------------------------------------------------------------------------
+   *** BASE STYLES ***
+-------------------------------------------------------------------------------- */
+/* =TYPOGRAPHY
+-------------------------------------------------------------------------- */
+body {
+  color: #333333;
+  font-family: "Droid Serif", serif;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* =HEADINGS
+------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin-top: 0;
+}
+
+h1,
+.f-h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 38px;
+  font-size: 2.375rem;
+  line-height: 1.26316;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+h1 strong,
+.f-h1 strong {
+  font-weight: inherit;
+}
+h1 span,
+.f-h1 span {
+  display: block;
+  font-size: 61px;
+  font-size: 3.8125rem;
+  line-height: 0.78689;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.mail {
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.links {
+  margin: 48px 0px;
+  margin: 3rem 0rem;
+}
+.links a {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: Chocolate;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------------
+   *** COMPONENTS ***
+-------------------------------------------------------------------------------- */
+body {
+  margin: 4em auto;
+  max-width: 40em;
+}
+
+div:first-of-type {
+  margin: 36px 0px 48px;
+  margin: 2.25rem 0rem 3rem;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+
+// ============== [ INDEX ] ==============
+//
+//  Grid Settings
+//
+//  Typography
+//      Font familys
+//      Line height
+//
+//  Colors
+//      Main colors
+//
+//  Mediaqueries
+//
+// ========================================
+
+// =Grid Settings
+// -------------------------------------------------------------------------- */
+// $column-width: 60px;
+// $gutter-width: 20px;
+// $total-columns: 12;
+// $max-width: 924px;
+
+
+// =Typography
+// -------------------------------------------------------------------------- */
+    // =Font familys
+    // ------------------------------------------------------ */
+    $f-sans: 'Oswald', sans-serif;
+    $f-serif: 'Droid Serif', serif;
+
+    // =Font size
+    // ------------------------------------------------------ */
+    // vertical rythm unit: 24;
+    $base-font-size: 16px;
+
+    //$base-font-size-rem: ($base-font-size/16px)+rem;
+    $base-line-height: 1.5;
+
+
+
+// =Colors
+// -------------------------------------------------------------------------- */
+    // =Main colors
+    // ------------------------------------------------------ */
+
+    $c-text: #333;

@@ -1,0 +1,44 @@
+@import 'compass';
+@import 'theme/settings';
+@import 'partials/mixins';
+
+/*
+    NOTE FOR CURIOUS DEVELOPERS:
+    This is a compress css files, but if you are reading this you probably  want to see the code in a more legible way. You can find it here: https://github.com/nahuelsotelo/nahuelsotelo-v4.0
+*/
+
+
+//    MODERNIZER PROPERTIES TARGETED
+//    -
+//
+
+/* ============== [ INDEX ] ==============
+
+*** BASE STYLES ***
+*** COMPONENTS ***
+*** LAYOUT ***
+*** HELPERS ***
+
+======================================== */
+/* ------------------------------------------------------------ */
+/* ---------------------------------------- */
+/* -------------------- */
+
+/* --------------------------------------------------------------------------------
+   *** BASE STYLES ***
+-------------------------------------------------------------------------------- */
+@import "theme/base/normalize";
+@import "theme/base/typography";
+
+/* --------------------------------------------------------------------------------
+   *** COMPONENTS ***
+-------------------------------------------------------------------------------- */
+
+body {
+    margin: 4em auto;
+    max-width: 40em;
+}
+div:first-of-type {
+    @include vrm(margin, 1.5, 0, 2);
+    text-align: center;
+}

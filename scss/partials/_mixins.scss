@@ -1,0 +1,67 @@
+// ============== [ INDEX ] ==============
+//
+//  1 - Vertical Rythm
+//      1.1 - Vertical Rythm magic number function
+//      1.2 - Vertical Rythm (rem + px)
+//
+//  2 - Typography
+//      2.1 - Fonts Sizes (rem + px)
+//      2.2 - Line height
+//
+//  4 - Helpers
+//
+//  5 - Flex box
+//
+// ========================================
+
+
+// =1 - Vertical Rythm
+// -------------------------------------------------------------------------- */
+    // =1.1 - Vertical Rythm magic number function
+    // ------------------------------------------------------ */
+    @function vertical-rythm-unit() {
+        $rythm: ($base-font-size/1px) * $base-line-height;
+        @return floor($rythm);
+    }
+    $vrm: vertical-rythm-unit();
+
+    // =1.2 - Vertical Rythm (rem + px)
+    // ------------------------------------------------------ */
+    @mixin vrm($property:margin-bottom, $multip:1, $multip2:"", $multip3:"", $multip4:"") {
+        @if $multip2 != "" {
+            @if $multip3 != "" {
+                @if $multip4 != "" {
+                    #{$property}: (vertical-rythm-unit() * $multip+0px) (vertical-rythm-unit() * $multip2+0px) (vertical-rythm-unit() * $multip3+0px)  (vertical-rythm-unit() * $multip4+0px);
+                    #{$property}: (((vertical-rythm-unit() * $multip+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip2+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip3+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip4+0px)/16px)+0rem);
+                } @else {
+                    #{$property}: (vertical-rythm-unit() * $multip+0px) (vertical-rythm-unit() * $multip2+0px) (vertical-rythm-unit() * $multip3+0px);
+                    #{$property}: (((vertical-rythm-unit() * $multip+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip2+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip3+0px)/16px)+0rem);
+                }
+            } @else {
+                #{$property}: (vertical-rythm-unit() * $multip+0px) (vertical-rythm-unit() * $multip2+0px);
+                #{$property}: (((vertical-rythm-unit() * $multip+0px)/16px)+0rem) (((vertical-rythm-unit() * $multip2+0px)/16px)+0rem);
+            }
+        } @else {
+            #{$property}: vertical-rythm-unit() * $multip+0px;
+            #{$property}: ((vertical-rythm-unit() * $multip+0px)/16px)+0rem;
+        }
+    }
+
+// =2 - Typography
+// -------------------------------------------------------------------------- */
+    // =2.1 - Fonts Sizes (rem + px)
+    // ------------------------------------------------------ */
+    @mixin font($size, $line-height: "") {
+        font-size: $size;
+        font-size: $size/16px+0rem;
+        @if $line-height != "" {
+            line-height: (vertical-rythm-unit() * $line-height) / ($size/1px);
+        }
+    }
+
+
+    // =2.2 - Line height
+    // ------------------------------------------------------ */
+    @mixin line-h($size, $multip: 1) {
+        line-height: (vertical-rythm-unit() * $multip) / ($size/1px);
+    }
