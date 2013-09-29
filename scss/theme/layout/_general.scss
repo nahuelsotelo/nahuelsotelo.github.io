@@ -12,39 +12,65 @@ body {
     text-shadow: 1px 1px 0 #fff;
 }
 .main-wrapper {
-    margin: 5% auto;
+    margin: 2.469em auto;
     max-width: 65em;
 }
 .brand,
 .main-content {
-    @include vrm(margin-bottom, 2);
+    margin-bottom: 3.161em;
 }
 .main-content {
     @include cf;
 }
 .portrait {
-    @include span-columns(2);
+    @include span-columns(3);
     @include push(5);
-    text-align: center;
+    position: relative;
 
     svg {
         fill: $c-text;
         -webkit-filter: drop-shadow( 1px 1px 0 #fff );
                 filter: drop-shadow( 1px 1px 0 #fff );
         @include transition(all .6s ease-out);
-        width: 100%;
+        max-width: 70%;
         height: 12em;
     }
-
-    &.is--active {
-        svg {
-            fill: $c-hover;
+    &:before,
+    &:after {
+        background-repeat: no-repeat;
+        background-position: center center;
+        content: '';
+        display: block;
+        @include font(47px);
+        position: absolute;
+            top: 1em;
+            right: -.15em;
+        width: 1.75em;
+        height: 1.75em;
+    }
+    &:before {
+        @include background-size(50%);
+        z-index: 1;
+    }
+    &:after {
+        background: url(../img/ballon.svg);
+        @include background-size(contain);
+        content: 'Hi';
+        font-family: $f-cursive;
+        line-height: 1.8em;
+        text-align: center;
+        text-indent: -.1em;
+    }
+    &.is--twitter {
+        &:after {
+            content: '';
         }
     }
+    &.is--twitter:before { background-image: url(../img/twitter.svg); }
 }
 .intro {
     @include span-columns(5);
-    @include pull(7);
+    @include pull(8);
     text-align: right;
 }
 .social {

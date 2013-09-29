@@ -48,23 +48,25 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 .brand {
   text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .brand__hello {
   display: block;
   font-family: "Cookie", cursive;
-  font-size: 72px;
-  font-size: 4.5rem;
-  line-height: 0.78125;
+  font-size: 79px;
+  font-size: 4.9375rem;
+  line-height: 0.781;
   font-weight: normal;
 }
 
 .brand__my-name {
   display: inline-block;
   font-family: "Gentium Book Basic", serif;
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 1.78571;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.389;
   font-style: italic;
   font-weight: normal;
   position: relative;
@@ -88,9 +90,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 .brand__name {
   display: block;
-  font-size: 94px;
-  font-size: 5.875rem;
-  line-height: 0.99734;
+  font-size: 101px;
+  font-size: 6.3125rem;
+  line-height: 1;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -98,18 +100,22 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 .mail span {
   display: block;
   font-family: "Gentium Book Basic", serif;
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 0.89286;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 0.78125;
   font-style: italic;
   font-weight: normal;
 }
 .mail a {
-  font-size: 46px;
-  font-size: 2.875rem;
+  font-size: 57px;
+  font-size: 3.5625rem;
   font-weight: normal;
   text-decoration: none;
   text-transform: lowercase;
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 a {
@@ -152,14 +158,13 @@ body {
 }
 
 .main-wrapper {
-  margin: 5% auto;
+  margin: 2.469em auto;
   max-width: 65em;
 }
 
 .brand,
 .main-content {
-  margin-bottom: 50px;
-  margin-bottom: 3.125rem;
+  margin-bottom: 3.161em;
 }
 
 .main-content {
@@ -174,12 +179,12 @@ body {
 }
 
 .portrait {
-  width: 14.28571%;
+  width: 21.05263%;
   float: left;
-  margin-right: 2.85714%;
+  margin-right: 2.63158%;
   display: inline;
-  margin-left: 42.85714%;
-  text-align: center;
+  margin-left: 39.47368%;
+  position: relative;
 }
 .portrait svg {
   fill: #222222;
@@ -189,24 +194,59 @@ body {
   -moz-transition: all 0.6s ease-out;
   -o-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out;
-  width: 100%;
+  max-width: 70%;
   height: 12em;
 }
-.portrait.is--active svg {
-  fill: #cb3c1b;
+.portrait:before, .portrait:after {
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: '';
+  display: block;
+  font-size: 47px;
+  font-size: 2.9375rem;
+  position: absolute;
+  top: 1em;
+  right: -.15em;
+  width: 1.75em;
+  height: 1.75em;
+}
+.portrait:before {
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
+  z-index: 1;
+}
+.portrait:after {
+  background: url(../img/ballon.svg);
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  content: 'Hi';
+  font-family: "Cookie", cursive;
+  line-height: 1.8em;
+  text-align: center;
+  text-indent: -.1em;
+}
+.portrait.is--twitter:after {
+  content: '';
+}
+.portrait.is--twitter:before {
+  background-image: url(../img/twitter.svg);
 }
 
 .intro {
-  width: 40%;
+  width: 36.84211%;
   float: left;
-  margin-right: 2.85714%;
+  margin-right: 2.63158%;
   display: inline;
-  margin-left: -60.0%;
+  margin-left: -63.15789%;
   text-align: right;
 }
 
 .social {
-  width: 40%;
+  width: 36.84211%;
   float: right;
   margin-right: 0;
   #margin-left: -1em;

@@ -1,5 +1,7 @@
 /* =TYPOGRAPHY
 -------------------------------------------------------------------------- */
+// Scale: http://modularscale.com/scale/?px1=18&px2=25&ra1=1.778&ra2=0
+
 body {
     color: $c-text;
     font-family: $f-text;
@@ -30,17 +32,20 @@ body {
     }
     .brand {
         text-align: center;
+        @include font($base-font-size);
     }
     .brand__hello {
         display: block;
         font-family: $f-cursive;
-        @include font(72px, 2.25);
+        @include font(79px);
+        line-height: 0.781;
         font-weight: normal;
     }
     .brand__my-name {
         display: inline-block;
         font-family: $f-serifDisplay;
-        @include font(28px, 2);
+        @include font(32px);
+        line-height: 1.389;
         font-style: italic;
         font-weight: normal;
         position: relative;
@@ -62,7 +67,8 @@ body {
     .brand__name {
         @extend %hero-text;
         display: block;
-        @include font(94px, 3.75);
+        @include font(101px);
+        line-height: 1;
         font-weight: normal;
         text-transform: uppercase;
     }
@@ -70,19 +76,21 @@ body {
         span {
             display: block;
             font-family: $f-serifDisplay;
-            @include font(28px, 1);
+            @include font(32px, 1);
             font-style: italic;
             font-weight: normal;
         }
         a {
             @extend %hero-text;
-            @include font(46px);
+            @include font(57px);
             font-weight: normal;
             text-decoration: none;
             text-transform: lowercase;
         }
     }
-
+    p {
+        margin-bottom: 1em;
+    }
     a {
         color: $c-mainDark;
         font-family: $f-link;
