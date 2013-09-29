@@ -1,0 +1,59 @@
+/* =GENERAL LAYOUT
+-------------------------------------------------------------------------- */
+*
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+body {
+    background: #fff url(../img/paper_fibers.png);
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 0 #fff;
+}
+.main-wrapper {
+    margin: 5% auto;
+    max-width: 65em;
+}
+.brand,
+.main-content {
+    @include vrm(margin-bottom, 2);
+}
+.main-content {
+    @include cf;
+}
+.portrait {
+    @include span-columns(2);
+    @include push(5);
+    text-align: center;
+
+    svg {
+        @include transition(all .8s ease-out);
+        -webkit-filter: drop-shadow( 1px 1px 0 #fff );
+            filter: drop-shadow( 1px 1px 0 #fff )
+    }
+
+    &.is--active {
+        svg {
+            fill: $c-hover;
+        }
+    }
+}
+.intro {
+    @include span-columns(5);
+    @include pull(7);
+    text-align: right;
+}
+.social {
+    @include span-columns(5 omega);
+}
+.intro,
+.social {
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+.mail {
+    clear: both;
+    text-align: center;
+}

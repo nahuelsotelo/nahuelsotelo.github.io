@@ -8,9 +8,7 @@
 //      2.1 - Fonts Sizes (rem + px)
 //      2.2 - Line height
 //
-//  4 - Helpers
-//
-//  5 - Flex box
+//  3 - Helpers
 //
 // ========================================
 
@@ -64,4 +62,34 @@
     // ------------------------------------------------------ */
     @mixin line-h($size, $multip: 1) {
         line-height: (vertical-rythm-unit() * $multip) / ($size/1px);
+    }
+
+// =3 - Helpers
+// -------------------------------------------------------------------------- */
+    // =3.1 - Image replacement
+    // ------------------------------------------------------ */
+    @mixin ir {
+        text-indent: 200%;
+        white-space: nowrap;
+        overflow: hidden;
+
+        .lt-ie8 & {
+            text-indent: -100%;
+        }
+    }
+
+    // =3.2 - Clearfix
+    // ------------------------------------------------------ */
+    // + info: http://nicolasgallagher.com/micro-clearfix-hack/
+    @mixin cf {
+        *zoom: 1; // IE6/7 support
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+        }
+        &:after {
+            clear: both;
+        }
     }

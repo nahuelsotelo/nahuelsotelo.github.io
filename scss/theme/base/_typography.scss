@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------- */
 body {
     color: $c-text;
-    font-family: $f-serif;
+    font-family: $f-text;
     @include font($base-font-size);
     font-weight: 300;
     line-height: $base-line-height;
@@ -24,43 +24,49 @@ body {
             }
         }
     }
-    h1,
-    .f-h1 {
-        font-family: $f-sans;
-        @include font(38px, 2);
-        font-weight: 700;
+    %hero-text {
+        color: $c-main;
+        font-family: $f-title;
+    }
+    .brand {
         text-align: center;
-        text-transform: uppercase;
-
+        span,
         strong {
-            font-weight: inherit;
-        }
-        span {
             display: block;
-            @include font(61px, 2);
-            @include vrm(margin-bottom, 1);
         }
     }
-    a {
-        font-weight: 700;
+    .brand__hello {
 
-        .links & {
-            @include font(16px,1);
-            color: Chocolate;
-            font-family: $f-sans;
-            text-decoration: none;
-        }
-        .mail & {
-            color: $c-text;
-            display: block;
-            @include font(32px);
-            text-decoration: none;
-        }
+    }
+    .brand__my-name {
+        font-style: italic;
+    }
+    .brand__name {
+        @extend %hero-text;
+        @include font(72px);
+        font-weight: normal;
+        text-transform: uppercase;
     }
     .mail {
-        @include font(24px);
-        text-align: center;
+        a {
+            @extend %hero-text;
+            display: block;
+            @include font(46px);
+            font-weight: normal;
+            text-decoration: none;
+        }
     }
-    .links {
-        @include vrm(margin, 2, 0);
+
+    a {
+        color: $c-main;
+        font-family: $f-link;
+        @include font(16px);
+        text-transform: uppercase;
+        // font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            color: $c-hover;
+            text-decoration: underline;
+        }
     }

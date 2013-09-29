@@ -16,26 +16,31 @@
 
 // =Grid Settings
 // -------------------------------------------------------------------------- */
-// $column-width: 60px;
-// $gutter-width: 20px;
-// $total-columns: 12;
-// $max-width: 924px;
-
+$column-width: 2em;
+$gutter-width: 1em;
+$total-columns: 12;
 
 // =Typography
 // -------------------------------------------------------------------------- */
     // =Font familys
     // ------------------------------------------------------ */
-    $f-sans: 'Oswald', sans-serif;
-    $f-serif: 'Droid Serif', serif;
+    $f-sansText: 'PT Mono', sans-serif;
+    $f-sansDisplay: 'League Gothic', Impact, sans-serif;
+    $f-serifText: 'Vollkorn', serif;
+    $f-serifDisplay: serif;
+    $f-cursive: cursive;
+
+    $f-text: $f-serifText;
+    $f-title: $f-sansDisplay;
+    $f-link: $f-sansText;
 
     // =Font size
     // ------------------------------------------------------ */
     // vertical rythm unit: 24;
-    $base-font-size: 16px;
+    $base-font-size: 18px;
 
     //$base-font-size-rem: ($base-font-size/16px)+rem;
-    $base-line-height: 1.5;
+    $base-line-height: 1.4;
 
 
 
@@ -43,5 +48,12 @@
 // -------------------------------------------------------------------------- */
     // =Main colors
     // ------------------------------------------------------ */
+    // $c-main: #47779E;
+    // $c-main: #1693A5;
+    // $c-main: #F02311;
+    // $c-main: #02779E;
+    $c-main: #E45635;
+    $c-mainDark: darken($c-main, 15%);
 
     $c-text: #333;
+    $c-hover: $c-mainDark;
