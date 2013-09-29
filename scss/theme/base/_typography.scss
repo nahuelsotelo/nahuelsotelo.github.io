@@ -30,43 +30,68 @@ body {
     }
     .brand {
         text-align: center;
-        span,
-        strong {
-            display: block;
-        }
     }
     .brand__hello {
-
+        display: block;
+        font-family: $f-cursive;
+        @include font(72px, 2.25);
+        font-weight: normal;
     }
     .brand__my-name {
+        display: inline-block;
+        font-family: $f-serifDisplay;
+        @include font(28px, 2);
         font-style: italic;
+        font-weight: normal;
+        position: relative;
+
+        &:before,
+        &:after {
+            background: $c-text;
+            content: '';
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+                top: 50%;
+            width: 80%;
+            height: 1px;
+        }
+        &:before { left: -90%; }
+        &:after { right: -90%; }
     }
     .brand__name {
         @extend %hero-text;
-        @include font(72px);
+        display: block;
+        @include font(94px, 3.75);
         font-weight: normal;
         text-transform: uppercase;
     }
     .mail {
+        span {
+            display: block;
+            font-family: $f-serifDisplay;
+            @include font(28px, 1);
+            font-style: italic;
+            font-weight: normal;
+        }
         a {
             @extend %hero-text;
-            display: block;
             @include font(46px);
             font-weight: normal;
             text-decoration: none;
+            text-transform: lowercase;
         }
     }
 
     a {
-        color: $c-main;
+        color: $c-mainDark;
         font-family: $f-link;
         @include font(16px);
         text-transform: uppercase;
-        // font-weight: 700;
         text-decoration: none;
+        @include transition(all .6s ease-out);
 
         &:hover {
             color: $c-hover;
-            text-decoration: underline;
         }
     }

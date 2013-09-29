@@ -28,9 +28,12 @@ body {
     text-align: center;
 
     svg {
-        @include transition(all .8s ease-out);
+        fill: $c-text;
         -webkit-filter: drop-shadow( 1px 1px 0 #fff );
-            filter: drop-shadow( 1px 1px 0 #fff )
+                filter: drop-shadow( 1px 1px 0 #fff );
+        @include transition(all .6s ease-out);
+        width: 100%;
+        height: 12em;
     }
 
     &.is--active {

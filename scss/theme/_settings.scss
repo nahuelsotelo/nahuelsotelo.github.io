@@ -27,8 +27,8 @@ $total-columns: 12;
     $f-sansText: 'PT Mono', sans-serif;
     $f-sansDisplay: 'League Gothic', Impact, sans-serif;
     $f-serifText: 'Vollkorn', serif;
-    $f-serifDisplay: serif;
-    $f-cursive: cursive;
+    $f-serifDisplay: 'Gentium Book Basic', serif;
+    $f-cursive: 'Cookie', cursive;
 
     $f-text: $f-serifText;
     $f-title: $f-sansDisplay;
@@ -48,12 +48,13 @@ $total-columns: 12;
 // -------------------------------------------------------------------------- */
     // =Main colors
     // ------------------------------------------------------ */
-    // $c-main: #47779E;
-    // $c-main: #1693A5;
-    // $c-main: #F02311;
-    // $c-main: #02779E;
+    $c-main: #e4aa00;
+    $c-main: #F02311;
+    $c-main: #02779E;
+    $c-main: #47778E;
+    $c-main: #1693A5;
     $c-main: #E45635;
-    $c-mainDark: darken($c-main, 15%);
+    $c-mainDark: darken($c-main, 10%);
 
-    $c-text: #333;
+    $c-text: #222;
     $c-hover: $c-mainDark;
