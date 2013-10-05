@@ -71,7 +71,7 @@ body {
 .intro {
     @include span-columns(5);
     @include pull(8);
-    text-align: right;
+    // text-align: right;
 }
 .social {
     @include span-columns(5 omega);

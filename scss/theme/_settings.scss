@@ -54,7 +54,8 @@ $total-columns: 13;
     $c-main: #47778E;
     $c-main: #1693A5;
     $c-main: #E45635;
-    $c-mainDark: darken($c-main, 10%);
+    $c-mainDark: darken($c-main, 30%);
 
     $c-text: #222;
+    $c-link: $c-main;
     $c-hover: $c-mainDark;

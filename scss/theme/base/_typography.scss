@@ -92,7 +92,7 @@ body {
         margin-bottom: 1em;
     }
     a {
-        color: $c-mainDark;
+        color: $c-link;
         font-family: $f-link;
         @include font(16px);
         text-transform: uppercase;
