@@ -27,8 +27,8 @@
 /* =TYPOGRAPHY
 -------------------------------------------------------------------------- */
 body {
-  color: #222222;
-  font-family: "Vollkorn", serif;
+  color: #341c00;
+  font-family: "Gentium Book Basic", serif;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 300;
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 
 .brand__name, .mail a {
-  color: #e45635;
+  color: #d07c3f;
   font-family: "League Gothic", Impact, sans-serif;
 }
 
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   position: relative;
 }
 .brand__my-name:before, .brand__my-name:after {
-  background: #222222;
+  background: #341c00;
   content: '';
   display: block;
   margin: 0 auto;
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   text-transform: uppercase;
 }
 
-.mail span {
+.mail p > span {
   display: block;
   font-family: "Gentium Book Basic", serif;
   font-size: 32px;
@@ -119,19 +119,20 @@ p {
 }
 
 a {
-  color: #e45635;
-  font-family: "PT Mono", sans-serif;
+  color: #cc6e28;
+  font-family: "PT Sans", "Rambla", "Sintony", "PT Mono", sans-serif;
   font-size: 16px;
   font-size: 1rem;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all 0.6s ease-out;
-  -moz-transition: all 0.6s ease-out;
-  -o-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 a:hover {
-  color: #71220f;
+  color: #0e7983;
 }
 
 /* --------------------------------------------------------------------------------
@@ -187,13 +188,9 @@ body {
   position: relative;
 }
 .portrait svg {
-  fill: #222222;
+  fill: #341c00;
   -webkit-filter: drop-shadow(1px 1px 0 white);
   filter: drop-shadow(1px 1px 0 white);
-  -webkit-transition: all 0.6s ease-out;
-  -moz-transition: all 0.6s ease-out;
-  -o-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
   max-width: 70%;
   height: 12em;
 }
@@ -205,7 +202,6 @@ body {
   font-size: 47px;
   font-size: 2.9375rem;
   position: absolute;
-  top: 1em;
   right: -.15em;
   width: 1.75em;
   height: 1.75em;
@@ -215,6 +211,7 @@ body {
   -moz-background-size: 50%;
   -o-background-size: 50%;
   background-size: 50%;
+  top: .95em;
   z-index: 1;
 }
 .portrait:after {
@@ -228,12 +225,44 @@ body {
   line-height: 1.8em;
   text-align: center;
   text-indent: -.1em;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  top: 1em;
 }
-.portrait.is--twitter:after {
+.portrait.is--runroom:after, .portrait.is--twitter:after, .portrait.is--github:after, .portrait.is--codepen:after, .portrait.is--linkedin:after, .portrait.is--zerply:after {
   content: '';
+}
+.portrait.is--mail:after {
+  color: #0e7983;
+}
+.portrait.is--runroom:before {
+  background-image: url(../img/runroom.svg);
 }
 .portrait.is--twitter:before {
   background-image: url(../img/twitter.svg);
+}
+.portrait.is--github:before {
+  background-image: url(../img/github.svg);
+  -webkit-background-size: 58%;
+  -moz-background-size: 58%;
+  -o-background-size: 58%;
+  background-size: 58%;
+  text-indent: -.2em;
+}
+.portrait.is--codepen:before {
+  background-image: url(../img/codepen.svg);
+}
+.portrait.is--linkedin:before {
+  background-image: url(../img/linkedin.svg);
+  -webkit-background-size: 46%;
+  -moz-background-size: 46%;
+  -o-background-size: 46%;
+  background-size: 46%;
+}
+.portrait.is--zerply:before {
+  background-image: url(../img/zerply.svg);
 }
 
 .intro {

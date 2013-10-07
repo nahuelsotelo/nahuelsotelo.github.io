@@ -24,9 +24,9 @@ $total-columns: 13;
 // -------------------------------------------------------------------------- */
     // =Font familys
     // ------------------------------------------------------ */
-    $f-sansText: 'PT Mono', sans-serif;
+    $f-sansText: 'PT Sans', 'Rambla','Sintony','PT Mono', sans-serif;
     $f-sansDisplay: 'League Gothic', Impact, sans-serif;
-    $f-serifText: 'Vollkorn', serif;
+    $f-serifText: 'Gentium Book Basic', serif;
     $f-serifDisplay: 'Gentium Book Basic', serif;
     $f-cursive: 'Cookie', cursive;
 
@@ -48,14 +48,10 @@ $total-columns: 13;
 // -------------------------------------------------------------------------- */
     // =Main colors
     // ------------------------------------------------------ */
-    $c-main: #e4aa00;
-    $c-main: #F02311;
-    $c-main: #02779E;
-    $c-main: #47778E;
-    $c-main: #1693A5;
-    $c-main: #E45635;
-    $c-mainDark: darken($c-main, 30%);
+    $c-main: #D07C3F;
+    $c-mainDark: #CC6E28;
+    $c-secondary: #0E7983;
 
-    $c-text: #222;
-    $c-link: $c-main;
-    $c-hover: $c-mainDark;
+    $c-text: #341c00;
+    $c-link: $c-mainDark;
+    $c-hover: $c-secondary;

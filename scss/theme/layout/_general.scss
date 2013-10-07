@@ -31,7 +31,6 @@ body {
         fill: $c-text;
         -webkit-filter: drop-shadow( 1px 1px 0 #fff );
                 filter: drop-shadow( 1px 1px 0 #fff );
-        @include transition(all .6s ease-out);
         max-width: 70%;
         height: 12em;
     }
@@ -43,13 +42,13 @@ body {
         display: block;
         @include font(47px);
         position: absolute;
-            top: 1em;
             right: -.15em;
         width: 1.75em;
         height: 1.75em;
     }
     &:before {
         @include background-size(50%);
+        top: .95em;
         z-index: 1;
     }
     &:after {
@@ -60,13 +59,35 @@ body {
         line-height: 1.8em;
         text-align: center;
         text-indent: -.1em;
+        @include transition(all .4s ease-out);
+            top: 1em;
     }
-    &.is--twitter {
+    &.is--runroom,
+    &.is--twitter,
+    &.is--github,
+    &.is--codepen,
+    &.is--linkedin,
+    &.is--zerply {
         &:after {
             content: '';
         }
     }
-    &.is--twitter:before { background-image: url(../img/twitter.svg); }
+    &.is--mail:after {
+        color: $c-hover;
+    }
+    &.is--runroom:before  { background-image: url(../img/runroom.svg); }
+    &.is--twitter:before  { background-image: url(../img/twitter.svg); }
+    &.is--github:before   {
+        background-image: url(../img/github.svg);
+        @include background-size(58%);
+        text-indent: -.2em;
+    }
+    &.is--codepen:before  { background-image: url(../img/codepen.svg); }
+    &.is--linkedin:before {
+        background-image: url(../img/linkedin.svg);
+        @include background-size(46%);
+    }
+    &.is--zerply:before   { background-image: url(../img/zerply.svg); }
 }
 .intro {
     @include span-columns(5);

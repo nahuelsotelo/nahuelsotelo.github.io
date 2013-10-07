@@ -73,7 +73,7 @@ body {
         text-transform: uppercase;
     }
     .mail {
-        span {
+        p > span {
             display: block;
             font-family: $f-serifDisplay;
             @include font(32px, 1);
@@ -95,9 +95,10 @@ body {
         color: $c-link;
         font-family: $f-link;
         @include font(16px);
+        font-weight: 700;
         text-transform: uppercase;
         text-decoration: none;
-        @include transition(all .6s ease-out);
+        @include transition(all .4s ease-out);
 
         &:hover {
             color: $c-hover;

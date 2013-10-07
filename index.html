@@ -11,7 +11,7 @@
     -->
 
     <link rel="stylesheet" href="css/main.css">
-    <link href='http://fonts.googleapis.com/css?family=PT+Mono|Vollkorn:400,700|Gentium+Book+Basic:400italic|Cookie' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|Gentium+Book+Basic:400,700,400italic|Cookie' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <h1 class="brand">
             <span class="brand__hello">Hello, </span>
             <span class="brand__my-name">my name is </span>
-            <strong class="brand__name">Nahuel Sotelo</strong>
+            <strong id="brand__name" class="brand__name">Nahuel Sotelo</strong>
         </h1>
 
         <div class="main-content">
@@ -45,39 +45,94 @@
             <div class="intro">
                 <p>I'm a <strong>front-end web developer</strong> and a full time geek. I'm struggling each day to make the web a better place. One line of code at a time.</p>
                 <p>I consider myself a <strong>proactive</strong> and curious person who loves to learn new stuff all the time, I guess thats the reason I chose this profession. I also enjoy <strong>teamwork</strong> and being a part of my <strong>local web community</strong>.</p>
-                <p>I currently work for <a href="www.runroom.com">Runroom</a> an awesome web design studio based in Barcelona</p>
+                <p>I currently work for <a href="www.runroom.com" class="icon-link" data-icon="runroom">Runroom</a>, an awesome web design studio based in Barcelona</p>
             </div>
 
             <div class="social">
-                <p>Follow me on <a href="https://twitter.com/nahuelsotelo" id="twitter-link">Twitter</a> if you're looking for random thoughts and useful links.</p>
-                <p>The code of this page and other project are stored on <a href="https://github.com/nahuelsotelo">Github</a>. Or see some weird code sketches I do on <a href="codepen.io/nahuelsotelo">Codepen</a>.</p>
-                <p>My <a href="www.linkedin.com/in/nahuelsotelo">Linkedin</a> profile has all my professional information, but if you want a shorter (and nicer) version of my résumé find it at <a href="zerply.com/nahuelsotelo/public">Zerply</a>.</p>
+                <p>Follow me on <a href="https://twitter.com/nahuelsotelo" class="icon-link" data-icon="twitter">Twitter</a> if you're looking for random thoughts and useful links.</p>
+                <p>The code of this page and other project are stored on <a href="https://github.com/nahuelsotelo" class="icon-link" data-icon="github">Github</a>. Or see some weird code sketches I do on <a href="codepen.io/nahuelsotelo" class="icon-link" class="icon-link" data-icon="codepen">Codepen</a>.</p>
+                <p>My <a href="www.linkedin.com/in/nahuelsotelo" class="icon-link" data-icon="linkedin">Linkedin</a> profile has all my professional information, but if you want a shorter (and nicer) version of my résumé find it at <a href="zerply.com/nahuelsotelo/public" class="icon-link" data-icon="zerply">Zerply</a>.</p>
             </div>
         </div>
         <div class="mail">
-            <p><span>Drop me a line:</span> <a href="mailto:hola@nahuelsotelo.com" id="mail-link">hola@nahuelsotelo.com</a></p>
+            <p><span>Drop me a line:</span> <a href="mailto:hola@nahuelsotelo.com" id="mail__link" class="icon-link" data-icon="mail">hola@nahuelsotelo.com</a></p>
         </div>
     </div>
 
     <script>
         (function() {
-            var twitter = document.getElementById('twitter-link');
             var portrait = document.getElementsByClassName('portrait');
+            var iconLink = document.getElementsByClassName('icon-link');
 
-            function addImage(clase) {
+            var addEvent = function(a,e,o) {
+                if(document.addEventListener) {
+                    a.removeEventListener(e,o,false);
+                    a.addEventListener(e,o,false);
+                }
+                else {
+                    a.detachEvent('on'+e,o);
+                    a.attachEvent('on'+e,o);
+                }
+            }
+
+            var addIcon = function() {
+                var icon = this.dataset.icon;
+                var clase = 'is--' + icon;
                 portrait[0].classList.add(clase);
             }
-            function removeImage(clase) {
+
+            var removeIcon = function() {
+                var icon = this.dataset.icon;
+                var clase = 'is--' + icon;
                 portrait[0].classList.remove(clase);
             }
 
-            twitter.onmouseover = function() {
-                addImage('is--twitter');
-            }
-            twitter.onmouseout = function() {
-                removeImage('is--twitter');
+            for(i=0; i<iconLink.length; i++) {
+                addEvent(iconLink[i],'mouseover',addIcon);
+                addEvent(iconLink[i],'mouseout',removeIcon);
             }
         })();
+
+        (function() {
+            function watercolor(target) {
+                function wrapEachCharacter(textNode, tag) {
+                    var text = textNode.nodeValue;
+                    var parent = textNode.parentNode;
+
+                    var characters = text.split('');
+                    characters.forEach(function(character) {
+                        var element = document.createElement(tag);
+                        var characterNode = document.createTextNode(character);
+
+                        var opacityValue = function() {
+                            var value =  Math.random() * (1.1 - .8) + .8;
+
+                            return (value > 1) ? 1 : value;
+                        };
+                        element.style.opacity = opacityValue();
+                        element.appendChild(characterNode);
+
+                        parent.insertBefore(element, textNode);
+                    });
+
+                    parent.removeChild(textNode);
+                }
+
+                var textNodes = target.childNodes;
+
+                for(i = 0; i < textNodes.length; i++) {
+                    if (textNodes[i].nodeType == Node.TEXT_NODE) {
+                        wrapEachCharacter(textNodes[i], 'span');
+                    }
+                }
+            };
+
+            var brand = document.getElementById('brand__name');
+            var mail = document.getElementById('mail__link');
+
+            watercolor(brand);
+            watercolor(mail);
+        })();
+
     </script>
-</body>
-</html>
+</body></html>
