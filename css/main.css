@@ -197,10 +197,7 @@ a:hover {
   text-align: center;
   width: 85%;
 }
-.portrait svg {
-  fill: #341c00;
-  -webkit-filter: drop-shadow(1px 1px 0 white);
-  filter: drop-shadow(1px 1px 0 white);
+.portrait img {
   max-width: 70%;
   height: 9em;
 }
@@ -211,7 +208,7 @@ a:hover {
     text-align: left;
     width: 65%;
   }
-  .portrait svg {
+  .portrait img {
     height: 10em;
   }
   .portrait:before, .portrait:after {
@@ -249,7 +246,7 @@ a:hover {
     text-align: left;
     width: 55%;
   }
-  .portrait svg {
+  .portrait img {
     height: 12em;
   }
   .portrait:before, .portrait:after {
@@ -321,6 +318,9 @@ a:hover {
   }
   .portrait.is--zerply:before {
     background-image: url(../img/zerply.svg);
+  }
+  .portrait img {
+    width: 60%;
   }
 }
 /* --------------------------------------------------------------------------------

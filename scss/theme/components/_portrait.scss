@@ -7,10 +7,7 @@
     text-align: center;
     width: 85%;
 
-    svg {
-        fill: $c-text;
-        -webkit-filter: drop-shadow( 1px 1px 0 #fff );
-                filter: drop-shadow( 1px 1px 0 #fff );
+    img {
         max-width: 70%;
         height: 9em;
     }
@@ -23,7 +20,7 @@
         text-align: left;
         width: 65%;
 
-        svg {
+        img {
             height: 10em;
         }
 
@@ -58,7 +55,7 @@
         text-align: left;
         width: 55%;
 
-        svg {
+        img {
             height: 12em;
         }
 
@@ -122,5 +119,9 @@
             @include background-size(46%);
         }
         &.is--zerply:before   { background-image: url(../img/zerply.svg); }
+
+        img {
+            width: 60%;
+        }
     }
 }
