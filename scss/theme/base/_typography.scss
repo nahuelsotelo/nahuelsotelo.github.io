@@ -95,6 +95,12 @@ body {
     }
     p {
         @include vrm(margin-bottom, 1);
+
+        .intro &,
+        .social & {
+            @include font(18px);
+            line-height: 1.4;
+        }
     }
     a {
         color: $c-link;
@@ -111,7 +117,7 @@ body {
 
 /* ===================== MEDIA QUERIES ===================== */
 @media screen and (min-width: $brand-fix-fontsize) {
-    html {
+     html {
         font-size: 18px;
     }
     .brand__hello {
