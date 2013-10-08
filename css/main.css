@@ -334,8 +334,8 @@ a:hover {
 body {
   background: white url(../img/paper_fibers.png);
   margin: 0;
-  padding: 22px 11px;
-  padding: 1.375rem 0.6875rem;
+  padding: 44px 11px;
+  padding: 2.75rem 0.6875rem;
 }
 
 .brand {
@@ -362,8 +362,8 @@ body {
 /* ===================== MEDIA QUERIES ===================== */
 @media screen and (min-width: 400px) {
   body {
-    padding: 22px;
-    padding: 1.375rem;
+    padding: 44px 22px;
+    padding: 2.75rem 1.375rem;
   }
 
   .main-wrapper {

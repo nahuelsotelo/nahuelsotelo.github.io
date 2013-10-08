@@ -8,7 +8,7 @@
 body {
     background: #fff url(../img/paper_fibers.png);
     margin: 0;
-    @include vrm(padding, 1, .5);
+    @include vrm(padding, 2, .5);
 }
 
 .brand {
@@ -30,7 +30,7 @@ body {
 
 @media screen and (min-width: $wider-body-margins) {
     body {
-        @include vrm(padding, 1);
+        @include vrm(padding, 2, 1);
     }
     .main-wrapper {
         margin: 0 auto;
