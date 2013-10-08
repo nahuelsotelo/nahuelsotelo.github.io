@@ -1,0 +1,126 @@
+/* =PORTRAIT
+-------------------------------------------------------------------------- */
+.portrait {
+    position: relative;
+    margin: 0 auto;
+    @include vrm(margin-bottom, 1);
+    text-align: center;
+    width: 85%;
+
+    svg {
+        fill: $c-text;
+        -webkit-filter: drop-shadow( 1px 1px 0 #fff );
+                filter: drop-shadow( 1px 1px 0 #fff );
+        max-width: 70%;
+        height: 9em;
+    }
+
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+@media screen and (min-width: $ballon-appear) {
+    .portrait {
+        text-align: left;
+        width: 65%;
+
+        svg {
+            height: 10em;
+        }
+
+        &:before,
+        &:after {
+            background-repeat: no-repeat;
+            background-position: center center;
+            content: '';
+            display: block;
+            @include font(47px);
+            position: absolute;
+                left: 2.5em;
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        &:after {
+            background: url(../img/ballon.svg);
+            @include background-size(contain);
+            content: 'Hi';
+            font-family: $f-cursive;
+            line-height: 1.8em;
+            text-align: center;
+            text-indent: -.1em;
+            @include transition(all .4s ease-out);
+                top: .4em;
+        }
+    }
+}
+@media screen and (min-width: $portrait-big) {
+    .portrait {
+        text-align: left;
+        width: 55%;
+
+        svg {
+            height: 12em;
+        }
+
+        &:before,
+        &:after {
+            left: 3.2em;
+        }
+        &:after {
+            top: 1em;
+        }
+    }
+}
+@media screen and (min-width: $portrait-bigger) {
+    .portrait {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: $two-columns-layout) {
+    .portrait {
+        @include span-columns(3);
+        @include push(5);
+        margin-bottom: 0;
+        @include vrm(left, -.25);
+
+        &:before,
+        &:after {
+            right: -.15em;
+        }
+        &:after {
+            top: 1em;
+        }
+        &:before {
+            @include background-size(50%);
+            top: .95em;
+            z-index: 1;
+        }
+        &.is--runroom,
+        &.is--twitter,
+        &.is--github,
+        &.is--codepen,
+        &.is--linkedin,
+        &.is--zerply {
+            &:after {
+                content: '';
+            }
+        }
+        &.is--mail:after {
+            color: $c-hover;
+        }
+        &.is--runroom:before  { background-image: url(../img/runroom.svg); }
+        &.is--twitter:before  { background-image: url(../img/twitter.svg); }
+        &.is--github:before   {
+            background-image: url(../img/github.svg);
+            @include background-size(58%);
+            text-indent: -.2em;
+        }
+        &.is--codepen:before  { background-image: url(../img/codepen.svg); }
+        &.is--linkedin:before {
+            background-image: url(../img/linkedin.svg);
+            @include background-size(46%);
+        }
+        &.is--zerply:before   { background-image: url(../img/zerply.svg); }
+    }
+}

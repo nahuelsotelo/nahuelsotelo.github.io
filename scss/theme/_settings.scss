@@ -37,7 +37,7 @@ $total-columns: 13;
     // =Font size
     // ------------------------------------------------------ */
     // vertical rythm unit: 24;
-    $base-font-size: 18px;
+    $base-font-size: 16px;
 
     //$base-font-size-rem: ($base-font-size/16px)+rem;
     $base-line-height: 1.4;
@@ -52,6 +52,23 @@ $total-columns: 13;
     $c-mainDark: #CC6E28;
     $c-secondary: #0E7983;
 
-    $c-text: #341c00;
+    $c-neutroDarkest: #341c00;
+    $c-neutro: #CFC7BC;
+
+    $c-text: $c-neutroDarkest;
     $c-link: $c-mainDark;
     $c-hover: $c-secondary;
+
+
+
+// =Mediaqueries
+// -------------------------------------------------------------------------- */
+    $wider-body-margins: 400px;
+    $two-columns-layout: 1190px;
+
+    $brand-fix-fontsize: 550px;
+
+    $ballon-appear: 280px;
+    $portrait-big: 370px;
+    $portrait-bigger: 540px;
+    $portrait-biggest: 650px;

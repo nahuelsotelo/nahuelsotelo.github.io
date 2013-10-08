@@ -6,9 +6,7 @@
 
     <title>Nahuel Sotelo | Front end geek, at your service</title>
 
-    <!--
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    -->
 
     <link rel="stylesheet" href="css/main.css">
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|Gentium+Book+Basic:400,700,400italic|Cookie' rel='stylesheet' type='text/css'>
@@ -43,7 +41,7 @@
             </div>
 
             <div class="intro">
-                <p>I'm a <strong>front-end web developer</strong> and a full time geek. I'm struggling each day to make the web a better place. One line of code at a time.</p>
+                <p>I'm a <strong>front-end web developer</strong> and a full time geek. I'm stru*ggling each day to make th*e web a better place. One line of code at a time.</p>
                 <p>I consider myself a <strong>proactive</strong> and curious person who loves to learn new stuff all the time, I guess thats the reason I chose this profession. I also enjoy <strong>teamwork</strong> and being a part of my <strong>local web community</strong>.</p>
                 <p>I currently work for <a href="www.runroom.com" class="icon-link" data-icon="runroom">Runroom</a>, an awesome web design studio based in Barcelona</p>
             </div>
@@ -61,8 +59,8 @@
 
     <script>
         (function() {
+            var windowSize = 1190;
             var portrait = document.getElementsByClassName('portrait');
-            var iconLink = document.getElementsByClassName('icon-link');
 
             var addEvent = function(a,e,o) {
                 if(document.addEventListener) {
@@ -87,10 +85,18 @@
                 portrait[0].classList.remove(clase);
             }
 
-            for(i=0; i<iconLink.length; i++) {
-                addEvent(iconLink[i],'mouseover',addIcon);
-                addEvent(iconLink[i],'mouseout',removeIcon);
+            var initLinks = function() {
+                if(window.innerWidth >= windowSize) {
+                    var iconLink = document.getElementsByClassName('icon-link');
+                    for(i=0; i<iconLink.length; i++) {
+                        addEvent(iconLink[i],'mouseover',addIcon);
+                        addEvent(iconLink[i],'mouseout',removeIcon);
+                    }
+                }
             }
+
+            initLinks();
+
         })();
 
         (function() {

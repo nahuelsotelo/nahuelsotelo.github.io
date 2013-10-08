@@ -1,15 +1,15 @@
 /* =TYPOGRAPHY
 -------------------------------------------------------------------------- */
 // Scale: http://modularscale.com/scale/?px1=18&px2=25&ra1=1.778&ra2=0
-
 body {
     color: $c-text;
     font-family: $f-text;
     @include font($base-font-size);
     font-weight: 300;
     line-height: $base-line-height;
-}
+    text-shadow: 1px 1px 0 #fff;
 
+}
     /* =HEADINGS
     ------------------------------------------------------ */
     h1,h2,h3,h4,h5,h6,p,ul,ol {
@@ -32,20 +32,20 @@ body {
     }
     .brand {
         text-align: center;
-        @include font($base-font-size);
     }
     .brand__hello {
         display: block;
         font-family: $f-cursive;
-        @include font(79px);
-        line-height: 0.781;
+        font-size: 54px;
+        font-size: 17vw;
         font-weight: normal;
+        line-height: 0.439;
     }
     .brand__my-name {
         display: inline-block;
         font-family: $f-serifDisplay;
-        @include font(32px);
-        line-height: 1.389;
+        font-size: 22px;
+        font-size: 7vw;
         font-style: italic;
         font-weight: normal;
         position: relative;
@@ -55,46 +55,50 @@ body {
             background: $c-text;
             content: '';
             display: block;
+            line-height: 1.389;
             margin: 0 auto;
             position: absolute;
-                top: 50%;
-            width: 80%;
+            top: 50%;
+            width: 60%;
             height: 1px;
         }
-        &:before { left: -90%; }
-        &:after { right: -90%; }
+        &:before { left: -70%; }
+        &:after { right: -70%; }
     }
     .brand__name {
         @extend %hero-text;
         display: block;
-        @include font(101px);
-        line-height: 1;
         font-weight: normal;
+        font-size: 64px;
+        font-size: 20vw;
+        line-height: 1;
         text-transform: uppercase;
     }
     .mail {
         p > span {
             display: block;
             font-family: $f-serifDisplay;
-            @include font(32px, 1);
+            font-size: 22px;
+            font-size: 9vw;
             font-style: italic;
             font-weight: normal;
+            line-height: .9;
         }
         a {
             @extend %hero-text;
-            @include font(57px);
+            font-size: 38px;
+            font-size: 13.5vw;
             font-weight: normal;
             text-decoration: none;
             text-transform: lowercase;
         }
     }
     p {
-        margin-bottom: 1em;
+        @include vrm(margin-bottom, 1);
     }
     a {
         color: $c-link;
         font-family: $f-link;
-        @include font(16px);
         font-weight: 700;
         text-transform: uppercase;
         text-decoration: none;
@@ -104,3 +108,39 @@ body {
             color: $c-hover;
         }
     }
+
+/* ===================== MEDIA QUERIES ===================== */
+@media screen and (min-width: $brand-fix-fontsize) {
+    html {
+        font-size: 18px;
+    }
+    .brand__hello {
+        @include font(79px);
+        line-height: 0.781;
+    }
+    .brand__my-name {
+        @include font(32px);
+
+        &:before,
+        &:after {
+            width: 80%;
+        }
+        &:before { left: -90%; }
+        &:after { right: -90%; }
+    }
+    .brand__name {
+        @include font(101px);
+    }
+    .mail {
+        p > span {
+            @include font(32px, 1);
+        }
+        a {
+            @include font(57px);
+        }
+    }
+    a {
+        @include font(16px);
+
+    }
+}

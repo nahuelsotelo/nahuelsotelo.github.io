@@ -8,102 +8,59 @@
 body {
     background: #fff url(../img/paper_fibers.png);
     margin: 0;
-    padding: 0;
-    text-shadow: 1px 1px 0 #fff;
+    @include vrm(padding, 1, .5);
 }
-.main-wrapper {
-    margin: 2.469em auto;
-    max-width: 65em;
-}
-.brand,
-.main-content {
-    margin-bottom: 3.161em;
-}
-.main-content {
-    @include cf;
-}
-.portrait {
-    @include span-columns(3);
-    @include push(5);
-    position: relative;
 
-    svg {
-        fill: $c-text;
-        -webkit-filter: drop-shadow( 1px 1px 0 #fff );
-                filter: drop-shadow( 1px 1px 0 #fff );
-        max-width: 70%;
-        height: 12em;
-    }
-    &:before,
-    &:after {
-        background-repeat: no-repeat;
-        background-position: center center;
-        content: '';
-        display: block;
-        @include font(47px);
-        position: absolute;
-            right: -.15em;
-        width: 1.75em;
-        height: 1.75em;
-    }
-    &:before {
-        @include background-size(50%);
-        top: .95em;
-        z-index: 1;
-    }
-    &:after {
-        background: url(../img/ballon.svg);
-        @include background-size(contain);
-        content: 'Hi';
-        font-family: $f-cursive;
-        line-height: 1.8em;
-        text-align: center;
-        text-indent: -.1em;
-        @include transition(all .4s ease-out);
-            top: 1em;
-    }
-    &.is--runroom,
-    &.is--twitter,
-    &.is--github,
-    &.is--codepen,
-    &.is--linkedin,
-    &.is--zerply {
-        &:after {
-            content: '';
-        }
-    }
-    &.is--mail:after {
-        color: $c-hover;
-    }
-    &.is--runroom:before  { background-image: url(../img/runroom.svg); }
-    &.is--twitter:before  { background-image: url(../img/twitter.svg); }
-    &.is--github:before   {
-        background-image: url(../img/github.svg);
-        @include background-size(58%);
-        text-indent: -.2em;
-    }
-    &.is--codepen:before  { background-image: url(../img/codepen.svg); }
-    &.is--linkedin:before {
-        background-image: url(../img/linkedin.svg);
-        @include background-size(46%);
-    }
-    &.is--zerply:before   { background-image: url(../img/zerply.svg); }
+.brand {
+    @include vrm(margin-bottom, 1);
+}
+.main-content {
+    @include vrm(margin-bottom, 2);
 }
 .intro {
-    @include span-columns(5);
-    @include pull(8);
-    // text-align: right;
-}
-.social {
-    @include span-columns(5 omega);
-}
-.intro,
-.social {
-    p:last-of-type {
-        margin-bottom: 0;
-    }
+    border-bottom: 1px solid $c-neutro;
+    @include vrm(margin-bottom, 1);
 }
 .mail {
     clear: both;
     text-align: center;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+
+@media screen and (min-width: $wider-body-margins) {
+    body {
+        @include vrm(padding, 1);
+    }
+    .main-wrapper {
+        margin: 0 auto;
+        max-width: 33em;
+    }
+}
+@media screen and (min-width: $two-columns-layout) {
+    .main-wrapper {
+        margin: 2.469em auto;
+        max-width: 65em;
+    }
+    .brand,
+    .main-content {
+        margin-bottom: 3.161em;
+    }
+    .main-content {
+        @include cf;
+    }
+    .intro {
+        border: 0;
+        @include span-columns(5);
+        @include pull(8);
+    }
+    .social {
+        @include span-columns(5 omega);
+    }
+    .intro,
+    .social {
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
