@@ -38,13 +38,16 @@ body {
     }
 }
 @media screen and (min-width: $two-columns-layout) {
+    body {
+        padding: 0;
+    }
     .main-wrapper {
         margin: 2.469em auto;
         max-width: 65em;
     }
     .brand,
     .main-content {
-        margin-bottom: 3.161em;
+        margin-bottom: 1.389em;
     }
     .main-content {
         @include cf;
