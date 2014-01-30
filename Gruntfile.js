@@ -11,13 +11,14 @@ module.exports = function(grunt) {
                     sassDir: 'scss',
                     cssDir:  'css',
                     imagesDir: 'img',
-                    outputStyle: 'expanded',
+                    outputStyle: 'compressed',
                     noLineComments: true
                 }
             }
         }
+
         // IMAGES ======================
-        , svgmin: {
+      , svgmin: {
             options: {
                 plugins: [
                     { removeViewBox: false },
@@ -29,12 +30,30 @@ module.exports = function(grunt) {
                     expand: true,       // Enable dynamic expansion.
                     cwd: 'img/svg-src',     // Src matches are relative to this path.
                     src: ['**/*.svg'],  // Actual pattern(s) to match.
-                    dest: 'img',       // Destination path prefix.
+                    dest: 'img/svg-src',       // Destination path prefix.
                     ext: '.svg'     // Dest filepaths will have this extension.
                     // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
                 }]
             }
         }
+
+      , grunticon: {
+            svg: {
+                files: [{
+                    expand: true,
+                    cwd: 'img/svg-src',
+                    src: [
+                        '*.svg'
+                      , '*.png'
+                    ]
+                  , dest: 'img/svg'
+                }]
+              , options: {
+                    pngfolder: '../png-src'
+                }
+            }
+        }
+
         // GENERAL =================
       , watch: {
             scss: {
@@ -57,11 +76,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-grunticon');
     grunt.loadNpmTasks('grunt-svgmin');
+    grunt.loadNpmTasks('grunt-grunticon');
 
     // Define your tasks here
     grunt.registerTask('default', [
         'compass',
+    ]);
+    grunt.registerTask('img', [
+        'svgmin'
+      , 'grunticon'
+      , 'compass'
     ]);
 };
