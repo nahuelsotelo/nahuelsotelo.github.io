@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                     sassDir: 'scss',
                     cssDir:  'css',
                     imagesDir: 'img',
-                    outputStyle: 'expanded',
+                    outputStyle: 'compressed',
                     noLineComments: true
                 }
             }
