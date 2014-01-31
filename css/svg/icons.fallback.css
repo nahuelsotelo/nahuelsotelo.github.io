@@ -1,0 +1,28 @@
+.icon-ballon:after,
+.is--ballon:before,
+is--ballon { background-image: url('../../img/png-src/ballon.png'); background-repeat: no-repeat; }
+
+.icon-codepen:after,
+.is--codepen:before,
+is--codepen { background-image: url('../../img/png-src/codepen.png'); background-repeat: no-repeat; }
+
+.icon-github:after,
+.is--github:before,
+is--github { background-image: url('../../img/png-src/github.png'); background-repeat: no-repeat; }
+
+.icon-linkedin:after,
+.is--linkedin:before,
+is--linkedin { background-image: url('../../img/png-src/linkedin.png'); background-repeat: no-repeat; }
+
+.icon-runroom:after,
+.is--runroom:before,
+is--runroom { background-image: url('../../img/png-src/runroom.png'); background-repeat: no-repeat; }
+
+.icon-twitter:after,
+.is--twitter:before,
+is--twitter { background-image: url('../../img/png-src/twitter.png'); background-repeat: no-repeat; }
+
+.icon-zerply:after,
+.is--zerply:before,
+is--zerply { background-image: url('../../img/png-src/zerply.png'); background-repeat: no-repeat; }
+

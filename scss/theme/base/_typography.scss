@@ -4,9 +4,9 @@
 body {
     color: $c-text;
     font-family: $f-text;
-    @include font($base-font-size);
+    @include font($font-size);
     font-weight: 300;
-    line-height: $base-line-height;
+    line-height: $line-height;
     text-shadow: 1px 1px 0 #fff;
 
 }
@@ -104,6 +104,7 @@ body {
     }
     a {
         color: $c-link;
+        display: inline-block;
         font-family: $f-link;
         font-weight: 700;
         text-transform: uppercase;
@@ -139,10 +140,11 @@ body {
     }
     .mail {
         p > span {
-            @include font(32px, 1);
+            @include font(32px, 2);
         }
         a {
-            @include font(57px);
+
+            @include font(57px, 3);
         }
     }
     a {

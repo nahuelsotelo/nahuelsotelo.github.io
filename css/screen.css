@@ -125,6 +125,7 @@ p {
 
 a {
   color: #cc6e28;
+  display: inline-block;
   font-family: "PT Sans", "Rambla", "Sintony", "PT Mono", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -172,11 +173,12 @@ a:hover {
   .mail p > span {
     font-size: 32px;
     font-size: 2rem;
-    line-height: 0.6875;
+    line-height: 1.375;
   }
   .mail a {
     font-size: 57px;
     font-size: 3.5625rem;
+    line-height: 1.15789;
   }
 
   a {
@@ -184,6 +186,23 @@ a:hover {
     font-size: 1rem;
   }
 }
+/* MEDIA
+------------------------------------------------------------ */
+/* =IMAGES
+------------------------------------------------------ */
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+iframe {
+  border: 0;
+}
+
+/* =SPRITES
+------------------------------------------------------ */
 /* --------------------------------------------------------------------------------
    *** COMPONENTS ***
 -------------------------------------------------------------------------------- */
@@ -205,6 +224,7 @@ a:hover {
 /* ===================== MEDIA QUERIES ===================== */
 @media screen and (min-width: 280px) {
   .portrait {
+    background-image: none;
     text-align: left;
     width: 65%;
   }
@@ -224,7 +244,6 @@ a:hover {
     height: 1.75em;
   }
   .portrait:after {
-    background: url(../img/ballon.svg);
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -291,33 +310,6 @@ a:hover {
   }
   .portrait.is--mail:after {
     color: #0e7983;
-  }
-  .portrait.is--runroom:before {
-    background-image: url(../img/runroom.svg);
-  }
-  .portrait.is--twitter:before {
-    background-image: url(../img/twitter.svg);
-  }
-  .portrait.is--github:before {
-    background-image: url(../img/github.svg);
-    -webkit-background-size: 58%;
-    -moz-background-size: 58%;
-    -o-background-size: 58%;
-    background-size: 58%;
-    text-indent: -.2em;
-  }
-  .portrait.is--codepen:before {
-    background-image: url(../img/codepen.svg);
-  }
-  .portrait.is--linkedin:before {
-    background-image: url(../img/linkedin.svg);
-    -webkit-background-size: 46%;
-    -moz-background-size: 46%;
-    -o-background-size: 46%;
-    background-size: 46%;
-  }
-  .portrait.is--zerply:before {
-    background-image: url(../img/zerply.svg);
   }
   .portrait img {
     width: 60%;

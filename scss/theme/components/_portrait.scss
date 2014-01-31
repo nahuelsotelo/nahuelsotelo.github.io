@@ -17,6 +17,7 @@
 /* ===================== MEDIA QUERIES ===================== */
 @media screen and (min-width: $ballon-appear) {
     .portrait {
+        background-image: none;
         text-align: left;
         width: 65%;
 
@@ -38,7 +39,7 @@
         }
 
         &:after {
-            background: url(../img/ballon.svg);
+            // background: url(../img/ballon.svg);
             @include background-size(contain);
             content: 'Hi';
             font-family: $f-cursive;
@@ -58,11 +59,11 @@
         img {
             height: 12em;
         }
-
         &:before,
         &:after {
             left: 3.2em;
         }
+        // span,
         &:after {
             top: 1em;
         }
@@ -106,19 +107,13 @@
         &.is--mail:after {
             color: $c-hover;
         }
-        &.is--runroom:before  { background-image: url(../img/runroom.svg); }
-        &.is--twitter:before  { background-image: url(../img/twitter.svg); }
         &.is--github:before   {
-            background-image: url(../img/github.svg);
-            @include background-size(58%);
-            text-indent: -.2em;
+            // @include background-size(58%);
+            // text-indent: -.2em;
         }
-        &.is--codepen:before  { background-image: url(../img/codepen.svg); }
         &.is--linkedin:before {
-            background-image: url(../img/linkedin.svg);
-            @include background-size(46%);
+            // @include background-size(46%);
         }
-        &.is--zerply:before   { background-image: url(../img/zerply.svg); }
 
         img {
             width: 60%;

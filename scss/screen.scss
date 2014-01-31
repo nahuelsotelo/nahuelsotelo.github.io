@@ -12,16 +12,11 @@
 @import 'theme/settings';
 @import 'partials/partials';
 
-
 /*
     NOTE FOR CURIOUS DEVELOPERS:
     This is a compress css files, but if you are reading this you probably  want to see the code in a more legible way. You can find it here: https://github.com/nahuelsotelo/nahuelsotelo-v4.0
 */
 
-
-//    MODERNIZER PROPERTIES TARGETED
-//    -
-//
 
 /* ============== [ INDEX ] ==============
 
@@ -40,6 +35,7 @@
 -------------------------------------------------------------------------------- */
 @import "theme/base/normalize";
 @import "theme/base/typography";
+@import "theme/base/media";
 
 /* --------------------------------------------------------------------------------
    *** COMPONENTS ***

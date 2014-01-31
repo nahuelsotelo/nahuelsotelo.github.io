@@ -1,0 +1,17 @@
+/* MEDIA
+------------------------------------------------------------ */
+    /* =IMAGES
+    ------------------------------------------------------ */
+    img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        -ms-interpolation-mode: bicubic;
+    }
+    iframe {
+        border: 0;
+    }
+
+    /* =SPRITES
+    ------------------------------------------------------ */
+    $icons: sprite-map('png-src/*.png');
