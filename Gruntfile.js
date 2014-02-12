@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     // Configuration goes here
     grunt.initConfig({
-        // CSS ====================
+        // CSS ========================
         compass: {
             dist: {
                 options: {
@@ -13,6 +13,20 @@ module.exports = function(grunt) {
                     imagesDir: 'img',
                     outputStyle: 'compressed',
                     noLineComments: true
+                }
+            }
+        }
+
+        // JS ==========================
+      , modernizr: {
+            dist: {
+                devFile:     'js/vendor/modernizr-dev.js'
+              , outputFile:  'js/modernizr.js'
+              , files: {
+                    src: [
+                        'css/**/*.*'
+                      , 'js/main.js'
+                    ]
                 }
             }
         }
@@ -61,9 +75,9 @@ module.exports = function(grunt) {
               , options: {
                     pngfolder: '../../img/png-src'
                   , customselectors: {
-                        "*": [
-                            ".icon-$1:after"
-                            , ".is--$1:before"
+                        '*': [
+                            '.icon-$1:after'
+                            , '.is--$1:before'
                         ]
                     }
                   , cssprefix: 'is--'
@@ -92,17 +106,27 @@ module.exports = function(grunt) {
     // Load plugins here
     grunt.loadNpmTasks('grunt-contrib');
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-svgmin');
     grunt.loadNpmTasks('grunt-grunticon');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Define your tasks here
     grunt.registerTask('default', [
         'compass',
     ]);
+
+    grunt.registerTask('build', [
+        'svgmin'
+      , 'grunticon'
+      , 'compass'
+      , 'modernizr'
+    ]);
+
     grunt.registerTask('img', [
         'svgmin'
       , 'grunticon'
       , 'compass'
     ]);
+
 };
