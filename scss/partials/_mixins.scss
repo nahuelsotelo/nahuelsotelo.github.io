@@ -17,8 +17,6 @@
 // -------------------------------------------------------------------------- */
     // =1.1 - Vertical Rythm magic number function
     // ------------------------------------------------------ */
-    // =1.1 - Vertical Rythm magic number function
-    // ------------------------------------------------------ */
     @function vertical-rythm-unit() {
         $rythm: ($font-size/1px) * $line-height;
         @return floor($rythm);
@@ -66,7 +64,6 @@
             line-height: ($vrmu * $line-height) / ($size/1px);
         }
     }
-
 
     // =2.2 - Line height
     // ------------------------------------------------------ */
