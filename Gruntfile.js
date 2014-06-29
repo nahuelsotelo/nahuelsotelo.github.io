@@ -2,6 +2,12 @@
 
 module.exports = function(grunt) {
 
+    // load all grunt tasks matching the `grunt-*` pattern
+    require('load-grunt-tasks')(grunt);
+
+    // require it at the top and pass in the grunt instance
+    require('time-grunt')(grunt);
+
     // Configuration goes here
     grunt.initConfig({
         // CSS ========================
@@ -15,31 +21,31 @@ module.exports = function(grunt) {
                     noLineComments: true
                 }
             }
-        }
+        },
 
         // JS ==========================
-      , modernizr: {
+        modernizr: {
             dist: {
-                devFile:     'js/vendor/modernizr-dev.js'
-              , outputFile:  'js/modernizr.js'
-              , files: {
+                devFile:     'js/vendor/modernizr-dev.js',
+                outputFile:  'js/modernizr.js',
+                files: {
                     src: [
-                        'css/**/*.*'
-                      , 'js/main.js'
+                        'css/**/*.*',
+                        'js/main.js'
                     ]
                 }
             }
-        }
+        },
 
         // IMAGES ======================
-      , svgmin: {
+        svgmin: {
             options: {
                 plugins: [
                     { removeViewBox: false },
                     { removeUselessStrokeAndFill: false }
                 ]
-            }
-          , sprite: {                     // Target
+            },
+            sprite: {                     // Target
                 files: [{               // Dictionary of files
                     expand: true,       // Enable dynamic expansion.
                     cwd: 'img/svg-src',     // Src matches are relative to this path.
@@ -48,8 +54,8 @@ module.exports = function(grunt) {
                     ext: '.svg'     // Dest filepaths will have this extension.
                     // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
                 }]
-            }
-          , content: {
+            },
+            content: {
                 files: [{               // Dictionary of files
                     expand: true,       // Enable dynamic expansion.
                     cwd: 'img/',     // Src matches are relative to this path.
@@ -61,32 +67,32 @@ module.exports = function(grunt) {
             }
         }
 
-      , grunticon: {
+        grunticon: {
             svg: {
                 files: [{
                     expand: true,
                     cwd: 'img/svg-src',
                     src: [
-                        '*.svg'
-                      , '*.png'
-                    ]
-                  , dest: 'css/svg'
-                }]
-              , options: {
-                    pngfolder: '../../img/png-src'
-                  , customselectors: {
+                        '*.svg',
+                        '*.png'
+                    ],
+                    dest: 'css/svg'
+                }],
+                options: {
+                    pngfolder: '../../img/png-src',
+                    customselectors: {
                         '*': [
-                            '.icon-$1:after'
-                            , '.is--$1:before'
+                            '.icon-$1:after',
+                            '.is--$1:before'
                         ]
-                    }
-                  , cssprefix: 'is--'
+                    },
+                    cssprefix: 'is--'
                 }
             }
-        }
+        },
 
         // GENERAL =================
-      , watch: {
+        watch: {
             scss: {
                 files: [
                     'scss/**/*.scss'
@@ -103,30 +109,25 @@ module.exports = function(grunt) {
         }
     });
 
-    // Load plugins here
-    grunt.loadNpmTasks('grunt-contrib');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-modernizr');
-    grunt.loadNpmTasks('grunt-svgmin');
-    grunt.loadNpmTasks('grunt-grunticon');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
     // Define your tasks here
     grunt.registerTask('default', [
         'compass',
     ]);
 
     grunt.registerTask('build', [
-        'svgmin'
-      , 'grunticon'
-      , 'compass'
-      , 'modernizr'
+        'svgmin',
+        'grunticon',
+        'compass',
+        'modernizr'
     ]);
-
     grunt.registerTask('img', [
-        'svgmin'
-      , 'grunticon'
-      , 'compass'
+        'svgmin',
+        'grunticon',
+        'compass'
+    ]);
+    grunt.registerTask('watcher', [
+        'connect',
+        'watch'
     ]);
 
 };
