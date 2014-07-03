@@ -65,7 +65,7 @@ module.exports = function(grunt) {
                     // ie: optimise img/src/branding/logo.svg and store it in img/branding/logo.min.svg
                 }]
             }
-        }
+        },
 
         grunticon: {
             svg: {
