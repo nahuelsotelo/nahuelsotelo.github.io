@@ -2,3 +2,29 @@
     color: #1b91ff;
     font-style: normal;
 }
+.reveal hr {
+    border-style: dashed;
+    color: rgba(0,0,0, .2);
+    margin: 1em auto;
+}
+.reveal .footnote {
+    position: relative;
+}
+.reveal .footnote:after {
+    background: rgba(52, 73, 94, .9);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0,0,0, .4);
+    content: attr(data-content);
+    font-size: .75rem;
+    font-weight: bold;
+    line-height: 1.75;
+    margin: 1em 0 0 -.875em;
+    display: block;
+    position: absolute;
+        top: 100%;
+        left: 50%;
+    text-align: center;
+    width: 1.75em;
+    height: 1.75em;
+}
