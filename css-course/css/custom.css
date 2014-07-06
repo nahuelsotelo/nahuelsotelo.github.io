@@ -5,6 +5,9 @@
     color: #1b91ff;
     font-style: normal;
 }
+.reveal li {
+    margin-bottom: .25em
+}
 .reveal hr {
     border-style: dashed;
     color: rgba(0,0,0, .2);
