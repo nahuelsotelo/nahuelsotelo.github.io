@@ -74,7 +74,7 @@
                     </div>
                     <div style="float: right; width: 48%">
                         <p style="font-size: 1.8rem; text-align: left;">Una red de ordenadores conectados en todo el mundo que comparten información mediante una serie de <em>protocolos.</em></p>
-                        <ul class="fragment" style="display: block; padding-left: 3rem; font-size: 2rem;">
+                        <ul class="fragment" style="display: block; padding-left: 3rem; font-size: 2rem;  text-align: left;">
                             <li>Email</li>
                             <li>SMS</li>
                             <li>FTP</li>
@@ -157,12 +157,12 @@
                 <section>
                     <p style="text-align: left;">Las <strong>URL</strong> son direcciones exclusivas que nos permiten localizar recursos dentro de internet.</p>
                     <p style="text-align: left;">Generalmente están compuestas de 3 partes principales:
-                        <ul>
-                            <li><span style="color: #27ae60;">el protocolo</span></li>
-                            <li><span style="color: #d35400;">el nombre del sitio</span></li>
-                            <li><span style="color: #8e44ad;">la ruta absoluta al recurso en concreto</span></li>
-                        </ul>
                     </p>
+                    <ul style="text-align: left;">
+                        <li><span style="color: #27ae60;">el protocolo</span></li>
+                        <li><span style="color: #d35400;">el nombre del sitio</span></li>
+                        <li><span style="color: #8e44ad;">la ruta absoluta al recurso en concreto</span></li>
+                    </ul>
                     <hr>
                     <p><span style="background: #27ae60; color: #fff; display: inline-block; padding: .2em .3em;">http://</span><span style="background: #d35400; color: #fff; display: inline-block; padding: .2em .3em;">www.baued.es</span><span style="background: #8e44ad; color: #fff; display: inline-block; padding: .2em .3em;">/es/estudios/workshops.html</span></p>
                 </section>
@@ -185,12 +185,12 @@
                 <section>
                     <h3>Sitio Web</h3>
                     <p style="text-align: left;">El nombre del sitio web se compone a su vez de varias partes:
-                        <ol style="font-size: .75em;">
-                            <li><strong>Subdominio:</strong> Es una carpeta dentro del servidor donde está alojada la web (por defecto suele ser "www")</li>
-                            <li><strong>Nombre del dominio:</strong> Es el nombre de nuestra web.</li>
-                            <li><strong>Dominio de nivel superior (top level domain):</strong> Es el nombre que el cliente usa para encontrar el servidor correspondiente. Puede ser genérico o geográfico.</li>
-                        </ol>
                     </p>
+                    <ol style="font-size: .75em; text-align: left;">
+                        <li><strong>Subdominio:</strong> Es una carpeta dentro del servidor donde está alojada la web (por defecto suele ser "www")</li>
+                        <li><strong>Nombre del dominio:</strong> Es el nombre de nuestra web.</li>
+                        <li><strong>Dominio de nivel superior (top level domain):</strong> Es el nombre que el cliente usa para encontrar el servidor correspondiente. Puede ser genérico o geográfico.</li>
+                    </ol>
                     <hr>
                     <p>
                         <span style="background: #27ae60; color: #fff; display: inline-block; padding: .2em .3em; opacity: .2;">http://</span>
@@ -204,7 +204,7 @@
 
                 <section>
                     <h3>Ruta del recurso</h3>
-                    <p style="text-align: left";>Es la ruta dentro de la carpeta del dominio al recurso específico que el cliente HTTP está solicitando.</p>
+                    <p style="text-align: left;">Es la ruta dentro de la carpeta del dominio al recurso específico que el cliente HTTP está solicitando.</p>
                     <p style="text-align: left;">Si no se especifica en la URL, el cliente intentará encontrar el archivo que esté configurado para mostrarse por defecto (normalmente <code>index.html</code> o <code>default.html</code>) </p>
                     <hr>
                     <p><span style="background: #27ae60; color: #fff; display: inline-block; padding: .2em .3em; opacity: .2">http://</span><span style="background: #d35400; color: #fff; display: inline-block; padding: .2em .3em; opacity: .2;">www.baued.es</span><span style="background: #8e44ad; color: #fff; display: inline-block; padding: .2em .3em;;">/es/estudios/workshops.html</span></p>
@@ -215,8 +215,79 @@
             <section>
                 <section>
                     <h2>Ejercicio</h2>
-                    <p>Mirar </p>
+                    <p>Mirar carga de nahuelsotelo.com en el timeline de Google Chrome para ver como se cargan los recursos </p>
                 </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Los lenguajes de la web</h2>
+                </section>
+
+                <section>
+                    <h3>Los pilares de la web</h3>
+                    <p style="text-align: left;">Hay 3 lenguajes que pueden considerarse los pilares sobre los que se sotiene cualquier sitio web:</p>
+                    <ul style="text-align: left;">
+                        <li><strong>HTML</strong> (Hypertext Markup Language)</li>
+                        <li><strong>CSS</strong> (Cascading Style Sheets)</li>
+                        <li><strong>Javascript</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>HTML</h2>
+                    <h3>(Hypertext Markup Language)</h3>
+                    <p>Es el lenguaje que se utiliza para crear un documento web.</p>
+                    <p>Se trata de un <strong>lenguaje de marcado</strong>, es decir un sistema para <i>identificar</i> y <i>describir</i> los diferentes elementos de una página</p>
+
+                    <pre><code data-trim contenteditable>
+<h1>Esto es un titular de nivel 1</h1>
+<h2>Este es de nivel 2</h2>
+<p>Esto es un párrafo con un <strong>texto destacado</strong>.</p>
+                    </code></pre>
+
+                </section>
+
+                    <section>
+                        <h2>CSS</h2>
+                        <h3 class="subtitulo">(Cascading Style Sheets)</h3>
+                        <p>Es un lenguaje creado para controlar la <i>presentación</i> (el estilo) de un documento HTML.</p>
+
+                        <pre><code data-trim contenteditable>
+.subtitulo {
+    color: red;
+    font-family: 'Comic Sans MS';
+    font-size: xx-large;
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Javascript</h2>
+                        <p>Es un lenguaje de programación que se utiliza para agregar interactividad y comportamientos dinámicos a nuestras páginas.</p>
+                        <pre><code data-trim contenteditable>
+(function(){
+    var hi_button    = document.getElementById('hi-button'),
+        hi_container = document.getElementById('hi-container');
+
+    hi_button.onclick = function() {
+        hi_container.innerHTML = '<h2 class="hi">Hola</h2>';
+    }
+})();
+                        </code></pre>
+
+                        <p id="hi-container"><button id="hi-button">Saludar</button></p>
+                        <script>
+                            (function(){
+                                var hi_button    = document.getElementById('hi-button'),
+                                    hi_container = document.getElementById('hi-container');
+
+                                hi_button.onclick = function() {
+                                    hi_container.innerHTML = '<h2 class="hi">Hola</h2>';
+                                }
+                            })();
+                        </script>
+                    </section>
             </section>
 
 
