@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>2 | Introducción a los lenguajes web: HTML y CSS</title>
 
     <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
     <meta name="author" content="Nahuel Sotelo">
@@ -51,10 +51,56 @@
             </section>
 
             <section>
-                <h1>Hola.</h1>
-                <h3>Soy <strong>Nahuel Sotelo</strong></h3>
-                <p style="text-align: center;">Mi email: <strong><a href="mailto:hola@nahuelsotelo.com">hola@nahuelsotelo.com</a></strong></p>
-                <p style="text-align: center;">Mi web: <strong><a href="http://www.nahuelsotoelo.com">www.nahuelsotelo.com</a></strong></p>
+                <section>
+                    <h2>Elementos block e inline</h2>
+                </section>
+                <section>
+                    <p>La mayoría de los elementos HTML se pueden dividir en dos grandes grupos: elementos <em>block</em> y elementos <em style="color:hsl(100, 50%, 45%);">inline</em>.</p>
+                    <p>Algunos elementos block son: <code>&#60;p&#62;</code>, <code>&#60;h1-6&#62;</code>, <code>&#60;ul&#62;</code>, <code>&#60;div&#62;</code></p>
+                    <p>Algunos elementos inline son: <code>&#60;a&#62;</code>, <code>&#60;strong&#62;</code>, <code>&#60;em&#62;</code>, <code>&#60;span&#62;</code>.</p>
+
+                </section>
+                <section>
+                    <p>Los elementos <em>block</em> empiezan en una nueva línea y por defecto ocupan la totalidad del ancho de su contenedor empujando a los elementos subsiguientes a la siguiente línea.</p>
+                    <hr>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); padding: .5em 0;">
+                        <h4 style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); text-align:left; text-transform: none;">&#60;h4&#62;Titular del texto&#60;h4&#62;</h4>
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em;">&#60;p&#62;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.&#60;p&#62;</p>
+                    </div>
+                </section>
+
+                <section>
+                    <p>Los elementos <em style="color:hsl(100, 50%, 45%);">inline</em> no comienzan en una nueva línea si no que se alinean uno tras otro siguiendo el <i>flow</i> natural del documento y ocupando únicamente el ancho de su contenido.</p>
+                    <hr>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); padding: .5em 0;">
+                        <h4 style="text-align:left; text-transform: none;">Titular del texto</h4>
+                        <p style="font-size: .7em;">Lorem ipsum dolor sit amet, <strong style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6);" >&#60;strong&#62;consectetur adipisicing&#60;strong&#62;</strong> elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, <a href="#" style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6); color: blue; text-decoration: underline;" >&#60;a&#62;libero iure expedita&#60;a&#62;</a> minima labore magnam.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <p>Los elementos <em>block</em> pueden contener tanto a otros elementos block como a elementos inline. En cambio un elemento <em style="color:hsl(100, 50%, 45%);">inline</em> nunca puede contener a un elemento block (aunque si a otros inline).</p>
+                    <hr>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); padding: .5em 0;">
+                        <h4 style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); text-align:left; text-transform: none;">&#60;h4&#62;Titular del texto&#60;h4&#62;</h4>
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em;">&#60;p&#62;Lorem ipsum dolor sit amet, <strong style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6);" >&#60;strong&#62;consectetur adipisicing&#60;strong&#62;</strong> elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, <a href="#" style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6); color: blue; text-decoration: underline;" >&#60;a&#62;libero iure expedita&#60;a&#62;</a> minima labore magnam.&#60;p&#62;</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <h1>Introducción al CSS</h1>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Sintáxis CSS</h2>
+                </section>
+
+                <section>
+                    <p>CSS es un lenguaje de presentación que se utiliza para dar estilos visuales a los elementos HTML.</p>
+
+                </section>
             </section>
 
             <section>
@@ -304,14 +350,10 @@
             </section>
 
 
-            <section>
-                <h1>Introducción al HTML</h1>
-            </section>
+
 
             <section>
-                <section>
-                    <h2>Sintáxis HTML (introducción)</h2>
-                </section>
+
 
                 <section>
                     <p>Los elementos son la estructura básica de HTML.</p>
