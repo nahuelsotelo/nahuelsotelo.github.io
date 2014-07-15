@@ -58,7 +58,6 @@
                     <p>La mayoría de los elementos HTML se pueden dividir en dos grandes grupos: elementos <em>block</em> y elementos <em style="color:hsl(100, 50%, 45%);">inline</em>.</p>
                     <p>Algunos elementos block son: <code>&#60;p&#62;</code>, <code>&#60;h1-6&#62;</code>, <code>&#60;ul&#62;</code>, <code>&#60;div&#62;</code></p>
                     <p>Algunos elementos inline son: <code>&#60;a&#62;</code>, <code>&#60;strong&#62;</code>, <code>&#60;em&#62;</code>, <code>&#60;span&#62;</code>.</p>
-
                 </section>
                 <section>
                     <p>Los elementos <em>block</em> empiezan en una nueva línea y por defecto ocupan la totalidad del ancho de su contenedor empujando a los elementos subsiguientes a la siguiente línea.</p>
@@ -99,10 +98,200 @@
 
                 <section>
                     <p>CSS es un lenguaje de presentación que se utiliza para dar estilos visuales a los elementos HTML.</p>
+                    <p>Una hoja de estilos CSS se compone de una serie de reglas (rules) que describen como debe representrse visualmente un elemento o grupo de elementos HTML</P>                 
+                </section>
+                <section>
+                    <h3>Componentes de una regla CSS</h3>
+                    <p>Una regla está formada por un selector y una declaración o bloque de declaraciones.</p>
+                    <p>El selector indica el elemento o elementos que queremos estilar. El bloque de declaraciones se componen de una susesción de propiedades con sus respectivos valores, por cada estilo visual, separados por ";".</p>
+                    <hr />
+                    <pre style="box-shadow: 0; font-size: 1.2em;">
+p {
+    color: red;
+    font-weight: bold;
+}
+                    </pre>
+                </section>
+                <section>
+                	<p>Al igual que con HTML, podemos insertar comentarios en nuestro código CSS. Para abrir un comentario escribiremos <code>/*</code> y para cerrarlo <code>*/</code></p>
+                	<pre><code>
+&#60;p&#62;Esto no es un comentario&#60;/p&#62;
+/* Este es un comentario de una sola linea */
 
+/*
+	pero tambien
+	puede tener
+	varias
+	lineas
+*/
+                	</code></pre>
                 </section>
             </section>
-
+            
+            <section>
+                <section>
+                    <h2>Algunos conceptos</h2>
+                </section>
+                
+                <section>
+                	<h3>Herencia</h3>
+                	<p>Los elementos HTML heredarán algunos estilos de sus elementos contenedores (parent elements).</p>
+                	<p>Por ejemplo si declaramos un color al elemento <code>&#060;body&#062;</code> el resto de elementos de la página tendrán el mismo color a menos que específiquemos lo contrario</p>
+                </section>
+                
+                <section>
+                	<h3>Cascada</h3>
+                	<p>La "cascada" a la que hace referencia la C de CSS explica la manera en la que el lenguaje resuelve los conflictos entre selectores.</p>
+                	<p>El cliente web lee los estilos desde la primera línea del documento de manera descendente.</p>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>Asociar CSS al HTML</h2>
+                </section>
+                <section>
+                    <p>Existen tres maneras de relacionar un CSS a un HTML en concreto:</p>
+                    <ul>
+                        <li>Estilo <i>inline</i>.</li>
+                        <li>Estilos embebidos en documento HTML.</li>
+                        <li>Hoja de estilos externa.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Podemos asignar estilos CSS directamente en un elemento HTML mediante el atributo <code>style=""</code>.</p>
+                    <p>Los estilos solo se aplicarán a ese elemento en concreto, por lo cual el selector no se utiliza en este caso.</p>             
+                    <pre><code>&#60;p style="color: red"&#62;Esto es un párrafo rojo.&#60;/p&#62;</code></pre>
+                </section>
+                <section>
+                    <p>Otra forma de utilizar CSS es mediante un tag <code>&#60;style&#62;</code> en el <code>&#60;head&#62;</code> del documento.</p>
+                    <p>Los estilos se aplicaran a todos los elementos de la página de acuerdo a los selectores utilizados.<p/>                    
+                    <pre><code>
+&#60;head&#62;
+    &#60;style&#62;
+         p {
+             color: red;
+         }
+         h1 {
+             color : blue;
+         }
+    &#60;/style&#62;
+&#60;/head&#62;
+                    </code></pre>
+                    
+                </section>
+                <section>
+                	<p>La manera más eficiente de relacionar CSS y HTML es utilizando una hoja de estilo externa, lo que nos permite compartir un mismo CSS para todo nuestro sitio web.</p>
+                	<p>Esta hoja es un archivo con extensión .css que se incluye en el <code>&#60;head&#62;</code> del HTML mediante un tag <code>&#60;link&#62;</code>.</p>                	
+                	<pre><code>
+&#60;head&#62;
+	&#60;link rel="stylesheet" href="css/styles.css"&#62;
+&#60;/head&#62;    
+                	</code></pre>
+                </section>
+            </section>
+            
+            <section>
+            	<section>
+                    <h2>Estilos de texto</h2>
+                </section>
+                
+                <section>
+                	<p>CSS ofrece muchas propiedades para estilar texto. Podemos encontrar estas propiedades agrupadas en dos categorías: propiedades de fuente y propiedades de texto.</p>
+                	<p>La mayoría comenzarán con los prefijos "font-" o "text-" correspondientemente.</p>
+                </section>
+                
+                <section>
+                	<ul style="font-size: .8em;">
+                		<li>
+                			<strong>font-family</strong>
+                		</li>
+                		<li>
+                			<strong>font-size</strong>
+                		</li>
+                		<li>
+                			<strong>font-style</strong> - <i>normal</i> | <i>italic</i> | <i>oblique</i> | <i>inherit</i>
+                		</li>
+                		<li>
+                			<strong>font-variant</strong> - <i>normal</i> | <i>small-caps</i> | <i>inherit</i>
+                		</li>
+                		<li>
+                			<strong>font-weight</strong> - <i>normal</i> | <i>bold</i> | <i>bolder</i> | <i>lighter</i> | <i>inherit</i> | valores numéricos
+            			</li>
+            			<li>
+            				<strong>line-height</strong>
+            			</li>
+            			<li>
+            				<strong>text-align</strong> - <i>left</i> | <i>right</i> | <i>center</i> | <i>justify</i>
+            			</li>
+            			<li>
+            				<strong>text-decoration</strong> - <i>none</i> | <i>underline</i> | <i>overline</i> | <i>line-through</i> | <i>inherit</i>
+            			</li>
+            			<li>
+            				<strong>text-indent</strong>
+            			</li>
+            			<li>
+            				<strong>text-shadow</strong>
+            			</li>
+            			<li>
+            				<strong>text-transform</strong> - none, capitalize, uppercase, lowercase, and inherit.
+            			</li>
+            			<li>
+            				<strong>letter-spacing</strong>
+            			</li>
+            			<li>
+            				<strong>word-spacing</strong>
+            			</li>
+                	</ul>
+                </section>
+            </section>
+            
+            <section>
+            	<section>
+                    <h2>Color</h2>
+                </section>
+                
+                <section>
+                	<p>Las pantallas de los dispositivos por los cuales accedemos a la web, generan todos los colores combinando únicamente luz de tres colores: <strong style="color:red;">rojo</strong>, <strong style="color: green;">verde</strong> y <strong style="color:blue;">azul</strong>. Esto se conoce cómo el modelo de color RGB (<strong style="color:red;">red</strong>, <strong style="color:green;">green</strong>, <strong style="color:blue;">blue</strong>).</p>
+                	<p>Los 3 colores en su máxima intensidad resultarán en luz <strong style="background: white;">blanca</strong>, mientras que su ausencia total equivaldrá a <strong style="background: black; color:white;">negro</strong>.</p>
+                </section>
+               
+                <section>
+                	<p>CSS pone a nuestra disposición varias maneras de asignar colores.</p>
+                	<p>La más sencilla, es a través de palabras clave que representan hasta un total de 140 colores en CSS 3</p>
+                	<hr />
+                	<p style="text-align: center;"><a href="#">link</a></p>
+                </section>
+                
+                <section>
+                	<p>Si queremos más control sobre los colores que queremos utilizar tendremos que recurrir a alguno de los 3 formatos numéricos que nos proporciona CSS: Colores Hexadecimales, RGB o HSL</p>
+                	<pre><code>
+p {
+	color: red;
+	color: #ff0000;
+	color: rgb(255, 0, 0);
+	color: hsl(0, 100%, 50%);
+}
+                	</code></pre>
+                </section>
+                
+                <section>
+                	<p>Los formatos RGB y HSL tienen una version que incluye un canal alpha, RGBa y HSLa respectivamente,  lo que nos permitirá añadir transparencia al color elegido.</p>
+                	<p>El canal alpha se moverá en una escala de 0 (completamente transparente) a 1 (completamente opaco)</p>
+                	<hr />
+                	<pre><code>
+p {
+	color: rgba(255, 0, 0, .5);
+	color: hsla(0, 100%, 50%, .5);
+}
+                	</code></pre>
+                </section>
+            </section>
+            
+            
+            
+            
+            
             <section>
                 <h1>¿Como funciona internet?</h1>
                 <h2>(muy brevemente)</h2>
@@ -137,57 +326,6 @@
                     <div style="float: right; width: 48%">
                         <p style="font-size: 1.8rem;">Una manera de transmitir <s style="opacity:.7">gatos</s> información por internet utilizando el protocolo  <em>HTTP</em> y <em> HTML.</em></p>
                     </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Clientes y servidores</h2>
-                </section>
-
-                <section data-transition="fade">
-                    <p style="margin-bottom: .5em;">La web puede resumirse como una serie de interacciones entre dos tipos de sistemas: <em>Servidores</em> y <em>Clientes</em></p>
-                    <img src="day-01/client-server.png" alt="" style="height: 65vh; border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <p style="margin-bottom: .5em;">Los <em>Clientes</em> son los encargados de solicitar y mostrar el contenido web.</p>
-                    <img src="day-01/clients.png" alt="" style="height: 65vh; border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <p style="margin-bottom: .5em;">Los <em>Servidores</em> son aplicaciones (software) encrgados de enviar contenido a los Clientes cuando este lo solicita.</p>
-                    <img src="day-01/servers.png" alt="" style="height: 65vh; border: 0; box-shadow: none;" >
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Ciclo de una transacción web</h2>
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-1.png" alt="" style="border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-2.png" alt="" style="border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-3.png" alt="" style="border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-4.png" alt="" style="border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-5.png" alt="" style="border: 0; box-shadow: none;" >
-                </section>
-
-                <section data-transition="fade">
-                    <img src="day-01/request-6.png" alt="" style="border: 0; box-shadow: none;" >
                 </section>
             </section>
 
@@ -258,11 +396,9 @@
             </section>
 
             <section>
-                <section>
-                    <h2>¡Manos al teclado!</h2>
-                    <img src="http://i.imgur.com/oUQ8j.gif" alt="">
-                </section>
-            </section>
+                <h2>¡Manos al teclado!</h2>
+                <img src="http://i.imgur.com/oUQ8j.gif" alt="">
+            </section>      
 
             <section>
                 <section>
@@ -353,8 +489,6 @@
 
 
             <section>
-
-
                 <section>
                     <p>Los elementos son la estructura básica de HTML.</p>
                     <p>Para marcar un elemento solo necesitamos dos <em>etiquetas</em> o <i>tags</i> (escritas entre corchetes angulares: <,>), una de apertura y una de cierre, que se diferencia por llevar una &ldquo; / &rdquo; tras el primer corchete.</p>
@@ -482,12 +616,10 @@ porque es un comentario
             </section>
 
             <section>
-                <section>
-                    <h2>¡Manos al teclado!</h2>
-                    <img src="http://gimmebar-assets.s3.amazonaws.com/519fd1233c0e0.gif" alt="">
-                    <hr>
-                    <p style="text-align: center"><a href="http://goo.gl/Xco6y7">http://goo.gl/Xco6y7</a></p>
-                </section>
+                <h2>¡Manos al teclado!</h2>
+                <img src="http://gimmebar-assets.s3.amazonaws.com/519fd1233c0e0.gif" alt="">
+                <hr>
+                <p style="text-align: center"><a href="http://goo.gl/Xco6y7">http://goo.gl/Xco6y7</a></p>
             </section>
 
             <section>
