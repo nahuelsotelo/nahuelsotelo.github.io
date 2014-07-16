@@ -77,3 +77,17 @@
 .reveal .hi:after {
     content: '~';
 }
+
+
+/* DAY 02 */
+.reveal .font-list {
+    font-size: .65em;
+}
+.reveal .font-list li {
+    border-bottom: 1px dashed rgba(0,0,0, .2);
+    margin-bottom: .15em;
+    padding-bottom: .15em;
+}
+.reveal .font-list strong {
+    font-size: 1.2em;
+}
