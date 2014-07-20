@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>3 | Introducción a los lenguajes web: HTML y CSS</title>
+
+    <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
+    <meta name="author" content="Nahuel Sotelo">
+    <meta name="robots" content="noindex">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Introducción a<br/>los lenguajes web:<br/>
+                    HTML y CSS
+                </h1>
+            </section>
+            <section>
+                <section>
+                    <h2>Selector descendente</h2>
+                    <h3>(Descendant selector)</h3>
+                </section>
+                <section>
+                    <p>El selector descendiente (<em>descendant selector</em>) actúa sobre un elemento que se encuentra <strong>contenido dentro de otro</strong>.</p>
+                    <p>Se trata de un selector contextual ya que afecta a un elemento no solo por él mismo, sino también por su relación con otros elementos.</p>
+                </section>
+                <section>
+                    <pre><code data-trim contenteditable>
+&#060;h1&#062;Esto es un &#060;strong&#062;título&#060;/strong&#062; con un strong&#060;/h1&#062;
+
+&#060;p&#062;Y esto es un &#060;strong&#062;párrafo&#060;/strong&#062; que támbien tiene un strong.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam ipsum,
+minus voluptatibus doloremque. &#060;strong&#062;Odit rerum&#060;/strong&#062;, explicabo
+iusto, ab similique placeat et vel obcaecati molestiae &#060;strong&#062;ratione
+laboriosam&#060;/strong&#062; minima harum eius libero!&#060;/p&#062;
+                    </code></pre>
+                    <pre><code data-trim contenteditable>
+h1 strong {
+    color: red;
+}
+                    </code></pre>
+                    <hr>
+                    <h4 style="font-size: 1.2em; margin: 1em 0 .2em; text-align: left;">Esto es un <strong style="color: red">título</strong> con un strong</h4>
+                    <p style="font-size: .8em;">Y esto es un <strong>párrafo</strong> que támbien tiene un strong. Lorem
+ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam ipsum, minus voluptatibus doloremque. <strong>Odit rerum</strong>, explicabo iusto, ab similique placeat et vel obcaecati molestiae <strong>ratione laboriosam</strong> minima harum eius libero!</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Especificidad</h2>
+                    <h3>(Specificity)</h3>
+                </section>
+                <section>
+                    <p>En CSS, la <em>especificidad</em>, es lo que determina que estilo será el que acabará aplicandose a un elemento determinado.</p>
+                    <p>Cuando a un elemento se le aplica <strong>más de un selector con reglas que actúan sobre la misma propiedad</strong>, es la especificidad la encargada de resolver este conflicto.</p>
+                </section>
+                <section>
+                    <p>A grandes rasgos podemos ordenar los diferentes tipos de selectores de mayor a menor peso específico de la siguiente manera:</p>
+                    <ol>
+                        <li>IDs</li>
+                        <li>Clases</li>
+                        <li>Selectores contextuales</li>
+                        <li>Selectores individuales</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>Calcular especificidad</h3>
+                </section>
+
+                <section>
+                    <p class="specificity"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example">
+<span class="specificity__element">p</span> {
+    color: red;
+}</pre>
+                    <hr>
+                    <p class="specificity"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example">
+<span class="specificity__class">.text</span> {
+    color: red;
+}</pre>
+                    <hr>
+                    <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">1</span>,<span class="specificity__element">0</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example">
+<span class="specificity__id">#main</span> <span class="specificity__element">strong</span> {
+    color: red;
+}</pre>
+                    <hr>
+                    <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">1</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example" style="font-size: 2rem;">
+<span class="specificity__element">header</span> <span class="specificity__element">ul</span><span class="specificity__id">#main-nav</span> <span class="specificity__class">.sub-menu</span> <span class="specificity__element">li</span><span class="specificity__class">.child</span> <span class="specificity__element">a</span><span class="specificity__class">:hover</span> {
+    color: red;
+}</pre>
+                    <hr>
+                    <p class="specificity fragment"><span class="specificity__inline">0</span>,<span class="specificity__id">1</span>,<span class="specificity__class">3</span>,<span class="specificity__element">4</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example" style="font-size: 2rem;">
+&#60;p <span class="specificity__inline">style="color: red"</span>&#62;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&#60;/p&#62;</pre>
+                    <hr>
+                    <p class="specificity fragment"><span class="specificity__inline">1</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></p>
+                </section>
+
+                <section>
+                    <pre class="specificity__example">
+<span class="specificity__element">p</span> {
+    color: red <span style="color: red";>!important</span>;
+}</pre>
+                    <hr>
+                    <p class="specificity specificity--important">
+                        <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">1</span></span>
+                        <span class="specificity__important-wrap"><span class="specificity__inline">0</span>,<span class="specificity__id">0</span>,<span class="specificity__class">0</span>,<span class="specificity__element">0</span></span></p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>div y span</h2>
+                </section>
+
+                <section>
+                    <p>HTML nos ofrece dos elementos genéricos para agrupar nuestro contenido, con el fin de poder asignar selectores CSS más específicos: <em>Division (<code>&#060;div&#062;</code>)</em> y <em>Span (<code>&#060;span&#062;</code>)</em>.</p>
+                    <p>En el primer caso se trata de un elemento <strong>block</strong>, mientras que el segundo es un elemento <strong>inline</strong></p>
+                </section>
+
+                <section>
+                    <p><code>&#060;div&#062;</code> y <code>&#060;span&#062;</code> nos permiten poder asignar clases o ids a diferentes contenidos aunque estos no posean un valor semántico concreto.</p>
+                    <p>De todas maneras, antes de utilizarlos, hay que asegurarse que no exista ningún otro elemento más apropiado para ese contenido.</p>
+                    <pre><code data-trim contenteditable>
+&#060;div class="ejemplo"&#062;
+    &#060;h1&#062;Ejemplo de div&#060;/h1&#062;
+    &#060;p&#062;Podemos usar div para agrupar algunos elementos y luego otorgar
+    a ese grupo unos estilos concretos&#060;/p&#062;
+    &#060;p&#062;&#060;span class="capital-letter"&#062;S&#060;/span&#062;pan por su parte nos permite
+    agrupar letras, palabras u otros elementos inline.&#060;/p&#062;
+&#060;/div&#062;
+                    </code></pre>
+                </section>
+            </section>
+
+            <section>
+                <h2>¡Manos al teclado!</h2>
+                <img src="https://gimmebar-assets.s3.amazonaws.com/51fa5e77e6da8.gif" alt="">
+            </section>
+
+            <section>
+                <section>
+                    <h2>Imágenes</h2>
+                </section>
+
+                <section>
+                    <p>Para agregar imágenes en la web utilizaremos el tag <code>&#60;img&#62;</code>. Se trata de un tag vacío por lo que no lleva ni contenido ni etiqueta de cierre.</p>
+                    <p>La ruta de la imágen a incluir la determinaremos con el atributo <code>src</code>. También podemos proporcionar un texto alternativo que el usuario verá si la imágen no se carga, gracias al atributo <code>alt</code>.</p>
+                    <hr>
+                    <code style="font-size: 1.8rem">&#60;img src="ruta-de-la-imagen.jpg" alt="texto alternativo"&#62;</code>
+                </section>
+
+                <section>
+                    <p>El elemento imágen es un <strong>elemento inline</strong>. Por esta razón, si lo utilizamos dentro lo que no provocará un salto de línea sino que se insertará entre el texto provocando que esa <code>line-height</code> de esa línea pase a ser la altura de la imágen.</p>
+                    <hr>
+                    <div class="fragment">
+                        <pre><code data-trim contenteditable>
+&#60;p style="font-size: 1.5rem"&#62;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto fuga
+    hic, soluta optio culpa, quibusdam ducimus porro laboriosam exercitationem
+    &#60;img src="http://lorempixel.com/100/100" alt="texto alternativo"&#62; nam
+    deserunt. Dicta sed ex assumenda necessitatibus neque nobis, esse
+    consequuntur?
+&#60;/p&#62;
+                        </code></pre>
+                        <p style="font-size: 1.5rem">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto fuga hic, soluta optio culpa, quibusdam ducimus porro laboriosam exercitationem <img src="http://lorempixel.com/100/100" alt="texto alternativo" style="margin: 0; background: transparent; border: 0; box-shadow: none;"> nam deserunt. Dicta sed ex assumenda necessitatibus neque nobis, esse consequuntur?
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Formatos de imágenes</h3>
+                </section>
+
+                <section>
+                    <p>No todos los formatos de imágenes estan disponibles para ser usados en web.</p>
+                    <p>Los formatos de imágen en mapa de bits permitidos para web son <em>JPG</em>, <em>GIF</em> y <em>PNG</em>.</p>
+                </section>
+
+                <section>
+                    <h3>GIF</h3>
+                    <p style="font-size: 1.8rem">GIF es el formato web más antiguo. Su compresión se realiza sin perdida de calidad en la imágen pero está limitado a una paleta de <strong>256 colores</strong>. <strong>Posee un canal de transparencia</strong> pero por lo limitado de su paleta no da muy buen resultado sobre todo con superficies curvas.</p>
+                    <p style="font-size: 1.8rem">Es el único de los 3 formatos que <strong>permite animación</strong>. Es decir, incluir varias imágenes dentro de un mismo archivo que se irán sucediendo en el tiempo.</p>
+                    <hr>
+                    <p style="text-align: center"><img src="day-03/gif.gif" alt="Animated gif example" style="
+                     background: transparent; border: 0; box-shadow: none; margin-top: 0; width: auto; height: 40vh;"></p>
+                </section>
+
+                <section>
+                    <h3>JPG</h3>
+                    <p style="font-size: 1.8rem">JPG es un <strong>formato de 24-bits</strong>, capaz de mostrar millones de colores. Esto lo convierte en <strong>ideal para fotografía</strong> o imágenes con transiciones de color suaves.</p>
+                    <p style="font-size: 1.8rem">Su algoritmo de compresión acarrea perdida de calidad por lo que, a la hora de generar una imágen jpg, hay que evaluar la relación calidad-peso que queremos conseguir.</p>
+                    <hr>
+                    <p style="text-align: center"><img src="day-03/jpg.jpg" alt="Animated jpg example" style="
+                     background: transparent; border: 0; box-shadow: none; margin-top: 0; width: auto; height: 40vh;"></p>
+                </section>
+
+                <section>
+                    <h3>PNG</h3>
+                    <p style="font-size: 1.8rem">PNG es el formato más nuevo de los 3. Algunas de ñas características que lo hacen destacar son:</p>
+                    <ul style="font-size: 1.8rem; line-height: 1.2;">
+                        <li>Puede contener imágenes indexadas de <strong>8-bit</strong>, RGB <strong>24-bit</strong>, <strong>16-bit</strong> en escala de grises, e incluso de color <strong>48-bit</strong>.</li>
+                        <li><strong>Compresión sin pérdida</strong> de calidad.</li>
+                        <li>Varios <strong>niveles de transparencia</strong>.</li>
+                        <li><strong>Texto embebido</strong> con información acerca del autor, copyright, etc.</li>
+                    </ul>
+                    <hr>
+                    <p style="text-align: center"><img src="day-03/png.png" alt="Animated png example" style="background: transparent; border: 0; box-shadow: none; margin-top: 0; max-width: 400px;"></p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Listas</h2>
+                </section>
+
+                <section>
+                    <p>HTML cuenta con 3 tipos de listas:</p>
+                    <ul>
+                        <li><em>Unordered lists</em>: Un listado de elementos sin un orden concreto.</li>
+                        <li><em>Ordered lists</em>: Un listado de elementos dónde el orden es importante.</li>
+                        <li><em>Description lists</em>: Un listado compuesto de pares término/descripción.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Unordered Lists (<code>&#60;ul&#62;</code>)</h3>
+                    <p>Marcaremos una lista dónde el orden de los elementos es indiferente, con el tag <em><code>&#60;ul&#62;</code></em>.</p>
+                    <p>A diferencia de otros elementos que funcionan solos, <code>&#60;ul&#62;</code> necesita un segundo elemento que nos servirá para marcar cada item de la list: <em>list item (<code>&#60;li&#62;</code>)</em>.</p>
+                    <hr>
+                    <pre style="float: left; margin: 0; width: 48%"><code data-trim contenteditable>
+&#60;ul&#62;
+    &#60;li&#62;Item 1&#60;/li&#62;
+    &#60;li&#62;Item 2&#60;/li&#62;
+    &#60;li&#62;Item 3&#60;/li&#62;
+    &#60;li&#62;Item 4&#60;/li&#62;
+&#60;/ul&#62;
+                    </code></pre>
+                    <ul style="float: right; font-size: 1.5rem; line-height: 1.5; list-style-position: inside;  margin: .5rem 0 0; width: 40%">
+                        <li style="margin-bottom: 0;">Item 1</li>
+                        <li style="margin-bottom: 0;">Item 2</li>
+                        <li style="margin-bottom: 0;">Item 3</li>
+                        <li style="margin-bottom: 0;">Item 4</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Ordered Lists (<code>&#60;ol&#62;</code>)</h3>
+                    <p>Si el orden de los elementos de nuestra lista es relevante, como por ejemplo en una receta de cocina o en un top-ten, usaremos tag <em><code>&#60;ol&#62;</code></em>.</p>
+                    <p>Para marcar los items de la lista también será necesario el tag <code>&#60;li&#62;</code>.</p>
+                    <hr>
+                    <pre style="float: left; margin: 0; width: 48%"><code data-trim contenteditable>
+&#60;ol&#62;
+    &#60;li&#62;Item 1&#60;/li&#62;
+    &#60;li&#62;Item 2&#60;/li&#62;
+    &#60;li&#62;Item 3&#60;/li&#62;
+    &#60;li&#62;Item 4&#60;/li&#62;
+&#60;/ol&#62;
+                    </code></pre>
+                    <ol style="float: right; font-size: 1.5rem; line-height: 1.5; list-style-position: inside;  margin: .5rem 0 0; width: 40%">
+                        <li style="margin-bottom: 0;">Item 1</li>
+                        <li style="margin-bottom: 0;">Item 2</li>
+                        <li style="margin-bottom: 0;">Item 3</li>
+                        <li style="margin-bottom: 0;">Item 4</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Description lists (<code>&#60;dl&#62;</code>)</h3>
+                    <p>La estructura de las <em>definition list (<code>&#60;dl&#62;</code></em>) es un poco diferente a la de las dos listas anteriores.</p>
+                    <p>En lugar de items una <code>&#60;dl&#62;</code> está compuesta por una suseción de <em>términos (<code>&#60;dt&#62;</code>)</em> con sus respectivas <em>definiciones(<code>&#60;dd&#62;</code>)</em>.</p>
+                    <p>Un <code>&#60;dt&#62;</code> puede estar seguido de múltiples <code>&#60;dd&#62;</code> pero no a la inversa.</p>
+                    <hr>
+                    <pre style="float: left; margin: 0; width: 48%"><code data-trim contenteditable>
+&#60;dl&#62;
+    &#60;dt&#62;Title&#60;/dt&#62;
+    &#60;dd&#62;Back to the Future&#60;/dd&#62;
+    &#60;dt&#62;Director&#60;/dt&#62;
+    &#60;dd&#62;Robert Zemeckis&#60;/dd&#62;
+    &#60;dt&#62;Stars&#60;/dt&#62;
+    &#60;dd&#62;Michael J. Fox&#60;/dd&#62;
+    &#60;dd&#62;Christopher Lloyd&#60;/dd&#62;
+&#60;/dl&#62;
+                    </code></pre>
+                    <dl class="dl-example">
+                        <dt>Title</dt>
+                        <dd>Back to the Future</dd>
+                        <dt>Director</dt>
+                        <dd>Robert Zemeckis</dd>
+                        <dt>Stars</dt>
+                        <dd>Michael J. Fox</dd>
+                        <dd>Christopher Lloyd</dd>
+                    </dl>
+                </section>
+
+                <section>
+                    <ul class="font-list" style="font-size: .75em;">
+                        <li>
+                            <p style="margin-bottom:0;"><strong>list-style-type</strong></p>
+                            <p><code>none</code> | <code>disc</code> | <code>circle</code> | <code>square</code> | <code>decimal</code> | <code>decimal-leading-zero</code> | <code>lower-alpha</code> | <code>upper-alpha</code> | <code>lower-latin</code> | <code>upper-latin</code> | <code>lower-roman</code> | <code>upper-roman</code> | <code>lower-greek</code></p>
+                        </li>
+                        <li>
+                            <p style="margin-bottom:0;"><strong>list-style-position</strong></p>
+                            <p><code>inside</code> | <code>outside</code></p>
+                        </li>
+                        <li>
+                            <p style="margin-bottom:0;"><strong>list-style-image</strong></p>
+                            <p> <code>none</code> | <i>&#060;url&#062;</i></p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>¡Manos al teclado!</h2>
+                <img src="http://media.giphy.com/media/AhjXalGPAfJg4/giphy.gif" alt="">
+            </section>
+
+            <section>
+                <h2>Links relacionados</h2>
+                <ul>
+                    <li style="margin-bottom: .8em;">
+                        <strong>Our (css) best practices are killing us</strong> <i style="color: #999;"> &mdash; Nicole Sullivan at Webstock 2011</i>
+                        <br>
+                        <a href="http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/" style="font-size: .8em;">http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/</a>
+                    </li>
+                    <li style="margin-bottom: .8em;">
+                        <strong>When using IDs can be a pain in the class...</strong> <i style="color: #999;"> &mdash; Harry Roberts</i><br>
+                        <a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/" style="font-size: .8em;">http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/</a>
+                    </li>
+                    <li style="margin-bottom: .8em;">
+                        <strong>The Myth of DPI</strong> <i style="color: #999;"> &mdash; Ben Gremillion</i><br>
+                        <a href="http://www.webdesignerdepot.com/2010/02/the-myth-of-dpi/" style="font-size: .8em;">http://www.webdesignerdepot.com/2010/02/the-myth-of-dpi/</a>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
