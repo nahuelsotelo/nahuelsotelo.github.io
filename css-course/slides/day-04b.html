@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>2 | Introducción a los lenguajes web: HTML y CSS</title>
+    <title>4 | Introducción a los lenguajes web: HTML y CSS</title>
 
     <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
     <meta name="author" content="Nahuel Sotelo">
@@ -140,11 +140,46 @@
                 <section>
                     <h2>Background color</h2>
                 </section>
+
+                <section>
+                    <p>La propiedad que usaremos en CSS para controlar el color de fondo de un elemento será <em><code>background-color</code></em>.</p>
+                    <p><code>background-color</code> acepta cualquiera de los formatos de color CSS, tanto colores planos como con transparencia. Por defecto, su valor inicial es <code>transparent</code>.</p>
+                    <hr>
+                    <pre><code data-trim contenteditable>
+ p {
+    background-color: teal;
+    color: white;
+ }
+                    </code></pre>
+                    <p style="background-color: teal; color: white; font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non enim fugit deserunt commodi dolorum quaerat itaque sequi ex ea veritatis aliquid possimus aliquam perspiciatis, est esse quod. Quas, doloremque, aspernatur.</p>
+                </section>
+                <section>
+                    <p>A la hora de fijar un color de fondo sobre el que se muestre un texto es importante tener en cuenta el <strong>ratio de contraste</strong> entre ambos colores por cuestiones de <strong>accesibilidad</strong></p>
+                    <p>Si el ratio es muy bajo, un usuario con problemas de visión, podría tener dificultades a la hora de acceder a nuestro contenido.</p>
+                    <p>Hay varias herramientas tanto online como offline para medir el ratio de contraste. Una de las más sencillas de usar es la creada por Lea Verou:</p>
+                    <hr>
+                    <p style="text-align: center;"><a href="https://leaverou.github.io/contrast-ratio/">https://leaverou.github.io/contrast-ratio/</a></p>
+                </section>
             </section>
 
             <section>
                 <section>
                     <h2>Box model</h2>
+                </section>
+
+                <section>
+                    <p>Todos los elementos en una página web son realmente cajas rectangulares que se posicionan unas en relación con otras para representar nuestro código en el navegador.</p>
+                    <p>Las propiedades inerentes a estas cajas es lo que se conoce como <em>box-model</em> y es uno de los puntos claves a la hora de entender como funciona el CSS.</p>
+                </section>
+
+                <section>
+                    <p>Hay varias propiedades CSS que controlan las dimensiones de cada elemento:</p>
+                    <ul>
+                        <li><em><code>width</code></em> y <em><code>height</code></em>, que definen las dimensiones del elemento (aunque, como se aplican exactamente, dependerá de la propiedad <code>display</code>)</li>
+                        <li><em><code>padding</code></em>, que determina el espacio entre el contenido y el borde exterior.</li>
+                        <li>El mismo <em><code>border</code></em> de la caja.</li>
+                        <li><em><code>margin</code></em>, el espacio que separa el elemento del resto de elementos.</li>
+                    </ul>
                 </section>
             </section>
 
