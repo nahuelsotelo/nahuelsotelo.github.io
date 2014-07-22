@@ -180,6 +180,7 @@
                         <li>El mismo <em><code>border</code></em> de la caja.</li>
                         <li><em><code>margin</code></em>, el espacio que separa el elemento del resto de elementos.</li>
                     </ul>
+                    <p>Para calcular las dimensiones que tendrá un elemento tendremos que sumar los valores de <code>padding</code> y <code>border</code> a su <code>width</code> y <code>height</code>.</p>
                 </section>
 
                 <section style="text-align: center;">
@@ -188,6 +189,7 @@
                             <span style="height: 50px" contenteditable>contenido</span>
                         </div>
                     </div>
+                    <p style="font-size: 1.2rem; font-weight: bold; margin-top: 1rem; text-align: center;"><span style=" margin: 0 1em; color: #2980b9;">Area de contenido</span> | <span style=" margin: 0 1em; color: #27ae60;">Padding</span> | <span style=" margin: 0 1em; color: #2c3e50;">Border</span> | <span style=" margin: 0 1em; color: rgb(213, 126, 0);">Margin</span></p>
                     <hr>
                     <pre><code data-trim contenteditable>
 .box {
@@ -199,36 +201,124 @@
 }
                     </code></pre>
                 </section>
-<!--
-                <section style="text-align: center;">
-                    <div class="box-model__margin">
-                        <div class="box-model">
-                            <span contenteditable>alto variable</span>
-                        </div>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Width y margin</h2>
+                </section>
+
+                <section>
+                    <p><em><code>width</code></em> y <em><code>height</code></em> son las propiedades que determinan el <em>ancho</em> y <em>alto</em>,respectivamente, del area de contenido de un elemento html.</p>
+                    <p><strong>Por defecto su valor es <code>auto</code></strong>, es decir que se asignaran automaticamente dependiendo de si el elemento es inline o block.</p>
+                    <p>Si es inline, el <code>width</code> será tan largo como el contenido, si es block, ocupará el 100% de su contenedor.</p>
+                    <p>El <code>height</code> por su parte, dependerá del alto del contenido, por lo que, si se trata de texto <strong>estará ligado al <code>line-height</code></strong> del mismo.</p>
+                </section>
+
+                <section>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
+                        <h4 style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); text-align:left; text-transform: none;">Lorem ipsum dolor sit</h4>
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em;">Lorem ipsum dolor sit amet, <strong style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6);" >consectetur adipisicing</strong> elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, <a href="#" style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6); color: blue; text-decoration: underline;" >libero iure expedita</a> minima labore magnam.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <p>Podemos con las propiedades <code>width</code> y <code>height</code> asignar las dimensiones que queramos a los elementos.</p>
+                    <p>Si el contenido ocupa menos que las dimensiones del elemento, el resto de espacio quedará vacio.</p>
+                    <p>Si el contenido no cabe dentro de las dimensiones asignadas, se saldrá del elemento. Podemos controlar exactamente de que manera con la propiedad <em><code>overflow</code></em>.</p>
+                </section>
+                <section>
+                    <pre><code data-trim contenteditable>
+p { height: 220px; }
+                    </code></pre>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 220px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
                     </div>
                     <hr>
                     <pre><code data-trim contenteditable>
-.box {
-    width: 300px;
-    line-height: 50px;
-    border: 2px solid #2c3e50;
-    margin: 50px;
-    padding: 50px;
+p { height: 80px; }
+                    </code></pre>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
+
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Overflow</h2>
+                </section>
+
+                <section>
+                    <p>La propiedad <em><code>overflow</code></em> controla lo que sucede con el contenido cuando excede el tamaño del elemento contenedor. Sus posibles valores son:</p>
+                    <ul>
+                        <li><code>visible</code></li>
+                        <li><code>hidden</code></li>
+                        <li><code>scroll</code></li>
+                        <li><code>auto</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Overflow: visible</h3>
+                    <pre><code data-trim contenteditable>
+p {
+    height: 80px;
+    overflow: visible;
 }
                     </code></pre>
-                </section>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
 
-
-                <section style="text-align: center;">
-                    Lorem ipsum dolor sit
-                    <div class="box-model__margin">
-                        <div class="box-model">
-                            <span contenteditable>contenido</span>
-                        </div>
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
                     </div>
-                    adipisicing elit.
                 </section>
--->
+
+                <section>
+                    <h3>Overflow: hidden</h3>
+                    <pre><code data-trim contenteditable>
+p {
+    height: 80px;
+    overflow: hidden;
+}
+                    </code></pre>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
+
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px; overflow: hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Overflow: scroll</h3>
+                    <pre><code data-trim contenteditable>
+p {
+    height: 150px;
+    overflow: scroll;
+}
+                    </code></pre>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 60%;">
+
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsam quae quibusdam temporibus laboriosam dolorem explicabo modi, esse corrupti error sapiente nemo et odit ea natus consequuntur beatae, voluptate expedita!.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Overflow: auto</h3>
+                    <pre><code data-trim contenteditable>
+p {
+    height: 150px;
+    overflow: auto;
+}
+                    </code></pre>
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto 1em; width: 60%;">
+
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsam quae quibusdam temporibus laboriosam dolorem explicabo modi, esse corrupti error sapiente nemo et odit ea natus consequuntur beatae, voluptate expedita!.</p>
+                    </div>
+
+                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 60%;">
+                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum.</p>
+                    </div>
+                </section>
             </section>
 
             <section>
