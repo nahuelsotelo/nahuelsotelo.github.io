@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>4 | Introducción a los lenguajes web: HTML y CSS</title>
+    <title>5 | Introducción a los lenguajes web: HTML y CSS</title>
 
     <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
     <meta name="author" content="Nahuel Sotelo">
@@ -103,449 +103,189 @@ strong { opacity: 1; }
 
             <section>
                 <section>
-                    <h2>Unidades de medida en CSS</h2>
+                    <h2>Posicionando elementos con float</h2>
                 </section>
 
                 <section>
-                    <p>Las unidades de medida en CSS pueden dividirse en <strong>dos grandes grupos</strong>: <em>unidades absolutas</em> y <em>unidades relativas</em></p>
-                    <p>La sintaxis para declarar una medida siempre será igual: un número seguido de la unidad correspondiente. Algunas propiedades CSS aceptan <strong>valores negativas</strong> con ciertas unidades.</p>
+                    <p>En CSS hay varias maneras de posicionar los elementos dentro de la página. Una de las más utilizadas es a través de la porpiedad <em><code>float</code></em>.</p>
+                    <p><code>float</code> nos permitie remover a un elemento de su posición natural en el flow de la página y <strong>posicionarlo contra uno de los lados de su elemento contenedor</strong>. Los elementos que están a continuación suyo se limitarán a rodearlo.</p>
                 </section>
 
                 <section>
-                    <h3>Unidades absolutas</h3>
-                    <p>Las unidades absolutas son las más directas, están relacionadas a una medida física. La más utilizada es el pixel pero hay varias más:</p>
-                    <ul class="font-list" style="font-size: 2.2rem;">
-                        <li>
-                            <p style="margin-bottom:0;"><code>px</code> <span style="font-size: 1.6rem;">(píxel)</span></li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>mm</code> <span style="font-size: 1.6rem;">(milimetro)</span></li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>cm</code> <span style="font-size: 1.6rem;">(centímetro, 10 millimeters)</span></li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>in</code> <span style="font-size: 1.6rem;">(pulgada, 2.54 centímetros)</span></li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>pt</code> <span style="font-size: 1.6rem;">(punto, 1/72 de pulgada)</span></li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>pc</code> <span style="font-size: 1.6rem;">(pica, 12 puntos)</span></li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Unidades relativas</h3>
-                    <p>Las unidades relativas son un poco más complicadas ya que su valor no es fijo sino que dependen de la medida de otro elemento. También pueden dividirse en tres grupos más pequeños: <em>unidades relativas al tamaño de fuente</em>, <em>unidades relativas al viewport</em> y <em>porcentajes</em>.</p>
-                </section>
-
-                <section>
-                    <h3>Relativas al tamaño de fuente</h3>
-                    <ul class="font-list" style="font-size: 2.2rem;">
-                        <li>
-                            <p style="margin-bottom:0;"><code>em</code></p>
-                            <p style="font-size: 1.5rem;">Es un número relativo al <code>font-size</code> del elemento. Si se aplica a la misma propiedad <code>font-size</code> se calculará en base al <code>font-size</code> heredado.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>rem</code></p>
-                            <p style="font-size: 1.5rem;">Hace referencia al <code>font-size</code> del elemento root (normalmente el <code>&#60;html&#62;</code>). Si se aplica sobre este usara de base su valor inicial.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>ex</code></p>
-                            <p style="font-size: 1.5rem;">Representa la <i>x-height</i> del elemento fuente, normalmente la altura del caracter "x" en minúsculas.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>ch</code></p>
-                            <p style="font-size: 1.5rem;">Representa el ancho del carácter "0".</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Relativas al viewport</h3>
-                    <ul class="font-list" style="font-size: 2.2rem;">
-                        <li>
-                            <p style="margin-bottom:0;"><code>vh</code></p>
-                            <p style="font-size: 1.5rem;">1/100 del alto del viewport.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>vw</code></p>
-                            <p style="font-size: 1.5rem;">1/100 del ancho del viewport.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>vmin</code></p>
-                            <p style="font-size: 1.5rem;">1/100 del valor más bajo entre el alto y ancho del viewport.</p>
-                        </li>
-                        <li>
-                            <p style="margin-bottom:0;"><code>vmax</code></p>
-                            <p style="font-size: 1.5rem;">1/100 del valor más alto entre el alto y ancho del viewport.</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                     <h3>Porcentajes</h3>
-                     <p>Podemos asignar una unidad de medida porcentual con un <em>valor seguido del signo "%"</em> (ej: 50%). El contexto que se utilizará para calcular el porcentaje variará dependiendo a que propiedad se aplique.</p>
-                     <p>Si se aplica al <code>font-size</code>, el porcentaje será relativo al <code>font-size</code> del elemento padre.</p>
-                     <p>Si se aplica al <code>width</code>, <code>margin</code> o <code>padding</code>, será relativo a las medidas de su contenedor.</p>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Background color</h2>
-                </section>
-
-                <section>
-                    <p>La propiedad que usaremos en CSS para controlar el color de fondo de un elemento será <em><code>background-color</code></em>.</p>
-                    <p><code>background-color</code> acepta cualquiera de los formatos de color CSS, tanto colores planos como con transparencia. Por defecto, su valor inicial es <code>transparent</code>.</p>
+                    <p>En su origen <code>float</code> se creo para posicionar imágenes dentro de un bloque de texto pero con el tiempo acabo por ser una de las herramientas CSS más usadas para generar layout en nuestras paginas (por falta de otras herramientas mejores).</p>
                     <hr>
+                    <div style="font-size: 1.5rem; width: 70%; margin: 0 auto;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, delectus aperiam quas temporibus nisi, qui dicta officia at blanditiis, suscipit repudiandae tempora impedit, quibusdam! Tempora ducimus, maiores inventore voluptas est? <img src="https://4.bp.blogspot.com/-B70oaS-ZUiU/UXu4f5gG-xI/AAAAAAAALeM/JDAWfEAm1Hw/s1600/floating-hedgehog.gif" alt="" style="float: left; width: 250px; margin-right:1em;"></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sed natus ut, quas ullam dicta qui optio magnam nulla illum nesciunt itaque voluptatem, quia. Quos culpa libero, deleniti ad adipisci!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sed natus ut, quas ullam dicta qui optio magnam nulla illum nesciunt itaque voluptatem, quia. Quos culpa libero, deleniti ad adipisci!</p>
+                    </div>
+                </section>
+
+                <section>
+                    <p><code>float</code> acepta tres posibles valores: <em><code>none</code></em>, <em><code>left</code></em> y <em><code>right</code></em>.</p>
+                    <p>Si flotamos más de un elemento seguidos estos se ubicarán uno al lado del otro siempre y cuando sus dimensiones les permitan acomodarse dentro del contenedor. Cuando ya no quepan saltarán a la línea siguiente.</p>
+                    <p>Dependiendo la dirección en que se floten los elementos se <strong>ordenara hacia uno o el otro lado</strong>. Hay que tener en cuenta que si usamos <code>float: right</code>, el primer elemento en el documento HTML será el de más a la derecha.</p>
+                </section>
+
+                <section class="float-example">
                     <pre><code data-trim contenteditable>
- p {
-    background-color: teal;
-    color: white;
- }
+div { float: none; }
                     </code></pre>
-                    <p style="background-color: teal; color: white; font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non enim fugit deserunt commodi dolorum quaerat itaque sequi ex ea veritatis aliquid possimus aliquam perspiciatis, est esse quod. Quas, doloremque, aspernatur.</p>
+                    <div class="float-wrap">
+                        <div class="float-box">1</div>
+                        <div class="float-box">2</div>
+                        <div class="float-box">3</div>
+                    </div>
+                    <pre><code data-trim contenteditable>
+div { float: left; }
+                    </code></pre>
+                    <div class="float-wrap">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
+                        <div class="float-box float-left">4</div>
+                        <div class="float-box float-left">5</div>
+                        <div class="float-box float-left">6</div>
+                    </div>
+                    <pre><code data-trim contenteditable>
+div { float: right; }
+                    </code></pre>
+                    <div class="float-wrap">
+                        <div class="float-box float-right">1</div>
+                        <div class="float-box float-right">2</div>
+                        <div class="float-box float-right">3</div>
+                    </div>
                 </section>
-                <section>
-                    <p>A la hora de fijar un color de fondo sobre el que se muestre un texto es importante tener en cuenta el <strong>ratio de contraste</strong> entre ambos colores por cuestiones de <strong>accesibilidad</strong></p>
-                    <p>Si el ratio es muy bajo, un usuario con problemas de visión, podría tener dificultades a la hora de acceder a nuestro contenido.</p>
-                    <p>Hay varias herramientas tanto online como offline para medir el ratio de contraste. Una de las más sencillas de usar es la creada por Lea Verou:</p>
-                    <hr>
-                    <p style="text-align: center;"><a href="https://leaverou.github.io/contrast-ratio/">https://leaverou.github.io/contrast-ratio/</a></p>
-                </section>
-            </section>
-
-            <section>
-                <h2>¡Manos al teclado!</h2>
-                <img src="http://media.giphy.com/media/PvvSfSDFoAL5e/giphy.gif" alt="">
-            </section>
-
-            <section>
-                <section>
-                    <h2>Box model</h2>
-                </section>
 
                 <section>
-                    <p>Todos los elementos en una página web son realmente cajas rectangulares que se posicionan unas en relación con otras para representar nuestro código en el navegador.</p>
-                    <p>Las propiedades inerentes a estas cajas es lo que se conoce como <em>box-model</em> y es uno de los puntos claves a la hora de entender como funciona el CSS.</p>
-                </section>
-
-                <section>
-                    <p>Hay varias propiedades CSS que controlan las dimensiones de cada elemento:</p>
+                    <h3>clear</h3>
+                    <p>Si en algun momento queremos que un determinado elemento ignore una propiedad float de un elemento anterior, deberemos recurrir a la propiedad <em><code>clear</code></em>.</p>
+                    <p><code>clear</code> soporta 4 valores:</p>
                     <ul>
-                        <li><em><code>width</code></em> y <em><code>height</code></em>, que definen las dimensiones del elemento (aunque, como se aplican exactamente, dependerá de la propiedad <code>display</code>)</li>
-                        <li><em><code>padding</code></em>, que determina el espacio entre el contenido y el borde exterior.</li>
-                        <li>El mismo <em><code>border</code></em> de la caja.</li>
-                        <li><em><code>margin</code></em>, el espacio que separa el elemento del resto de elementos.</li>
-                    </ul>
-                </section>
-
-                <section style="text-align: center;">
-                    <div class="box-model__margin">
-                        <div class="box-model">
-                            <span style="height: 50px" contenteditable>contenido</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 1.2rem; font-weight: bold; margin-top: 1rem; text-align: center;"><span style=" margin: 0 1em; color: #2980b9;">Area de contenido</span> | <span style=" margin: 0 1em; color: #27ae60;">Padding</span> | <span style=" margin: 0 1em; color: #2c3e50;">Border</span> | <span style=" margin: 0 1em; color: rgb(213, 126, 0);">Margin</span></p>
-                    <hr>
-                    <pre><code data-trim contenteditable>
-.box {
-    width: 300px;
-    height: 50px;
-    border: 2px solid #2c3e50;
-    margin: 50px;
-    padding: 50px;
-}
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>Box-sizing</h3>
-                    <p>Por defecto <strong>el navegador añade los paddings y los bordes a las dimensiones del elemento</strong>, por lo que si declaramos un <code>width</code> de 100px con un <code>padding</code> a cada lado de 20px y un <code>border</code> de 2px, el ancho del elemento será de 142px</p>
-                    <p>Para conseguir una manera de calcular dimensiones más intuitiva tenemos que recurrir a la propiedad <em><code>box-sizing</code></em>.</p>
-                </section>
-
-                <section>
-                    <p style="font-size: 1.9rem"><code>box-sizing</code> tiene 3 valores posibles:</p>
-                    <ul style="font-size: 1.9rem">
-                        <li><em><code>content-box</code></em>: el que se aplica por defecto y calcula el <code>width</code> y <code>height</code> teniendo en cuenta únicamente el contenido.</li>
-                        <li><em><code>padding-box</code></em>: Incluye el <code>padding</code> dentro de las dimensiones del elemento.</li>
-                        <li><em><code>border-box</code></em>: Incluye <code>padding</code> y <code>border</code> dentro de las dimensiones.</li>
-                    </ul>
-                    <p style="font-size: 1.9rem">Es una buena idea, sobre todo si trabajamos con una layout flexible (en porcentajes) declarar <code>box-sizing: border-box</code> para todos los elementos usando el selector universal (<code>*</code>).</p>
-                    <pre><code data-trim contenteditable>
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-                    </code></pre>
-
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Width y margin</h2>
-                </section>
-
-                <section>
-                    <p><em><code>width</code></em> y <em><code>height</code></em> son las propiedades que determinan el <em>ancho</em> y <em>alto</em>,respectivamente, del area de contenido de un elemento html.</p>
-                    <p><strong>Por defecto su valor es <code>auto</code></strong>, es decir que se asignaran automaticamente dependiendo de si el elemento es inline o block.</p>
-                    <p>Si es inline, el <code>width</code> será tan largo como el contenido, si es block, ocupará el 100% de su contenedor.</p>
-                    <p>El <code>height</code> por su parte, dependerá del alto del contenido, por lo que, si se trata de texto <strong>estará ligado al <code>line-height</code></strong> del mismo.</p>
-                </section>
-
-                <section>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
-                        <h4 style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); text-align:left; text-transform: none;">Lorem ipsum dolor sit</h4>
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em;">Lorem ipsum dolor sit amet, <strong style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6);" >consectetur adipisicing</strong> elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, <a href="#" style="background: hsla(100, 70%, 60%, .3); border: 1px solid hsla(100, 70%, 60%, .6); color: blue; text-decoration: underline;" >libero iure expedita</a> minima labore magnam.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <p>Podemos con las propiedades <code>width</code> y <code>height</code> asignar las dimensiones que queramos a los elementos.</p>
-                    <p>Si el contenido ocupa menos que las dimensiones del elemento, el resto de espacio quedará vacio.</p>
-                    <p>Si el contenido no cabe dentro de las dimensiones asignadas, se saldrá del elemento. Podemos controlar exactamente de que manera con la propiedad <em><code>overflow</code></em>.</p>
-                </section>
-                <section>
-                    <pre><code data-trim contenteditable>
-p { height: 220px; }
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 220px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
-                    </div>
-                    <hr>
-                    <pre><code data-trim contenteditable>
-p { height: 80px; }
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
-
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Overflow</h2>
-                </section>
-
-                <section>
-                    <p>La propiedad <em><code>overflow</code></em> controla lo que sucede con el contenido cuando excede el tamaño del elemento contenedor. Sus posibles valores son:</p>
-                    <ul>
-                        <li><code>visible</code></li>
-                        <li><code>hidden</code></li>
-                        <li><code>scroll</code></li>
-                        <li><code>auto</code></li>
+                        <li><em><code>none</code></em>: el elemento se verá afectado normalmente por un float.</li>
+                        <li><em><code>left</code></em>: el elemento se desplazará abajo cuando se encuentre con un <code>float: left</code>.</li>
+                        <li><em><code>right</code></em>: el elemento se desplazará abajo cuando se encuentre con un <code>float: right</code>.</li>
+                        <li><em><code>both</code></em>: el elemento se desplazará abajo ante cualquier <code>float</code>.</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h3>Overflow: visible</h3>
-                    <pre><code data-trim contenteditable>
-p {
-    height: 80px;
-    overflow: visible;
-}
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
-
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Overflow: hidden</h3>
-                    <pre><code data-trim contenteditable>
-p {
-    height: 80px;
-    overflow: hidden;
-}
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 80%;">
-
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 80px; overflow: hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Overflow: scroll</h3>
-                    <pre><code data-trim contenteditable>
-p {
-    height: 150px;
-    overflow: scroll;
-}
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 60%;">
-
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsam quae quibusdam temporibus laboriosam dolorem explicabo modi, esse corrupti error sapiente nemo et odit ea natus consequuntur beatae, voluptate expedita!.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Overflow: auto</h3>
-                    <pre><code data-trim contenteditable>
-p {
-    height: 150px;
-    overflow: auto;
-}
-                    </code></pre>
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto 1em; width: 60%;">
-
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum, ratione est voluptas reiciendis perspiciatis accusantium sed, libero iure expedita minima labore magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsam quae quibusdam temporibus laboriosam dolorem explicabo modi, esse corrupti error sapiente nemo et odit ea natus consequuntur beatae, voluptate expedita!.</p>
-                    </div>
-
-                    <div style="border: 2px dotted hsla(0,0%,60%,.6); margin: 0 auto; width: 60%;">
-                        <p style="background: hsla(200, 70%, 60%, .3); border: 1px solid hsla(200, 70%, 60%, .6); font-size: .7em; height: 150px; overflow: auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, esse ut voluptates cumque dolore vitae similique harum.</p>
+                    <div style="font-size: 1.5rem; width: 70%; margin: 0 auto; border: 1px dotted #666; padding: 1em;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, delectus aperiam quas temporibus nisi, qui dicta officia at blanditiis, suscipit repudiandae tempora impedit, quibusdam! Tempora ducimus, maiores inventore voluptas est? <img src="https://4.bp.blogspot.com/-B70oaS-ZUiU/UXu4f5gG-xI/AAAAAAAALeM/JDAWfEAm1Hw/s1600/floating-hedgehog.gif" alt="" style="float: left; width: 250px; margin-right:1em;"></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sed natus ut, quas ullam dicta.</p>
+                        <p style="clear: both; background: hsla(200, 60%, 50%, .3)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sed natus ut, quas ullam dicta qui optio</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sed natus ut, quas ullam dicta qui optio magnam nulla illum nesciunt itaque voluptatem, quia. Quos culpa libero, deleniti ad adipisci!</p>
                     </div>
                 </section>
             </section>
 
             <section>
                 <section>
-                    <h2>Padding y margin</h2>
+                    <h2>clearfix</h2>
                 </section>
 
-                <section>
-                    <h3>Padding</h3>
-                    <p>El <code>padding</code> es el espacio interior que separa el contenido del borde de la caja.</p>
+                <section class="float-example-02">
+                    <p style="font-size: 1.8rem;">Un problema que suele presentarse cuando utilizamos <code>float</code> para crear layouts es que al remover todos los elementos en un contenedor del flow natural el contenedor se queda vacío y su altura pasa a ser 0.</p>
                     <hr>
-                    <div class="box-model__margin" style="background-color: #666;">
-                        <div class="box-model" style="background-color: #e74c3c;">
-                            <span style="background-color: #666;" contenteditable>contenido</span>
-                        </div>
+                    <pre><code data-trim contenteditable>
+div { float: none; }
+                    </code></pre>
+                    <div class="float-wrap">
+                        <div class="float-box">1</div>
+                        <div class="float-box">2</div>
+                        <div class="float-box">3</div>
+                    </div>
+                    <pre><code data-trim contenteditable>
+div { float: left; }
+                    </code></pre>
+                    <div class="float-wrap">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
                     </div>
                 </section>
 
-                <section>
-                    <h3>Margin</h3>
-                    <p>El <code>margin</code> es el espacio exterior que separa el al elemento del resto de los elementos.</p>
+                <section class="float-example-03">
+                    <p style="font-size: 2rem;">Este problema puede pasar desapercibido si el contenedor no tiene <code>background</code> ni <code>border</code>, pero puede afectar a los elementos que estén ubicados a continuación.</p>
                     <hr>
-                    <div class="box-model__margin" style="background-color: #e74c3c;">
-                        <div class="box-model" style="background-color: #777;">
-                            <span style="background-color: #666;" contenteditable>contenido</span>
-                        </div>
+                    <div class="float-wrap">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
                     </div>
-
+                    <div class="float-wrap">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis repudiandae odio, expedita itaque earum pariatur tempore, placeat eaque minus illum inventore quas tenetur praesentium laudantium unde modi atque tempora voluptates.</p>
+                    </div>
                 </section>
 
                 <section>
-                    <p>Tanto el <code>padding</code> como el <code>margin</code> nos permiten controlar cada uno de sus lados individualmente con las siguientes propiedades:</p>
-                    <ul>
-                        <li style="font-size: 1.8rem;"><code>padding-top</code> | <code>padding-right</code> | <code>padding-bottom</code> | <code>padding-left</code></li>
-                        <li style="font-size: 1.8rem;"><code>margin-top</code> | <code>margin-right</code> | <code>margin-bottom</code> | <code>margin-left</code></li>
-                    </ul>
-                    <pre><code data-trim contenteditable>
-.box {
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 10%;
-    padding-right: 4em;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-
-}
-                    </code></pre>
+                    <p>Hay varios técnicas para solucionar este problema. Este conjunto de técnicas se suelen conocer con el nombre de <em>clearfix</em>, y aunque todas se agrupen bajo el mismo nombre sulen diferir mucho unas de otras.</p>
+                    <p>Hay que tener en cuenta que la propiedad <code>float</code> nunca fue diseñada para ser usada como una herramienta de layout por lo que tanto el echo de utilizarla para componer páginas,  como las distintas técnicas para solucionar los problemas asociados, no dejan de ser hacks y cada uno acarrea un serie de ventajas e inconvenientes que hay que considerar a la hora de utilizarlos.</p>
                 </section>
 
-                <section>
-                    <p style="font-size: 1.8rem">También pueden declararse <em>todos los lados en una sola propiedad</em> (<code>padding</code> y <code>margin</code> respectivamente) separando los valores con un espacio y siguiendo el <strong>sentido de las agujas del reloj</strong>.</p>
-                    <p style="font-size: 1.8rem">Si utilizamos esta abreviación, cuando el valor derecho es igual al izquierdo podemos omitir este último. Si además el valor superior e inferior también son iguales podemos omitir el inferior.</p>
-                    <pre><code data-trim contenteditable>
-.box {
-    padding-top:    10px;
-    padding-right:  20px;
-    padding-bottom: 10px;
-    padding-left:   20px;
-
-    /* es igual a: */
-    padding: 10px 20px 10px 20px;
-
-    /* e igual a: */
-    padding: 10px 20px 10px;
-
-    /* e igual a: */
-    padding: 10px 20px;
-}
-                    </code></pre>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Borders</h2>
-                </section>
-
-                <section>
-                    <p style="font-size: 1.8rem"><code>border</code> es la propiedad usada para controlar el borde que delimita un elemento y requiere tres valores: <code>width</code>, <code>style</code> y <code>color</code> separados por un espacio.</p>
-                    <pre style="float:left; width: 70%;"><code data-trim contenteditable>
-.box {
-    border: 1px solid red;
-}
-                    </code></pre>
-                    <div style="border: 1px solid red; float:right; margin: 40px 10% 0 0; width: 80px; height: 80px;"></div>
-                    <p style="clear: both; font-size: 1.8rem">Si queremos afectar estos valores de manera individual utilizaremos las propiedades: <em><code>border-width</code></em>, <em><code>border-style</code></em> y <em><code>border-color</code></em>, que pueden a su vez contener 4 valores, uno por lado, al igual que el padding o el margin.</p>
-                    <pre style="float:left; width: 70%;"><code data-trim contenteditable>
-.box {
-    border-width: 1px 8px 6px 4px;
-    border-style: solid;
-    border-color: red blue;
-}
-                    </code></pre>
-                    <div style="border-width: 1px 8px 6px 4px; border-style: solid; border-color: red blue; float:right; margin: 60px 10% 0 0; width: 80px; height: 80px;"></div>
-                </section>
-
-                <section>
-                    <p>Tambien podemos combinar las propiedades anteriores con los diferentes valores <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> para cambios muy precisos.</p>
-                    <pre><code data-trim contenteditable>
-.box {
-    border-right-style: solid;
-    border-top-width: 4px;
-    border-bottom-color: red;
-}
-                    </code></pre>
-                </section>
-
-                <section>
-                    <p>Los posibles estilos de borde que nos ofrece CSS para la propiedad <em><code>border-style</code></em> son:</p>
-                    <p style="font-size: .7em;">
-                        <code>none</code> | <code>hidden</code> | <code>dotted</code> | <code>dashed</code> |<code>solid</code> |<code>double</code> | <code>groove</code> | <code>ridge</code> | <code>inset</code> | <code>outset</code>
-                    </p>
+                <section class="float-example-02">
+                    <p>Una técnica sencilla para solucionar el problema es colocar dentro del contenedor, a continuación de los elementos flotados, un elemento con la propiedad <code>clear: both</code></p>
                     <hr>
-                    <div class="borders-example">
-                        <code class="border-solid">2px <br> solid</code>
-                        <code class="border-double">6px <br> double</code>
-                        <code class="border-dashed">8px <br> dashed</code>
-                        <code class="border-dotted">4px <br> dotted</code>
+                    <div class="float-wrap">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
+                        <div class="float-clear">clear: both;</div>
+                    </div>
+                </section>
+
+                <section class="float-example-02">
+                    <p>Otra posible solución, es recurrir a la propiedad <code>overflow</code>. Cualquier valor diferente a <code>visible</code> nos corregirá el problema </p>
+                    <hr>
+                    <pre><code data-trim contenteditable>
+div { overflow: auto; }
+                    </code></pre>
+                    <div class="float-wrap float-cleared">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
                     </div>
                 </section>
 
                 <section>
-                    <h3>border-radius</h3>
-                    <p>La propiedad <em><code>border-radius</code></em> nos permite redondear las esquinas de nuestras cajas.</p>
-                    <p>En su forma más simple funciona similar al propiedad a otras propiedades, aceptando 4 valores separados por espacio que indicarán el <strong>radio de la circunferencia</strong> que aplicaremos a las esquinas, empezando el primer valor en la esquina superior izquierda y desplazandose en sentido horario.</p>
+                    <p>Hay otras técnicas más avanzadas y estables de clearfix que combinan varias propiedades. Es una buena idea contar en el css con una class <code>.clearfix</code> de ayuda para poder utilizar cuando tengamos que lidiar con el problema.</p>
+                    <p>Una de las técnicas más populares es la siguiente:</p>
                     <pre><code data-trim contenteditable>
-.box { border-radius: 10px 40px 40px 10px}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
                     </code></pre>
-                    <div style="background: #eaeaed; border: 4px solid #666; border-radius: 10px 40px 40px 10px; margin: 1em auto 0; width: 100px; height: 100px;">
-
-                    </div>
-
                 </section>
-            </section>
 
-            <section>
-                <h2>¡Manos al teclado!</h2>
-                <img src="http://media0.giphy.com/media/12TufGliuamfaE/giphy.gif" alt="">
-                <hr>
-                <p style="text-align: center"><a href="http://goo.gl/mcwKlS">http://goo.gl/mcwKlS</a></p>
+                <section  class="float-example-02">
+                    <div class="float-wrap float-cleared">
+                        <div class="float-box float-left">1</div>
+                        <div class="float-box float-left">2</div>
+                        <div class="float-box float-left">3</div>
+                    </div>
+                    <pre><code data-trim contenteditable>
+&#60;div class="clearfix"&#62;
+    &#60;div class="float-box"&#62;1&#60;/div&#62;
+    &#60;div class="float-box"&#62;2&#60;/div&#62;
+    &#60;div class="float-box"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+                    </code></pre>
+                </section>
             </section>
 
             <section>
                 <h2>¡Manos al teclado!</h2>
                 <img src="http://stream1.gifsoup.com/view4/2163018/keyboard-fail-o.gif" alt="">
+                <hr>
+                <p style="text-align: center"><a href="http://goo.gl/mcwKlS">http://goo.gl/mcwKlS</a></p>
             </section>
 
             <section>
@@ -554,6 +294,14 @@ p {
                     <li style="margin-bottom: .8em;">
                         <strong>Hiding content for accessibility</strong> <i style="color: #999;"> &mdash; Jonathan Snook</i><br>
                         <a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility" style="font-size: .8em;">http://snook.ca/archives/html_and_css/hiding-content-for-accessibility</a>
+                    </li>
+                    <li style="margin-bottom: .8em;">
+                        <strong>CSS Floats 101</strong> <i style="color: #999;"> &mdash; Noah tokes </i><br>
+                        <a href="http://alistapart.com/article/css-floats-101" style="font-size: .8em;">http://alistapart.com/article/css-floats-101</a>
+                    </li>
+                    <li style="margin-bottom: .8em;">
+                        <strong>A new micro clearfix hack</strong> <i style="color: #999;"> &mdash; Nicolas Gallagher</i><br>
+                        <a href="http://nicolasgallagher.com/micro-clearfix-hack/" style="font-size: .8em;">http://nicolasgallagher.com/micro-clearfix-hack/</a>
                     </li>
                 </ul>
             </section>

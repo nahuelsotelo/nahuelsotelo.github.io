@@ -227,3 +227,60 @@
 .reveal .border-double { border: 6px double #9799a7; }
 .reveal .border-dashed { border: 8px dashed #9799a7; }
 .reveal .border-dotted { border: 4px dotted #9799a7; }
+
+
+/* DAY 05 */
+
+.reveal .float-wrap {
+    border: 1px dotted #666;
+    background: rgba(0,0,0, .1);
+    margin: 0 auto 1em;
+    overflow: auto;
+    width: 250px;
+}
+.reveal .float-box {
+    background: gold;
+    border: 2px solid orange;
+    margin: .25em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 45px;
+    height: 45px;
+}
+.reveal .float-left { float: left; }
+.reveal .float-right { float: right; }
+
+.reveal .float-example-02 .float-wrap,
+.reveal .float-example-03 .float-wrap {
+    overflow: visible;
+    width: 450px;
+}
+.reveal .float-example-02 .float-wrap {
+    padding: .5em;
+}
+.reveal .float-example-03 .float-wrap {
+    background: transparent;
+    border-color:rgba(0,0,0, .2);
+    padding: .25em;
+}
+.reveal .float-example-03 p {
+    font-size: 1.5rem;
+}
+
+
+.reveal .float-example-02 .float-box,
+.reveal .float-example-03 .float-box {
+    width: 50px;
+    height: 50px;
+}
+.reveal .float-clear {
+    clear: both;
+    background: hsla(200, 60%, 50%, .3);
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: .5em;
+    text-align: center;
+}
+.reveal .float-example-02 .float-cleared {
+    overflow: auto;
+}
