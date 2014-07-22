@@ -184,7 +184,6 @@
                         <li>El mismo <em><code>border</code></em> de la caja.</li>
                         <li><em><code>margin</code></em>, el espacio que separa el elemento del resto de elementos.</li>
                     </ul>
-                    <p>Para calcular las dimensiones que tendrá un elemento tendremos que sumar los valores de <code>padding</code> y <code>border</code> a su <code>width</code> y <code>height</code>.</p>
                 </section>
 
                 <section style="text-align: center;">
@@ -204,6 +203,32 @@
     padding: 50px;
 }
                     </code></pre>
+                </section>
+
+                <section>
+                    <h3>Box-sizing</h3>
+                    <p>Por defecto <strong>el navegador añade los paddings y los bordes a las dimensiones del elemento</strong>, por lo que si declaramos un <code>width</code> de 100px con un <code>padding</code> a cada lado de 20px y un <code>border</code> de 2px, el ancho del elemento será de 142px</p>
+                    <p>Para conseguir una manera de calcular dimensiones más intuitiva tenemos que recurrir a la propiedad <em><code>box-sizing</code></em>.</p>
+                </section>
+
+                <section>
+                    <p style="font-size: 1.9rem"><code>box-sizing</code> tiene 3 valores posibles:</p>
+                    <ul style="font-size: 1.9rem">
+                        <li><em><code>content-box</code></em>: el que se aplica por defecto y calcula el <code>width</code> y <code>height</code> teniendo en cuenta únicamente el contenido.</li>
+                        <li><em><code>padding-box</code></em>: Incluye el <code>padding</code> dentro de las dimensiones del elemento.</li>
+                        <li><em><code>border-box</code></em>: Incluye <code>padding</code> y <code>border</code> dentro de las dimensiones.</li>
+                    </ul>
+                    <p style="font-size: 1.9rem">Es una buena idea, sobre todo si trabajamos con una layout flexible (en porcentajes) declarar <code>box-sizing: border-box</code> para todos los elementos usando el selector universal (<code>*</code>).</p>
+                    <pre><code data-trim contenteditable>
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+                    </code></pre>
+
                 </section>
             </section>
 
@@ -530,6 +555,11 @@ strong { opacity: 1; }
                         <strong>The CSS Box Model</strong> <i style="color: #999;"> &mdash; Chris Coyier</i>
                         <br>
                         <a href="http://css-tricks.com/the-css-box-model/" style="font-size: .8em;">http://css-tricks.com/the-css-box-model/</a>
+                    </li>
+                    <li style="margin-bottom: .8em;">
+                        <strong>* { Box-sizing: Border-box } FTW</strong> <i style="color: #999;"> &mdash; Paul Irish</i>
+                        <br>
+                        <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/" style="font-size: .8em;">http://www.paulirish.com/2012/box-sizing-border-box-ftw/</a>
                     </li>
                     <li style="margin-bottom: .8em;">
                         <strong>Understanding border-image</strong> <i style="color: #999;"> &mdash; Nora Brown</i><br>
