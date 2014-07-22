@@ -52,6 +52,57 @@
 
             <section>
                 <section>
+                    <h2>Display, visibilty y opacity</h2>
+                </section>
+
+                <section>
+                    <h3>Display</h3>
+                    <p>La propiedad <em><code>display</code></em> es la encargada de controlar si un elemento se comportará como un elemento <code>block</code> o uno <code>inline</code> (entre otras opciones).</p>
+                    <p>Como ya hemos visto todos los elementos tendrán un comportamiento display por defecto pero con esta podemos sobreescribirlo.</p>
+                </section>
+
+                <section>
+                    <h3>Display inline-block</h3>
+                    <p>Los elementos inline tienen una manera particular de interpretar el box-model, por ejemplo los margenes superior e inferior no afectan a los elementos que lo rodean, <strong>tampoco aceptan <code>width</code> o <code>height</code></strong></p>
+                    <p>Si queremos que un elemento inline acepte el box model al completo, pero no genere un salto de línea (como uno block), tendremos que asignarle el valor <code>inline-block</code>.</p>
+                    <pre><code data-trim contenteditable>
+ p { display: inline-block; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Display none</h3>
+                    <p>El valor <code>none</code> en la propiedad <code>display</code> removerá por completo el elemento de nuestra página web. Los elementos que le sigan en el HTML ocuparán su lugar en el flow del documento.</p>
+                    <p>Un lector de voz ignorará nuestro contenido con <code>display: none</code>, lo cual tenemos que tener en cuenta si no queremos afectar la accesibilidad a la hora de ocultar algo.</p>
+                </section>
+
+                <section>
+                    <h3>Visibility</h3>
+                    <p>La propiedad <code>visibility</code> nos permite hacer invisible un objeto pero que este <strong>siga ocupando su logar en el flow del documento</strong>, por lo que el resto de los elementos seguirán comportándose como si estuviera allí.</p>
+                    <hr>
+                    <p>Los posibles valores para <code>visibiliy</code> son:<br>
+                    <code>visible</code> | <code>hidden</code> | <code>collapse</code></p>
+                </section>
+
+                <section>
+                    <h3>Opacity</h3>
+                    <p>Podemos controlar la opacidad de un elemento con la propiedad <code>opacity</code>, cuyo valor va de 0 (transparente) a 1 (opaco).</p>
+                    <p>Hay que tener en cuenta que los elementos contenidos por el elemento al que apliquemos opacity también se verán afectados y su opacidad máxima siempre será la del elemento padre.</p>
+                    <hr>
+                    <pre><code data-trim contenteditable>
+&#060;p&#062;El parrafo tiene una opacidad del 50% por eso, aunque el strong tenga
+el 100%, &#060;strong&#062;sigue siendo semitransparente.&#060;/strong&#062;&#060;/p&#062;
+                    </code></pre>
+                    <pre><code data-trim contenteditable>
+p { opacity: .5; }
+strong { opacity: 1; }
+                    </code></pre>
+                    <p style="font-size: 1.8rem; opacity: .5;">El parrafo tiene una opacidad del 50% por eso, aunque el strong tenga el 100%, <strong style="opacity: 1;">sigue siendo semitransparente.</strong></p>
+                </section>
+            </section>
+
+            <section>
+                <section>
                     <h2>Unidades de medida en CSS</h2>
                 </section>
 
@@ -493,57 +544,6 @@ p {
             </section>
 
             <section>
-                <section>
-                    <h2>Display, visibilty y opacity</h2>
-                </section>
-
-                <section>
-                    <h3>Display</h3>
-                    <p>La propiedad <em><code>display</code></em> es la encargada de controlar si un elemento se comportará como un elemento <code>block</code> o uno <code>inline</code> (entre otras opciones).</p>
-                    <p>Como ya hemos visto todos los elementos tendrán un comportamiento display por defecto pero con esta podemos sobreescribirlo.</p>
-                </section>
-
-                <section>
-                    <h3>Display inline-block</h3>
-                    <p>Los elementos inline tienen una manera particular de interpretar el box-model, por ejemplo los margenes superior e inferior no afectan a los elementos que lo rodean, <strong>tampoco aceptan <code>width</code> o <code>height</code></strong></p>
-                    <p>Si queremos que un elemento inline acepte el box model al completo, pero no genere un salto de línea (como uno block), tendremos que asignarle el valor <code>inline-block</code>.</p>
-                    <pre><code data-trim contenteditable>
- p { display: inline-block; }
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>Display none</h3>
-                    <p>El valor <code>none</code> en la propiedad <code>display</code> removerá por completo el elemento de nuestra página web. Los elementos que le sigan en el HTML ocuparán su lugar en el flow del documento.</p>
-                    <p>Un lector de voz ignorará nuestro contenido con <code>display: none</code>, lo cual tenemos que tener en cuenta si no queremos afectar la accesibilidad a la hora de ocultar algo.</p>
-                </section>
-
-                <section>
-                    <h3>Visibility</h3>
-                    <p>La propiedad <code>visibility</code> nos permite hacer invisible un objeto pero que este <strong>siga ocupando su logar en el flow del documento</strong>, por lo que el resto de los elementos seguirán comportándose como si estuviera allí.</p>
-                    <hr>
-                    <p>Los posibles valores para <code>visibiliy</code> son:<br>
-                    <code>visible</code> | <code>hidden</code> | <code>collapse</code></p>
-                </section>
-
-                <section>
-                    <h3>Opacity</h3>
-                    <p>Podemos controlar la opacidad de un elemento con la propiedad <code>opacity</code>, cuyo valor va de 0 (transparente) a 1 (opaco).</p>
-                    <p>Hay que tener en cuenta que los elementos contenidos por el elemento al que apliquemos opacity también se verán afectados y su opacidad máxima siempre será la del elemento padre.</p>
-                    <hr>
-                    <pre><code data-trim contenteditable>
-&#060;p&#062;El parrafo tiene una opacidad del 50% por eso, aunque el strong tenga
-el 100%, &#060;strong&#062;sigue siendo semitransparente.&#060;/strong&#062;&#060;/p&#062;
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-p { opacity: .5; }
-strong { opacity: 1; }
-                    </code></pre>
-                    <p style="font-size: 1.8rem; opacity: .5;">El parrafo tiene una opacidad del 50% por eso, aunque el strong tenga el 100%, <strong style="opacity: 1;">sigue siendo semitransparente.</strong></p>
-                </section>
-            </section>
-
-            <section>
                 <h2>¡Manos al teclado!</h2>
                 <img src="http://stream1.gifsoup.com/view4/2163018/keyboard-fail-o.gif" alt="">
             </section>
@@ -551,24 +551,6 @@ strong { opacity: 1; }
             <section>
                 <h2>Links relacionados</h2>
                 <ul>
-                    <li style="margin-bottom: .8em;">
-                        <strong>The CSS Box Model</strong> <i style="color: #999;"> &mdash; Chris Coyier</i>
-                        <br>
-                        <a href="http://css-tricks.com/the-css-box-model/" style="font-size: .8em;">http://css-tricks.com/the-css-box-model/</a>
-                    </li>
-                    <li style="margin-bottom: .8em;">
-                        <strong>* { Box-sizing: Border-box } FTW</strong> <i style="color: #999;"> &mdash; Paul Irish</i>
-                        <br>
-                        <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/" style="font-size: .8em;">http://www.paulirish.com/2012/box-sizing-border-box-ftw/</a>
-                    </li>
-                    <li style="margin-bottom: .8em;">
-                        <strong>Understanding border-image</strong> <i style="color: #999;"> &mdash; Nora Brown</i><br>
-                        <a href="http://css-tricks.com/understanding-border-image/" style="font-size: .8em;">http://css-tricks.com/understanding-border-image/</a>
-                    </li>
-                    <li style="margin-bottom: .8em;">
-                        <strong>The Shapes of CSS</strong> <i style="color: #999;"> &mdash; CSS Tricks</i><br>
-                        <a href="http://css-tricks.com/examples/ShapesOfCSS/" style="font-size: .8em;">http://css-tricks.com/examples/ShapesOfCSS/</a>
-                    </li>
                     <li style="margin-bottom: .8em;">
                         <strong>Hiding content for accessibility</strong> <i style="color: #999;"> &mdash; Jonathan Snook</i><br>
                         <a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility" style="font-size: .8em;">http://snook.ca/archives/html_and_css/hiding-content-for-accessibility</a>
