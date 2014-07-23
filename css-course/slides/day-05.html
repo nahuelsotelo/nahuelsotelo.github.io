@@ -52,6 +52,35 @@
 
             <section>
                 <section>
+                    <h2>Max &amp; min</h2>
+                </section>
+
+                <section>
+                    <p>Cuando utilizemos dimensiones en porcentajes habrá ciertas ocasiones en las que queramos fijar unos limites dentro de los cuales nuestros elementos sean flexibles.</p>
+                    <p>Para conseguir esto utilizaremos las propiedades <code><em>min-width</em></code>, <em><code>max-width</code></em>, <em><code>min-height</code></em> y <em><code>max-height</code></em>.</p>
+                </section>
+
+                <section>
+                    <p style="font-size: 1.8rem;">Por ejemplo podemos querer que el contenedor de nuestra web sea flexible y se adapte al tamaño de la ventana del navegador pero que llegado cierto punto deje de crecer para mantener unas longitudes de línea que no dificulten la legibilidad del texto</p>
+                    <hr>
+                    <pre><code data-trim contenteditable>
+div {
+    width:90%;
+    max-width: 700px;
+    margin: 0 auto; padding: 1em 0;
+}
+                    </code></pre>
+                    <div style="background: rgba(0,0,200,.15); font-size: 1.5rem; margin: 0 auto; padding: 1em 0; width:90%; max-width: 700px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam aspernatur sed consequuntur neque praesentium maxime ducimus similique incidunt voluptates. Saepe, in, consequatur! Quaerat ea, eum eligendi. Reprehenderit maiores, laborum eaque.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio labore et, deserunt natus, voluptatum id! Dolore ipsam magnam amet eius, ea facilis inventore pariatur distinctio, eum, reiciendis nihil molestiae! Asperiores.</p>
+                    </div>
+
+                </section>
+            </section>
+
+
+            <section>
+                <section>
                     <h2>Display, visibilty y opacity</h2>
                 </section>
 
