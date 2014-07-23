@@ -284,3 +284,14 @@
 .reveal .float-example-02 .float-cleared {
     overflow: auto;
 }
+.reveal .hidden-link {
+    display: block;
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 1em;
+    height: 1em;
+}
+.reveal .hidden-link:hover {
+    background: rgba(0,0,0, .1);
+}
