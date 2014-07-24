@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>6 | Introducción a los lenguajes web: HTML y CSS</title>
+
+    <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
+    <meta name="author" content="Nahuel Sotelo">
+    <meta name="robots" content="noindex">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Introducción a<br/>los lenguajes web:<br/>
+                    HTML y CSS
+                </h1>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Imágenes de fondo</h2>
+                </section>
+
+                <section>
+                    <p>CSS nos permite hacer mucho más con el background de un elemento que simplemente asignarle un color plano.</p>
+                    <p>Gracias a la propiedad <em><code>background-image</code></em> podremos asignar imágenes de fondo, pero eso es solo el comienzo.</p>
+                </section>
+
+                <section>
+                    <ul class="font-list">
+                        <li>
+                            <strong>background-color</strong> - <i>&#060;color value&#062;</i>
+                        </li>
+                        <li>
+                            <strong>background-image</strong> - <i>&#060;url (location of image)&#062;</i> | none
+                        </li>
+                        <li>
+                            <strong>background-repeat</strong> - repeat | repeat-x | repeat-y | no-repeat
+                        </li>
+                        <li>
+                            <strong>background-position</strong> - <i>&#060;length measurement&#062;</i> | <i>&#060;percentage&#062;</i> | left | center | right | top | bottom
+                        </li>
+                        <li>
+                            <strong>background-attachment</strong> - scroll | fixed | <span style="color: hsl(190,100%, 40%)">local</span>
+                        </li>
+                        <li>
+                            <strong><span style="color: hsl(190,100%, 40%)">background-clip</span></strong> - border-box | padding-box | content-box
+                        </li>
+                        <li>
+                            <strong><span style="color: hsl(190,100%, 40%)">background-origin</span></strong> - border-box | padding-box | content-box
+                        </li>
+                        <li>
+                            <strong><span style="color: hsl(190,100%, 40%)">background-size</span></strong> - <i>&#060;length&#062;</i> | <i>&#060;percentage&#062;</i> | auto | cover | contain
+                        </li>
+                    </ul>
+                    <p style="color: hsl(190,100%, 40%); font-size: 1.2rem;font-style: italic; font-weight: bold; margin-top: 2rem;">* Nuevos en CSS3</p>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://33.media.tumblr.com/tumblr_mb9x20F16h1qzw1qyo1_500.gif" data-background-repeat="no-repeat">
+                    <h3 style="color: #fff; text-shadow: 2px 2px 1px rgba(0,0,0,1);">background-image</h3>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-image: url(img/dalek.png); }
+                    </code></pre>
+                    <div class="image-wrap is--dalek">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://37.media.tumblr.com/7e18702914c2151c793bc86c507da10e/tumblr_n2yen3lSyW1qzw1qyo1_500.gif" data-background-repeat="repeat" data-background-size="100px">
+                    <h3 style="color: #fff; text-shadow: 2px 2px 1px rgba(0,0,0,1);">background-repeat</h3>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-repeat: repeat; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-repeat: repeat-x; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman" style="background-repeat: repeat-x">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-repeat: repeat-y; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman" style="background-repeat: repeat-y">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-repeat: no-repeat; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman" style="background-repeat: no-repeat">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://31.media.tumblr.com/7ed2dab49586c00956a0bb491d1b5538/tumblr_mlnzx84Ur21qzw1qyo1_500.gif" data-background-repeat="no-repeat"  data-background-position="center 5%" data-background-size="230px">
+                    <h3>background-position</h3>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-position: 15% 200px; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-position: 5% 200px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-position: center; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-position: center;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-position: left top; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-position: left top;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-position: right bottom; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-position: right bottom;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-position: right 100px bottom 20px; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-position: right 100px bottom 20px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://38.media.tumblr.com/b16e0a812737fd1290610fdb2ffaa51f/tumblr_n3ty3173ir1qzw1qyo1_500.gif" data-background-repeat="no-repeat">
+                    <h3 style="color: #fff; text-shadow: 2px 2px 1px rgba(0,0,0,1);">background-attachment </h3>
+                </section>
+
+                 <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-attachment: scroll; }
+                    </code></pre>
+                    <hr>
+                    <p style="text-align: center;"><a href="day-06/bg-scroll.html">Ver ejemplo &raquo;</a></p>
+                </section>
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-attachment: fixed; }
+                    </code></pre>
+                    <hr>
+                    <p style="text-align: center;"><a href="day-06/bg-fixed.html">Ver ejemplo &raquo;</a></p>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-attachment: local; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman" style="background-repeat: no-repeat; background-attachment: local; background-position:center; height: 400px; overflow: auto;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://38.media.tumblr.com/d370a65a5d865a33c0d86200b44d5840/tumblr_n7dq54Dv7l1qzw1qyo1_500.gif" data-background-repeat="no-repeat">
+                    <h3 style="color: #fff; text-shadow: 2px 2px 1px rgba(0,0,0,1);">background-clip</h3>
+                </section>
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-clip: border-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi" style="background-clip: border-box;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-clip: padding-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi" style="background-clip: padding-box;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-clip: content-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi" style="background-clip: content-box;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://37.media.tumblr.com/tumblr_m6hnk9zmAt1qzw1qyo1_500.gif" data-background-repeat="no-repeat">
+                    <h3 style="color: #fff; text-shadow: 2px 2px 1px rgba(0,0,0,1);">background-origin</h3>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-origin: border-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi"  style="background-image: url(../slides/day-06/megaman.png); background-repeat: no-repeat; background-position: left top; background-origin: border-box; color: #000;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-origin: padding-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi"  style="background-image: url(../slides/day-06/megaman.png); background-repeat: no-repeat; background-position: left top; background-origin: padding-box; color: #000;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-origin: content-box; }
+                    </code></pre>
+                    <div class="image-wrap is--tripi"  style="background-image: url(../slides/day-06/megaman.png); background-repeat: no-repeat; background-position: left top; background-origin: content-box; color: #000;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="http://31.media.tumblr.com/tumblr_m3ar191WAk1qzw1qyo1_500.gif" data-background-repeat="no-repeat">
+                    <h3>background-size</h3>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: 50px 200px; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: 50px 200px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: 100% 50%; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: 100% 50%;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: auto 100%; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: auto 100%;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: 100% auto; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: 100% auto;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: cover; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: cover;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable>
+div { background-size: contain; }
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background-repeat: no-repeat; background-size: contain;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Propiedad background</h2>
+                </section>
+
+                <section>
+                    <p>Como sucede con otras propiedades, podemos utilizar la propiedad <em><code>background</code></em> para agrupar varias propiedades de las antes mencionadas.</p>
+                    <p>Todas las propiedades son opcionales y pueden ir en cualquier orden, excepto los valores de <code>background-position</code>, primero siempre va el horizontal seguido inmediatamente del vertical.</p>
+                    <p>hay que tener en cuenta que si omitimos un valor este se asignará su valor por defecto.</p>
+                </section>
+
+                <section class="bg-image">
+                    <pre><code data-trim contenteditable style="font-size: 1.25rem">
+div {
+    background: url(day-06/megaman.png) no-repeat center top content-box;
+}
+                    </code></pre>
+                    <div class="image-wrap is--megaman"  style="background: url(day-06/megaman.png) no-repeat center top content-box;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, maxime sunt deserunt illum architecto! Consequatur ut debitis nesciunt adipisci, ad maxime eligendi itaque fugiat ea repellat odit voluptatum corporis blanditiis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quod, id dolore ad asperiores!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Multiples imágenes de fondo</h2>
+                </section>
+
+                <section>
+                    <p>Podemos utilizar más de una imágen de fondo simplemente <em>separando los valores con una coma</em>.</p>
+                    <p>Si asignamos más de una propiedad relativa al <code>backgrouns</code> tenemos que cuidar que el orden sea el mismo para todas las propiedades.</p>
+                    <p>Si algunas de las imágenes se superponen será la primera de la lista la que quede al frente y el resto le seguirán en orden.</p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+div {
+    background:
+        url(day-06/dalek.png) 140px top,
+        url(day-06/megaman.png) 90px 100px;
+
+    background-repeat: no-repeat;
+}
+                    </code></pre>
+                    <div class="image-wrap is--dalek" style="background: url(day-06/dalek.png) 140px top, url(day-06/megaman.png)  90px 100px; background-repeat: no-repeat;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, unde! Eum debitis quaerat voluptas itaque laborum alias ut animi. Harum necessitatibus similique id ullam distinctio cumque accusantium nostrum nisi. Accusamus!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ipsum.</p>
+                        <p>cum praesentium temporibus debitis odit ipsam est, libero eaque hic magnam! Adipisci, repudiandae, quisquam!</p>
+                    </div>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>¡Manos al teclado!</h2>
+                <img src="http://33.media.tumblr.com/tumblr_m6p9jx4ljp1qzw1qyo1_500.gif" style="height: 250px;" alt="">
+                <hr>
+                <p style="text-align: center"><a href="http://lea.verou.me/css-workshop/#slide7">Ejercicio 1</a></p>
+                <p style="text-align: center"><a href="http://lea.verou.me/css-workshop/#slide8">Ejercicio 2</a></p>
+                <p style="text-align: center"><a href="http://goo.gl/mcwKlS">http://goo.gl/mcwKlS</a></p>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Degradado linear</h2>
+                </section>
+                <section>
+                    <p>CSS nos facilita varias opciones para poder crear todo tipo de degradados, una vez más utilizando la propiedad <em><code>background-image</code></em> </p>
+                    <p>Un ejemplo de la sintáxis para crear un degrado linear simple sería:</p>
+                    <p><code>background-image: linear-gradient(180deg, HotPink, SkyBlue)</code></p>
+                </section>
+                <section>
+                    <pre><code data-trim contenteditable>
+div {
+    background-image: linear-gradient(180deg, HotPink, SkyBlue)
+}
+                    </code></pre>
+                    <div class="gradient-wrap" style="background-image: linear-gradient(70deg, HotPink, SkyBlue)">
+
+                    </div>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>Links relacionados</h2>
+                <ul>
+                    <li style="margin-bottom: .8em;">
+                        <strong>CSS image replacement museum</strong> <i style="color: #999;"> &mdash; CSS Tricks</i><br>
+                        <a href="http://css-tricks.com/examples/ImageReplacement/" style="font-size: .8em;">http://css-tricks.com/examples/ImageReplacement/</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
