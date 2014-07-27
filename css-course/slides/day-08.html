@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>8 | Introducción a los lenguajes web: HTML y CSS</title>
+
+    <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
+    <meta name="author" content="Nahuel Sotelo">
+    <meta name="robots" content="noindex">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Introducción a<br/>los lenguajes web:<br/>
+                    HTML y CSS
+                </h1>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Elementos estructurales HTML</h2>
+                </section>
+
+                <section>
+                    <p>HTML5 introduce varios elementos estructulares que podemos utilizar en lugar de <code>&#060;div&#062;</code>s para organizar nuestro contenido de una manera más semántica.</p>
+                    <p>Repasemos algunos de ellos:</p>
+                </section>
+
+                <section>
+                    <h3>&#060;header&#062;</h3>
+                    <p><em><code>&#060;header&#062;</code></em> se utiliza para representar la cabecera de un documento o de una sección del documento.</p>
+                    <p>Lo normal es que contengan algun elemento &#060;h1&hellip;h6&#062;, aunque también pueden llevar otra información relativa a la información que encabezan (por ejemplo, la fecha de publicación o el autor de un artículo).</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/the-header-element/">&ldquo;The header element&rdquo;</a> <i style="color: #999;"> &mdash; Richard Clark.</i></p>
+                </section>
+
+                <section>
+                    <h3>&#060;nav&#062;</h3>
+                    <p><em><code>&#060;nav&#062;</code></em> representa la navegación de un documento o página. Su contenido son enlaces a otros documentos o a secciones internas del mismo documento.</p>
+                    <p>No todos los links de una página deberían pertenecer a un elemento &#060;nav&#062;, solamente aquellos que sean parte de la navegación principal de la página.</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/nav-element/">&ldquo;Semantic navigation with the nav element&rdquo;</a> <i style="color: #999;"> &mdash; Tom Leadbetter.</i></p>
+                </section>
+
+                <section>
+                    <h3>&#060;article&#062;</h3>
+                    <p>El elemento <em><code>&#060;article&#062;</code></em> lo utilizaremos cuando queramos representar una sección de un documento cuyo contenido tenga sentido por si mismo independientemente de su contexto.</p>
+                    <p>Algunos casos donde es apropiado utilizar <code>&#060;article&#062;</code> podrían ser un post en un foro, un artículo de un blog, una noticia en un periódico o un comentario de un usuario.</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/the-article-element/">&ldquo;The article element&rdquo;</a> <i style="color: #999;"> &mdash; Tom Leadbetter.</i></p>
+                </section>
+
+                <section>
+                    <h3>&#060;section&#062;</h3>
+                    <p>Utilizaremos <em><code>&#060;section&#062;</code></em> para identificar un grupo de contenido temático. Puede tener una cabecera propia.</p>
+                    <p>Un ejemplo de uso para <code>&#060;section&#062;</code> podrían ser las distintas secciónes en una página de inicio o en un artículo largo.</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/the-section-element/">&ldquo;The section element&rdquo;</a> <i style="color: #999;"> &mdash; Bruce Lawson.</i></p>
+                </section>
+
+                <section>
+                    <h3>&#060;aside&#062;</h3>
+                    <p><em><code>&#060;aside&#062;</code></em> representa una sección de la página que contiene contenido relacionado o complementario al contenido principal.</p>
+                    <p>Si el elemento <code>&#060;aside&#062;</code> se encuentra dentro de un <code>&#060;article&#062;</code> se entenderá que su contenido está relacionado al del artículo. Si por el contrario no está contenido en ningun <code>&#060;article&#062;</code> puede funcionar como un sidebar de la página.</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/aside-revisited/">&ldquo;Aside Revisited&rdquo;</a> <i style="color: #999;"> &mdash; Mike Robinson.</i></p>
+                </section>
+
+                <section>
+                    <h3>&#060;footer&#062;</h3>
+                    <p><em><code>&#060;footer&#062;</code></em> se utiliza para representar el pie de un documento o de una sección de un documento.</p>
+                    <p>Suele contener metadata acerca de la sección a la que pertenece como copyright, datos del autor, enlaces relacionados, etc.</p>
+                    <hr>
+                    <p><a href="http://html5doctor.com/the-footer-element-update/">&ldquo;The Footer Element Update&rdquo;</a> <i style="color: #999;"> &mdash; Jack Osborne.</i></p>
+                </section>
+
+                <section>
+                    <p>Una estructura muy básica de una página podría ser algo así:</p>
+                    <img src="day-08/structure-html5.png" alt="" style="border: 0; height: 500px; ">
+                </section>
+            </section>
+
+            <section>
+                 <section>
+                    <h2>Tablas y formularios</h2>
+                </section>
+
+                <section>
+                    <p>Las tablas y los formularios son objetos complejos que requieren combinar varios elementos HTML.</p>
+                </section>
+
+                <section>
+                    <p>Los elementos relacionados a las tablas, se agrupan dentro del elemento <em><code>&#060;table&#062;</code></em> y se utilizan para organizar contenido tabular.</p>
+                    <p>La estructura básica de una tabla se compone de celdas (<em><code>&#060;td&#062;</code></em>) agrupadas dentro de filas (<em><code>&#060;tr&#062;</code></em>).</p>
+                </section>
+
+                <section>
+                    <p>Una lista completa de los elementos de tabla:</p>
+                    <ul style="display: block; font-size: 1.8rem; line-height: 1.2; margin-left: 4em;">
+                        <li><code>&#60;caption&#62;</code></li>
+                        <li><code>&#60;col&#62;</code></li>
+                        <li><code>&#60;colgroup&#62;</code></li>
+                        <li><code>&#60;table&#62;</code></li>
+                        <li><code>&#60;tbody&#62;</code></li>
+                        <li><code>&#60;td&#62;</code></li>
+                        <li><code>&#60;tfoot&#62;</code></li>
+                        <li><code>&#60;th&#62;</code></li>
+                        <li><code>&#60;thead&#62;</code></li>
+                        <li><code>&#60;tr&#62;</code></li>
+                    </ul>
+                    <hr>
+                    <p style="text-align: center;"><a href="day-08/tables.zip">Ver ejemplo</a></p>
+                </section>
+
+                <section>
+                    <p>En web los formularios serán los encargados de capturar información del usuario para posteriormente procesarla, aunque esto último no será tarea del HTML sino de lenguajes de programación back-end como PHP.</p>
+                </section>
+
+                <section>
+                    <h3>&#060;form&#062;</h3>
+                    <p>Para crear un formulario utilizaremos el elemento <em><code>form</code></em> y dentro suyo iremos colocando todos los campos de entrada, desplegables y botones necesarios.</p>
+                    <p>Hay varios atributos que puede tener el elemento <code>form</code> pero los dos más importantes seran <em><code>action</code></em> y <em><code>method</code></em>.</p>
+                    <p>El primero contendrá la URL donde será enviada la información que recoja el formulario para ser procesada por el servidor, mientras que el segundo será el método HTTP que utilizara el navegador para enviar la información.</p>
+                </section>
+
+                <section>
+                    <p>Los elementos que utizaremos dentro de un formulario son:</p>
+                    <ul style="display: block; font-size: 1.7rem; line-height: 1; margin-left: 4em;">
+                        <li><code>&#60;button&#062;</code></li>
+                        <li><code>&#60;datalist&#062;</code></li>
+                        <li><code>&#60;fieldset&#062;</code></li>
+                        <li><code>&#60;input&#062;</code></li>
+                        <li><code>&#60;keygen&#062;</code></li>
+                        <li><code>&#60;label&#062;</code></li>
+                        <li><code>&#60;legend&#062;</code></li>
+                        <li><code>&#60;meter&#062;</code></li>
+                        <li><code>&#60;optgroup&#062;</code></li>
+                        <li><code>&#60;option&#062;</code></li>
+                        <li><code>&#60;output&#062;</code></li>
+                        <li><code>&#60;progress&#062;</code></li>
+                        <li><code>&#60;select&#062;</code></li>
+                        <li><code>&#60;textarea&#062;</code></li>
+                    </ul>
+                    <hr>
+                    <p style="text-align: center;"><a href="day-08/forms.zip">Ver ejemplo</a></p>
+                </section>
+            </section>
+
+
+            <section>
+                <h2>Links relacionados</h2>
+                <ul style="font-size: 1.8rem">
+                    <li style="margin-bottom: .4em;">
+                        <strong>Avoiding common HTML5 mistakes</strong> <i style="color: #999;"> &mdash; Richard Clark</i><br>
+                        <a href="http://html5doctor.com/avoiding-common-html5-mistakes/" style="font-size: .8em; margin-top: -.5rem; display:block;">http://html5doctor.com/avoiding-common-html5-mistakes/</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>A Complete Guide to the Table Element</strong> <i style="color: #999;"> &mdash; Chris Coyier</i><br>
+                        <a href="http://css-tricks.com/complete-guide-table-element/" style="font-size: .8em; margin-top: -.5rem; display:block;">http://css-tricks.com/complete-guide-table-element/</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>HTML Table Generator</strong><br>
+                        <a href="http://www.tablesgenerator.com/html_tables" style="font-size: .8em; margin-top: -.5rem; display:block;">http://www.tablesgenerator.com/html_tables</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>HTML forms guide</strong> <i style="color: #999;"> &mdash; Mozilla Developer Network</i><br>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms" style="font-size: .8em; margin-top: -.5rem; display:block;">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
