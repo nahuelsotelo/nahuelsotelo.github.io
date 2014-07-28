@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>9 | Introducción a los lenguajes web: HTML y CSS</title>
+
+    <meta name="description" content="Introducción a los lenguajes web: HTML y CSS">
+    <meta name="author" content="Nahuel Sotelo">
+    <meta name="robots" content="noindex">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Introducción a<br/>los lenguajes web:<br/>
+                    HTML y CSS
+                </h1>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Responisve web design</h2>
+                </section>
+
+                <section>
+                    <p>Reponsive web design es una metodología a la hora de afrontar el diseño y desarrollo de una web que procura solventar el problema que genera la inmensa variedad de dispositivos del mercado actual.</p>
+                    <p>Su objetivo es conseguir que nuestro contenido se represente bien <strong>independientemente de las características del cliente que lo reproduzca</strong>.</p>
+                </section>
+
+                <section>
+                    <p>Cómo alcanzar este objetivo puede variar mucho dependiendo el diseño particular de nuestra web pero hay algunos puntos y técnicas que nos serán imprescindibles.</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>&#060;meta name="viewport"&#062;</h2>
+                </section>
+
+                <section>
+                    <p>Cuando los smartphones empezaron a poder reproducir sitios web con todas sus funcionalidades, el mercado aún no estaba preparado para este tipo de dispositivos por lo que las páginas web se diseñaban para el ancho de un monitor estándar (alrededor de los 980px).</p>
+                    <p>Por esta razón los móviles empezaron a simular un ancho similar sobre el que luego el usuario podía hacer un zoom manualmente.</p>
+                </section>
+
+                <section>
+                    <p>Si estamos trabajando con un diseño responsive, que se adaptará al ancho de cada dispositivo, querremos que los navegadores visualicen nuestra web usando sus proporciones reales.</p>
+                    <p>Aquí es donde entra el <code>&#060;meta name="viewport"&#062;</code>, con el le indicaremos al navegador como tiene que abrir nuestra página web.</p>
+                </section>
+
+                <section>
+                    <pre><code contenteditable>
+&#060;meta name="viewport" content="width=device-width, initial-scale=1.0"&#062;
+                    </code></pre>
+                    <p>Colocando esta etiqueta en el <code>&#060;head&#062;</code> le estaremos diciendo al navegador que tiene que abrir la página utilizando el ancho en pixels del dispositivo ya que nuestra web se adaptará.</p>
+                    <p>Hay que tener cuidad con <strong>no usar esta etiqueta innecesariamente</strong>, si nuestra web no es responsive, ya que de hacerlo los móviles abrirán la página focalizados en la esquina superior izquierda obligando al usuario hacer un <i>zoom out</i>.</p>
+                </section>
+            </section>
+
+            <section>
+                 <section>
+                    <h2>Layout fluido</h2>
+                </section>
+
+                <section>
+                    <p>Para que nuestros diseños se adapten a cualquier dispositivo es imprescindible que trabajemos con layouts fluidos.</p>
+                    <p>Para conseguir esto <strong>utilizaremos porcentajes a la hora de determinar los anchos</strong> de nuestros elementos en lugar de medidas absolutas como los pixeles.</p>
+                    <p>Hay que recordar que, por defecto, HTML es un medio fluido, somos nosotros los que tendemos a imponer limites al contenido.</p>
+                </section>
+
+                <section>
+                    <p>Para convertir nuestros anchos en pixels a porcentajes solamente tenemos que aplicar una regla de tres simple: <em><code>(objetivo / contexto) * 100</code></em></p>
+
+                    <pre><code data-trim contenteditable>
+.container {
+    width: 980px
+}
+.box {
+    width: 250px; /* (250/980)*100 */
+    width: 25.51%
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Imágenes fluidas</h3>
+                    <p>Si queremos que nuestras imágenes también se adapten al contenido pero que al mismo tiempo nunca sean más grande que su tamaño real para evitar que se pixelen, podemos utilizar el siguiente código a nivel global:</p>
+                    <pre><code data-trim contenteditable>
+img {
+    max-width: 100%;
+    height: auto; /* para forzar el aspect ratio correcto */
+    -ms-interpolation-mode: bicubic;  /* proporciona un mejor escalado
+                                         en IE7 */
+}
+                    </code></pre>
+                </section>
+            </section>
+
+            <section>
+                <h2>Links relacionados</h2>
+                <ul style="font-size: 1.8rem">
+                    <li style="margin-bottom: .4em;">
+                        <strong>Responsive Web Design</strong> <i style="color: #999;"> &mdash; Ethan Marcotte</i><br>
+                        <a href="http://alistapart.com/article/responsive-web-design/" style="font-size: .8em; margin-top: -.5rem; display:block;">http://alistapart.com/article/responsive-web-design/</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>Stop using the viewport meta tag (until you know how to use it)</strong> <i style="color: #999;"> &mdash; Javier Usobiaga</i><br>
+                        <a href="http://blog.javierusobiaga.com/stop-using-the-viewport-tag-until-you-know-ho" style="font-size: .8em; margin-top: -.5rem; display:block;">http://blog.javierusobiaga.com/stop-using-the-viewport-tag-until-you-know-ho</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>This Is Responsive</strong><br>
+                        <a href="https://bradfrost.github.io/this-is-responsive/" style="font-size: .8em; margin-top: -.5rem; display:block;">https://bradfrost.github.io/this-is-responsive/</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>Rundown of Handling Flexible Media</strong> <i style="color: #999;"> &mdash; Chris Coyier</i><br>
+                        <a href="http://css-tricks.com/rundown-of-handling-flexible-media/" style="font-size: .8em; margin-top: -.5rem; display:block;">http://css-tricks.com/rundown-of-handling-flexible-media/</a>
+                    </li>
+                    <li style="margin-bottom: .4em;">
+                        <strong>Embed Responsively</strong><br>
+                        <a href="http://embedresponsively.com/" style="font-size: .8em; margin-top: -.5rem; display:block;">http://embedresponsively.com/</a>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
