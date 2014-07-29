@@ -379,3 +379,15 @@
 .reveal .container-2 {
     border: 2px solid rgba(120,0,0, .2);
 }
+
+
+/* DAY 09 */
+.reveal .mq p {
+    color: red;
+}
+
+@media (max-width: 1000px) {
+    .reveal .mq p {
+        color: blue;
+    }
+}
