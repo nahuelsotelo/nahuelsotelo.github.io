@@ -1,90 +1,101 @@
 <!doctype html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
 
-	<head>
-		<meta charset="utf-8">
+    <title>reveal.js - The HTML Presentation Framework</title>
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+    <!-- <meta name="description" content="A framework for easily creating beautiful presentations using HTML"> -->
+    <!-- <meta name="author" content="Hakim El Hattab"> -->
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="css/index.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+<body class="index">
+    <div class="reveal">
+        <h1>Introducción a los lenguajes web: HTML y CSS</h2>
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <h2>Introducción a la web</h2>
+        <ul>
+            <li><a href="slides/day-01.html#/3">Internet vs Web</a></li>
+            <li><a href="slides/day-01.html#/4">Clientes y servidores</a></li>
+            <li><a href="slides/day-01.html#/5">Ciclo de una transacción web</a></li>
+            <li><a href="slides/day-01.html#/6">URL (Uniform Resource Locator)</a></li>
+            <li><a href="slides/day-01.html#/8">Los lenguajes de la web</a></li>
+        </ul>
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <h2>HTML</h2>
+        <ul>
+            <li><a href="slides/day-01.html#/10">Sintáxis HTML</a></li>
+            <li><a href="slides/day-01.html#/11">Anatomía de una pagina web</a></li>
+            <li><a href="slides/day-01.html#/13">Elementos de texto HTML</a></li>
+            <li><a href="slides/day-02.html#/1">Elementos block e inline</a></li>
+            <li><a href="slides/day-03.html#/3">Div y span</a></li>
+            <li><a href="slides/day-03.html#/5">Imágenes</a></li>
+            <li><a href="slides/day-03.html#/6">Listas</a></li>
+            <li><a href="slides/day-08.html#/1">Elementos estructurales HTML</a></li>
+            <li><a href="slides/day-08.html#/2">Tablas y formularios</a></li>
+            <li><a href="slides/day-06.html#/12">Workflow</a></li>
+        </ul>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h2>INTRODUCCIÓN A LOS LENGUAJES WEB: HTML Y CSS</h2>
-					<ul>
-						<li><a href="slides/day-10.html#/">Día 1</a>
-					</ul>
-				</section>
-
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
-	</body>
+        <h2>CSS</h2>
+        <ul>
+            <li><a href="slides/day-02.html#/3">Sintáxis</a></li>
+            <li><a href="slides/day-02.html#/4">Fundamentos</a></li>
+            <li><a href="slides/day-02.html#/5">Asociar CSS al HTML</a></li>
+            <li><a href="slides/day-02.html#/6">Selectores básicos</a></li>
+            <li><a href="slides/day-02.html#/7">Estilos de texto</a></li>
+            <li><a href="slides/day-02.html#/8">Color</a></li>
+            <li><a href="slides/day-03.html#/1">Selector descendente</a></li>
+            <li><a href="slides/day-03.html#/2">Especificidad</a></li>
+            <li><a href="slides/day-04.html#/1">Unidades de medida</a></li>
+            <li><a href="slides/day-04.html#/2">Background color</a></li>
+            <li><a href="slides/day-04.html#/4">Box model</a></li>
+            <li><a href="slides/day-04.html#/5">Width y height</a></li>
+            <li><a href="slides/day-04.html#/6">Overflow</a></li>
+            <li><a href="slides/day-04.html#/7">Padding y margin</a></li>
+            <li><a href="slides/day-04.html#/8">Borders</a></li>
+            <li><a href="slides/day-05.html#/1">Max &amp; min</a></li>
+            <li><a href="slides/day-05.html#/2">Display, visibilty y opacity</a></li>
+            <li><a href="slides/day-05.html#/3">Posicionando elementos con float</a></li>
+            <li><a href="slides/day-05.html#/4">Clearfix</a></li>
+            <li>
+                <a href="slides/day-06.html#/1">Imágenes de fondo</a>
+                <ul>
+                    <li><a href="slides/day-06.html#/2">Background-image</a></li>
+                    <li><a href="slides/day-06.html#/3">Background-repeat</a></li>
+                    <li><a href="slides/day-06.html#/4">Background-position</a></li>
+                    <li><a href="slides/day-06.html#/5">Background-attachment</a></li>
+                    <li><a href="slides/day-06.html#/6">Background-clip</a></li>
+                    <li><a href="slides/day-06.html#/7">Background-origin</a></li>
+                    <li><a href="slides/day-06.html#/8">Background-size</a></li>
+                    <li><a href="slides/day-06.html#/9">Background shorthand</a></li>
+                    <li><a href="slides/day-06.html#/10">Multiples imágenes de fondo</a></li>
+                </ul>
+            </li>
+            <li><a href="slides/day-06.html#/14">Degradado linear</a></li>
+            <li><a href="slides/day-07.html#/1">Degradado linear II</a></li>
+            <li><a href="slides/day-07.html#/2">Degradado radial</a></li>
+            <li><a href="slides/day-07.html#/3">Repeating background</a></li>
+            <li><a href="slides/day-07.html#/4">Combinando degradados</a></li>
+            <li><a href="slides/day-07.html#/6">Position</a></li>
+            <li>
+                <a href="slides/day-09.html#/1">Responsive web design</a>
+                <ul>
+                    <li><a href="slides/day-09.html#/2">&#60;meta name="viewport"&#62;</a></li>
+                    <li><a href="slides/day-09.html#/3">Layout fluido</a></li>
+                    <li><a href="slides/day-09.html#/4">Media queries</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
 </html>
