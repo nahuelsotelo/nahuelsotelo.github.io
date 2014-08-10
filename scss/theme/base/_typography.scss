@@ -8,7 +8,6 @@ body {
     font-weight: 300;
     line-height: $line-height;
     text-shadow: 1px 1px 0 #fff;
-
 }
     /* =HEADINGS
     ------------------------------------------------------ */
@@ -29,6 +28,7 @@ body {
     %hero-text {
         color: $c-main;
         font-family: $f-title;
+        mix-blend-mode: multiply;
     }
     .brand {
         text-align: center;

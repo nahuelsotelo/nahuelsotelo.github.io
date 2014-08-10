@@ -6,7 +6,7 @@
     @include box-sizing(border-box);
 }
 body {
-    background: #fff url(../img/paper_fibers.png);
+    background: #fff url(../img/ricepaper2.png);
     margin: 0;
     @include vrm(padding, 2 .5);
 }
@@ -65,5 +65,16 @@ body {
         p:last-of-type {
             margin-bottom: 0;
         }
+    }
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    body {
+        background-image: url(../img/ricepaper2_@2X.png);
     }
 }
