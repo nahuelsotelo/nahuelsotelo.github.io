@@ -14,6 +14,7 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
+                    bundleExec: true,
                     sassDir: 'scss',
                     cssDir:  'css',
                     imagesDir: 'img',
