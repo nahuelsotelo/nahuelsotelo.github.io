@@ -1,0 +1,17 @@
+{
+  "name": "Performance_test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node node_modules/.bin/http-server src -o"
+  },
+  "keywords": [
+      "boilerplate"
+  ],
+  "repository": "",
+  "author": "Nahuel Sotelo",
+  "dependencies": {},
+  "devDependencies": {
+      "grunt": "^0.4.5"
+  }
+}
