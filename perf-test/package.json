@@ -6,12 +6,16 @@
     "start": "node node_modules/.bin/http-server src -o"
   },
   "keywords": [
-      "boilerplate"
+    "boilerplate"
   ],
   "repository": "",
   "author": "Nahuel Sotelo",
   "dependencies": {},
   "devDependencies": {
-      "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "gruntfile-gtx": "^0.3.0",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~1.0.0",
+    "grunt-contrib-imagemin": "~0.8.1"
   }
 }
