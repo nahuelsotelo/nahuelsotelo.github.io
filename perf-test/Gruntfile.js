@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         path: {
             src:        'src',
             dist:       '.',
-            css_src:    '<%= path.src %>/_scss',
+            css_src:    '<%= path.src %>/css',
             css_dist:   '<%= path.dist %>/css',
             js_src:     '<%= path.src %>/_js',
             js_dist:    '<%= path.dist %>/js',
@@ -48,11 +48,22 @@ module.exports = function (grunt) {
                     dest: '<%= path.dist %>/views/images',
                 }]
             }
+        },
+        // CSS ======================
+        csso: {
+            compress: {
+                expand: true,
+                cwd: '<%= path.css_src %>/',
+                src: ['*.css', '!*.min.css'],
+                dest: '<%= path.css_dist %>/',
+                ext: '.min.css'
+            }
         }
     });
 
     // Tasks
     grunt.registerTask('default', [
         'imagemin',
+        'csso'
     ]);
 };
