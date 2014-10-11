@@ -55,15 +55,15 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: '<%= path.css_src %>/',
                 src: ['*.css', '!*.min.css'],
-                dest: '<%= path.css_dist %>/',
+                dest: '<%= path.css_src %>/',
                 ext: '.min.css'
             }
-        }
+        },
     });
 
     // Tasks
     grunt.registerTask('default', [
         'imagemin',
-        'csso'
+        'csso',
     ]);
 };
