@@ -246,7 +246,7 @@ body {
   margin-bottom: 0.5rem; }
 
 /* ============================ MEDIA QUERIES ============================ */
-@media screen and (min-width: 25em) {
+@media (min-width: 25em) {
   .contact strong {
     display: inline-block;
     margin-right: 0.5rem;
@@ -254,7 +254,7 @@ body {
     min-width: 6em; }
  }
 
-@media screen and (min-width: 32em) {
+@media (min-width: 32em) {
   .skills {
     width: 46%; }
     .skills.section-left {
@@ -264,7 +264,7 @@ body {
       float: right; }
  }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 60em), print {
   .main-wrapper {
     max-width: 60em; }
 

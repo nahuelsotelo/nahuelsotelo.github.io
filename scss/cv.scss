@@ -335,7 +335,7 @@ $t-sans: 'Oxygen', sans-serif;
 
 
 /* ============================ MEDIA QUERIES ============================ */
-@media screen and (min-width: 25em) {
+@media (min-width: 25em) {
     // =CONTACT
     //------------------------------------------------------
         .contact {
@@ -348,7 +348,7 @@ $t-sans: 'Oxygen', sans-serif;
         }
 }
 
-@media screen and (min-width: 32em) {
+@media (min-width: 32em) {
     // =SKILLS
     //------------------------------------------------------
     .skills {
@@ -364,7 +364,7 @@ $t-sans: 'Oxygen', sans-serif;
     }
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 60em), print {
     // =PAGE LAYOUT
     //------------------------------------------------------
         .main-wrapper {
