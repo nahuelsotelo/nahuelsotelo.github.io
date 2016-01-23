@@ -6,6 +6,24 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     runSequence = require('run-sequence');
 
+var path = {
+    stylesSrc: './scss',
+    stylesDist: './css',
+
+    // imgSrc: basePath.drive + '/img',
+    // imgDist: basePath.dist + '/img',
+
+    // spriteSrc: basePath.drive2 + '/sprite',
+    // spriteDist: basePath.dist + '/img/sprite',
+    // spritePngDist: basePath.dist + '/img/sprite/pngicons',
+
+    // scriptsSrc: basePath.drive + '/js',
+    // scriptsDist: basePath.dist + '/js',
+
+    // srcFont: basePath.drive + '/fonts',
+    // distFont: basePath.dist + '/fonts'
+};
+
 
 // ERROR HANDLER ========================================
 var onError = function(err) {
@@ -20,12 +38,12 @@ var onError = function(err) {
 
 // STYLES ===============================================
 gulp.task('css', function() {
-    return gulp.src( 'scss/cv.scss' )
+    return gulp.src( path.stylesSrc + '/**/*.scss' )
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(sass())
-        .pipe(gulp.dest( 'css' ))
+        .pipe(gulp.dest( path.stylesDist ))
 });
 
 
