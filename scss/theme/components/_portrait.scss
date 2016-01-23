@@ -1,123 +1,121 @@
-/* =PORTRAIT
--------------------------------------------------------------------------- */
+// =PORTRAIT
+// ----------------------------------------------------------------------------
 .portrait {
-    position: relative;
-    margin: 0 auto;
-    @include vrm(margin-bottom, 1);
-    text-align: center;
-    width: 85%;
+  position: relative;
+  margin: 0 auto;
+  @include vrm(margin-bottom, 1);
+  text-align: center;
+  width: 85%;
+
+  img {
+    max-width: 70%;
+    height: 9em;
+  }
+
+}
+
+// ===================== MEDIA QUERIES =====================
+@media screen and (min-width: $ballon-appear) {
+  .portrait {
+    background-image: none;
+    text-align: left;
+    width: 65%;
 
     img {
-        max-width: 70%;
-        height: 9em;
+      height: 10em;
     }
 
-}
-
-/* ===================== MEDIA QUERIES ===================== */
-@media screen and (min-width: $ballon-appear) {
-    .portrait {
-        background-image: none;
-        text-align: left;
-        width: 65%;
-
-        img {
-            height: 10em;
-        }
-
-        &:before,
-        &:after {
-            background-repeat: no-repeat;
-            background-position: center center;
-            content: '';
-            display: block;
-            @include font(47px);
-            position: absolute;
-                left: 2.5em;
-            width: 1.75em;
-            height: 1.75em;
-        }
-
-        &:after {
-            // background: url(../img/ballon.svg);
-            mix-blend-mode: multiply;
-            @include background-size(contain);
-            content: 'Hi';
-            font-family: $f-cursive;
-            line-height: 1.8em;
-            text-align: center;
-            text-indent: -.1em;
-            @include transition(all .4s ease-out);
-                top: .4em;
-        }
+    &:before,
+    &:after {
+      background-repeat: no-repeat;
+      background-position: center center;
+      content: '';
+      display: block;
+      @include font(47px);
+      position: absolute;
+      left: 2.5em;
+      width: 1.75em;
+      height: 1.75em;
     }
+
+    &:after {
+      // background: url(../img/ballon.svg);
+      mix-blend-mode: multiply;
+      background-size: contain;
+      content: 'Hi';
+      font-family: $f-cursive;
+      line-height: 1.8em;
+      text-align: center;
+      text-indent: -.1em;
+      transition: all .4s ease-out;
+      top: .4em;
+    }
+  }
 }
+
 @media screen and (min-width: $portrait-big) {
-    .portrait {
-        text-align: left;
-        width: 55%;
+  .portrait {
+    text-align: left;
+    width: 55%;
 
-        img {
-            height: 12em;
-        }
-        &:before,
-        &:after {
-            left: 3.2em;
-        }
-        // span,
-        &:after {
-            top: 1em;
-        }
+    img {
+      height: 12em;
     }
+    &:before,
+    &:after {
+      left: 3.2em;
+    }
+    &:after {
+      top: 1em;
+    }
+  }
 }
+
 @media screen and (min-width: $portrait-bigger) {
-    .portrait {
-        width: 45%;
-    }
+  .portrait {
+    width: 45%;
+  }
 }
 
 @media screen and (min-width: $two-columns-layout) {
-    .portrait {
-        @include span-columns(3);
-        @include push(5);
-        margin-bottom: 0;
-        @include vrm(left, -.25);
+  .portrait {
+    @include span(3);
+    @include push(5);
+    margin-bottom: 0;
+    @include vrm(left, -.25);
 
-        &:before,
-        &:after {
-            right: -.15em;
-        }
-        &:after {
-            top: 1em;
-        }
-        &:before {
-            @include background-size(50%);
-            top: .95em;
-            z-index: 1;
-        }
-        &.is--runroom,
-        &.is--twitter,
-        &.is--github,
-        &.is--codepen,
-        &.is--linkedin,
-        &.is--zerply {
-            &:after {
-                content: '';
-            }
-        }
-        &.is--mail:after {
-            color: $c-hover;
-        }
-        &.is--github:before   {
-            // @include background-size(58%);
-            // text-indent: -.2em;
-        }
-        &.is--linkedin:before {
-            // @include background-size(46%);
-        }
-
-        img {
-            width: 60%;
-        }
+    &:before,
+    &:after {
+      right: -.15em;
     }
+
+    &:after {
+      top: 1em;
+    }
+
+    &:before {
+      background-size: 50%;
+      top: .95em;
+      z-index: 1;
+    }
+
+    &.is--schibsted,
+    &.is--coches,
+    &.is--twitter,
+    &.is--github,
+    &.is--codepen,
+    &.is--linkedin {
+      &:after {
+        content: '';
+      }
+    }
+
+    &.is--mail:after {
+      color: $c-hover;
+    }
+
+    img {
+      width: 60%;
+    }
+  }
 }
