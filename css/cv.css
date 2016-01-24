@@ -217,41 +217,41 @@ body {
   margin-bottom: .5rem;
   padding-bottom: 0; }
   .skills li:after {
-    border: 0;
-    color: rgba(52, 28, 0, 0.4);
-    display: inline-block !important;
-    font-family: serif, sans-serif;
-    font-size: 1em;
-    margin-left: .25rem;
-    position: relative;
-    top: -.15em;
-    left: 0;
-    width: auto; }
+    display: none; }
   .skills li.st-1 {
     color: rgba(52, 28, 0, 0.4); }
-    .skills li.st-1:after {
-      content: '\2B51'; }
+    .skills li.st-1 .skill-icon {
+      opacity: .4; }
   .skills li.st-2 {
     color: rgba(52, 28, 0, 0.5); }
-    .skills li.st-2:after {
-      content: '\2B51\2B51'; }
+    .skills li.st-2 .skill-icon {
+      opacity: .5; }
   .skills li.st-3 {
     color: rgba(52, 28, 0, 0.6); }
-    .skills li.st-3:after {
-      content: '\2B51\2B51\2B51'; }
+    .skills li.st-3 .skill-icon {
+      opacity: .6; }
   .skills li.st-4 {
     color: rgba(52, 28, 0, 0.8); }
-    .skills li.st-4:after {
-      content: '\2B51\2B51\2B51\2B51'; }
+    .skills li.st-4 .skill-icon {
+      opacity: .8; }
   .skills li.st-5 {
     color: #341c00; }
-    .skills li.st-5:after {
-      content: '\2B51\2B51\2B51\2B51\2B51'; }
+    .skills li.st-5 .skill-icon {
+      opacity: 1; }
 
 .skills .h3 {
   font-size: 1.25rem;
   line-height: 1.5rem;
   margin-bottom: .5rem; }
+
+.skill-icon {
+  display: inline-block;
+  position: relative;
+  top: -.15em;
+  left: 0;
+  margin-right: -.25rem;
+  width: .5rem;
+  height: .5rem; }
 
 /* ============================ MEDIA QUERIES ============================ */
 @media screen and (min-width: 25em) {
@@ -317,9 +317,7 @@ body {
     letter-spacing: 1rem;
     margin-bottom: 3rem;
     text-align: center; }
-  .section-left:after,
-  .section-right:after,
-  .section-group:last-child:after {
+  .section-left:after, .section-right:after, .section-group:last-child:after {
     content: '';
     margin-bottom: 0; } }
 

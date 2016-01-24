@@ -1,14 +1,15 @@
 var gulp        = require('gulp'),
-    browsersync = require('browser-sync'),
-    beep        = require('beepbeep'),
-    colors      = require('colors'),
-    plumber     = require('gulp-plumber'),
-    sass        = require('gulp-sass'),
-    runSequence = require('run-sequence');
+browserSync = require('browser-sync'),
+beep        = require('beepbeep'),
+colors      = require('colors'),
+plumber     = require('gulp-plumber'),
+sass        = require('gulp-sass'),
+runSequence = require('run-sequence');
 
 var path = {
-    stylesSrc: './scss',
-    stylesDist: './css',
+  dist: '.',
+  stylesSrc: './scss',
+  stylesDist: './css',
 
     // imgSrc: basePath.drive + '/img',
     // imgDist: basePath.dist + '/img',
@@ -22,51 +23,51 @@ var path = {
 
     // srcFont: basePath.drive + '/fonts',
     // distFont: basePath.dist + '/fonts'
-};
+  };
 
 
 // ERROR HANDLER ========================================
 var onError = function(err) {
-    beep([200, 200]);
-    console.log(
+  beep([200, 200]);
+  console.log(
     '\n*****************'.bold.gray + ' \\(°□°)/ '.bold.red + '<( ERROR! ) '.bold.blue + '*****************\n\n'.bold.gray +
     String(err) +
     '\n*******************************************************\n'.bold.gray );
-    this.emit('end');
+  this.emit('end');
 };
 
 
 // STYLES ===============================================
 gulp.task('css', function() {
-    return gulp.src( path.stylesSrc + '/**/*.scss' )
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(sass())
-        .pipe(gulp.dest( path.stylesDist ))
-});
+  return gulp.src( path.stylesSrc + '/**/*.scss' )
+  .pipe(plumber({
+    errorHandler: onError
+    }))
+  .pipe(sass())
+  .pipe(gulp.dest( path.stylesDist ))
+  });
 
 
 // BROWSER SYNC =========================================
-gulp.task('browsersync', function() {
-    browsersync({
-        server: { baseDir: './' },
-        port: 8000,
-        files: [ 'css/*.css' ]
-    })
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: { baseDir: path.dist },
+    port: 8888,
+    files: [ 'css/*.css' ]
+  });
 });
 
 
 // WATCH ================================================
-gulp.task('watch', ['browsersync'], function() {
-    gulp.watch( 'scss/**/*.scss',       ['css'] );
-});
+gulp.task('watch', ['browserSync'], function() {
+  gulp.watch( 'scss/**/*.scss',       ['css'] );
+  });
 
 
 // BUILD ================================================
 gulp.task('default', function(callback) {
-    runSequence(
-        'css',
-        ['watch'],
+  runSequence(
+    'css',
+    ['watch'],
     callback);
-});
+  });

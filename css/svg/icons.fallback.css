@@ -23,6 +23,12 @@
 	background-repeat: no-repeat;
 }
 
+.icon-link:after,
+.is--link:before {
+	background-image: url('png/link.png');
+	background-repeat: no-repeat;
+}
+
 .icon-linkedin:after,
 .is--linkedin:before {
 	background-image: url('png/linkedin.png');
