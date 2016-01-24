@@ -293,36 +293,28 @@ $t-sans: 'Oxygen', sans-serif;
                 padding-bottom: 0;
 
                 &:after {
-                    border: 0;
-                    color: rgba($c-text, .4);
-                    display: inline-block !important;
-                    font-family: serif, sans-serif;
-                    font-size: 1em;
-                    margin-left: .25rem;
-                    position: relative;
-                        top: -.15em;
-                        left: 0;
-                    width: auto;
+                    display: none;
                 }
+
                 &.st-1 {
                     color: rgba($c-text, .4);
-                    &:after { content: '\2B51'; }
+                    .skill-icon { opacity: .4; }
                 }
                 &.st-2 {
                     color: rgba($c-text, .5);
-                    &:after { content: '\2B51\2B51'; }
+                    .skill-icon { opacity: .5; }
                 }
                 &.st-3 {
                     color: rgba($c-text, .6);
-                    &:after { content: '\2B51\2B51\2B51'; }
+                    .skill-icon { opacity: .6; }
                 }
                 &.st-4 {
                     color: rgba($c-text, .8);
-                    &:after { content: '\2B51\2B51\2B51\2B51'; }
+                    .skill-icon { opacity: .8; }
                 }
                 &.st-5 {
                     color: rgba($c-text, 1);
-                    &:after { content: '\2B51\2B51\2B51\2B51\2B51'; }
+                    .skill-icon { opacity: 1; }
                 }
             }
             .h3 {
@@ -330,6 +322,15 @@ $t-sans: 'Oxygen', sans-serif;
                 line-height: 1.5rem;
                 margin-bottom: .5rem;
             }
+        }
+        .skill-icon {
+            display: inline-block;
+            position: relative;
+                top: -.15em;
+                left: 0;
+            margin-right: -.25rem;
+            width: .5rem;
+            height: .5rem;
         }
 
 
@@ -423,7 +424,8 @@ $t-sans: 'Oxygen', sans-serif;
 
     // =SECTION
     //------------------------------------------------------
-        .section-group {
+    .section {
+        &-group {
             > section {
                 width: 46%;
             }
@@ -431,14 +433,14 @@ $t-sans: 'Oxygen', sans-serif;
                 max-width: none;
             }
         }
-        .section-left {
+        &-left {
             float: left;
             margin-bottom: 0;
         }
-        .section-right {
+        &-right {
             float: right;
         }
-        .section-group {
+        &-group {
             &:after {
                 color: rgba($c-text, .5);
                 content: '\2B26\2B26\2B26';
@@ -448,14 +450,15 @@ $t-sans: 'Oxygen', sans-serif;
                 text-align: center;
             }
         }
-        .section-left,
-        .section-right,
-        .section-group:last-child {
+        &-left,
+        &-right,
+        &-group:last-child {
             &:after {
                 content: '';
                 margin-bottom: 0;
             }
         }
+    }
 }
 
 @media screen and (min-width: 90em) {

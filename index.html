@@ -33,7 +33,7 @@
             <div class="intro">
                 <p>I'm a <strong>front-end web developer</strong> and a full time geek. I'm struggling each day to make the web a better place. One line of code at a time.</p>
                 <p>I consider myself a <strong>proactive</strong> and curious person who loves to learn new stuff all the time, I guess thats the reason I chose this profession. I also enjoy <strong>teamwork</strong> and being a part of my <strong>local web community</strong>.</p>
-                <p>I currently work for <a href="http://www.runroom.com" class="icon-link" data-icon="runroom">Runroom</a>, an awesome web design studio based in Barcelona</p>
+                <p>I currently work for <a href="http://www.schibsted.es/" class="icon-link" data-icon="schibsted">Schibsted Spain</a> in the  <a href="http://www.coches.net/" class="icon-link" data-icon="coches">Coches.net</a> Team.</p>
             </div>
 
             <div class="social">
@@ -49,6 +49,7 @@
 
     <script>
         (function() {
+            'use strict';
             var windowSize = 1190;
             var portrait = document.getElementsByClassName('portrait');
 
@@ -61,35 +62,36 @@
                     a.detachEvent('on'+e,o);
                     a.attachEvent('on'+e,o);
                 }
-            }
+            };
 
             var addIcon = function() {
                 var icon = this.dataset.icon;
                 var clase = 'is--' + icon;
                 portrait[0].classList.add(clase);
-            }
+            };
 
             var removeIcon = function() {
                 var icon = this.dataset.icon;
                 var clase = 'is--' + icon;
                 portrait[0].classList.remove(clase);
-            }
+            };
 
             var initLinks = function() {
                 if(window.innerWidth >= windowSize) {
                     var iconLink = document.getElementsByClassName('icon-link');
-                    for(i=0; i<iconLink.length; i++) {
+                    for(var i=0; i<iconLink.length; i++) {
                         addEvent(iconLink[i],'mouseover',addIcon);
                         addEvent(iconLink[i],'mouseout',removeIcon);
                     }
                 }
-            }
+            };
 
             initLinks();
 
         })();
 
         (function() {
+            'use strict';
             function watercolor(target) {
                 function wrapEachCharacter(textNode, tag) {
                     var text = textNode.nodeValue;
@@ -101,7 +103,7 @@
                         var characterNode = document.createTextNode(character);
 
                         var opacityValue = function() {
-                            var value =  Math.random() * (1.1 - .8) + .8;
+                            var value =  Math.random() * (1.1 - 0.8) + 0.8;
 
                             return (value > 1) ? 1 : value;
                         };
@@ -116,12 +118,12 @@
 
                 var textNodes = target.childNodes;
 
-                for(i = 0; i < textNodes.length; i++) {
-                    if (textNodes[i].nodeType == Node.TEXT_NODE) {
+                for(var i = 0; i < textNodes.length; i++) {
+                    if (textNodes[i].nodeType === Node.TEXT_NODE) {
                         wrapEachCharacter(textNodes[i], 'span');
                     }
                 }
-            };
+            }
 
             var brand = document.getElementById('brand__name');
             var mail = document.getElementById('mail__link');
@@ -129,20 +131,5 @@
             watercolor(brand);
             watercolor(mail);
         })();
-
-        // (function() {
-        //     var brands = document.getElementById('brand__name');
-        //     function isInspectOpen()
-        //     {
-        //         console.profile();
-        //         console.profileEnd();
-        //         if (console.clear) console.clear();
-        //         return console.profile.length;
-        //     }
-        //     brands.onclick  = function(){
-        //         alert(isInspectOpen());
-        //     };
-        // })();
-
     </script>
 </body></html>

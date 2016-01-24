@@ -1,80 +1,80 @@
-/* =GENERAL LAYOUT
--------------------------------------------------------------------------- */
+// =GENERAL LAYOUT
+// ----------------------------------------------------------------------------
 *
 *:before,
 *:after {
-    @include box-sizing(border-box);
+  box-sizing :border-box;
 }
 body {
-    background: #fff url(../img/ricepaper2.png);
-    margin: 0;
-    @include vrm(padding, 2 .5);
+  background: #fff url(../img/ricepaper2.png);
+  margin: 0;
+  @include vrm(padding, 2 .5);
 }
 
 .brand {
-    @include vrm(margin-bottom, 1);
+  @include vrm(margin-bottom, 1);
 }
 .main-content {
-    @include vrm(margin-bottom, 2);
+  @include vrm(margin-bottom, 2);
 }
 .intro {
-    border-bottom: 1px solid $c-neutro;
-    @include vrm(margin-bottom, 1);
+  border-bottom: 1px solid $c-neutro;
+  @include vrm(margin-bottom, 1);
 }
 .mail {
-    clear: both;
-    text-align: center;
+  clear: both;
+  text-align: center;
 }
 
-/* ===================== MEDIA QUERIES ===================== */
+// ===================== MEDIA QUERIES =====================
 
 @media screen and (min-width: $wider-body-margins) {
-    body {
-        @include vrm(padding, 2 1);
-    }
-    .main-wrapper {
-        margin: 0 auto;
-        max-width: 33em;
-    }
+  body {
+    @include vrm(padding, 2 1);
+  }
+  .main-wrapper {
+    margin: 0 auto;
+    max-width: 33em;
+  }
 }
 @media screen and (min-width: $two-columns-layout) {
-    body {
-        padding: 0;
-    }
-    .main-wrapper {
-        margin: 2.469em auto;
-        max-width: 65em;
-    }
-    .brand,
-    .main-content {
-        margin-bottom: 1.389em;
-    }
-    .main-content {
-        @include cf;
-    }
-    .intro {
-        border: 0;
-        @include span-columns(5);
+  body {
+    padding: 0;
+  }
+  .main-wrapper {
+    margin: 2.469em auto;
+    max-width: 65em;
+  }
+  .brand,
+  .main-content {
+    margin-bottom: 1.389em;
+  }
+  .main-content {
+    @include cf;
+  }
+  .intro {
+    border: 0;
+        @include span(5);
         @include pull(8);
-    }
-    .social {
-        @include span-columns(5 omega);
-    }
-    .intro,
-    .social {
+      }
+      .social {
+        @include span(5 omega);
+      }
+      .intro,
+      .social {
         p:last-of-type {
-            margin-bottom: 0;
+          margin-bottom: 0;
         }
+      }
     }
-}
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
-    body {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      body {
         background-image: url(../img/ricepaper2_@2X.png);
+      }
     }
-}

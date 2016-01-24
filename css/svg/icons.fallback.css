@@ -1,28 +1,48 @@
+
 .icon-ballon:after,
-.is--ballon:before,
-is--ballon { background-image: url('../../img/png-src/ballon.png'); background-repeat: no-repeat; }
+.is--ballon:before {
+	background-image: url('png/ballon.png');
+	background-repeat: no-repeat;
+}
+
+.icon-coches:after,
+.is--coches:before {
+	background-image: url('png/coches.png');
+	background-repeat: no-repeat;
+}
 
 .icon-codepen:after,
-.is--codepen:before,
-is--codepen { background-image: url('../../img/png-src/codepen.png'); background-repeat: no-repeat; }
+.is--codepen:before {
+	background-image: url('png/codepen.png');
+	background-repeat: no-repeat;
+}
 
 .icon-github:after,
-.is--github:before,
-is--github { background-image: url('../../img/png-src/github.png'); background-repeat: no-repeat; }
+.is--github:before {
+	background-image: url('png/github.png');
+	background-repeat: no-repeat;
+}
+
+.icon-link:after,
+.is--link:before {
+	background-image: url('png/link.png');
+	background-repeat: no-repeat;
+}
 
 .icon-linkedin:after,
-.is--linkedin:before,
-is--linkedin { background-image: url('../../img/png-src/linkedin.png'); background-repeat: no-repeat; }
+.is--linkedin:before {
+	background-image: url('png/linkedin.png');
+	background-repeat: no-repeat;
+}
 
-.icon-runroom:after,
-.is--runroom:before,
-is--runroom { background-image: url('../../img/png-src/runroom.png'); background-repeat: no-repeat; }
+.icon-schibsted:after,
+.is--schibsted:before {
+	background-image: url('png/schibsted.png');
+	background-repeat: no-repeat;
+}
 
 .icon-twitter:after,
-.is--twitter:before,
-is--twitter { background-image: url('../../img/png-src/twitter.png'); background-repeat: no-repeat; }
-
-.icon-zerply:after,
-.is--zerply:before,
-is--zerply { background-image: url('../../img/png-src/zerply.png'); background-repeat: no-repeat; }
-
+.is--twitter:before {
+	background-image: url('png/twitter.png');
+	background-repeat: no-repeat;
+}
