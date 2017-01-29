@@ -239,8 +239,7 @@ iframe {
     .portrait img {
       width: 60%; } }
 
-*
-*:before,
+* *:before,
 *:after {
   box-sizing: border-box; }
 
