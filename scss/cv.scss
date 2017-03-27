@@ -481,5 +481,9 @@ body {
     }
     .section-group {
       page-break-after: always;
+
+      &:last-of-type {
+        padding-top: 2.5rem;
+      }
     }
   }

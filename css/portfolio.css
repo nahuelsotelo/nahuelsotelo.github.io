@@ -334,7 +334,9 @@ body {
   a {
     text-decoration: none; }
   .section-group {
-    page-break-after: always; } }
+    page-break-after: always; }
+    .section-group:last-of-type {
+      padding-top: 2.5rem; } }
 
 @media screen and (min-width: 60em), print {
   #portfolio .section-group > section {
